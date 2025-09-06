@@ -21,14 +21,14 @@ export default function Home() {
             {/* Logo Side */}
             <div className="flex justify-center">
               <div className="bg-white rounded-full p-3 border-4 border-white shadow-lg">
-                <Image
+        <Image
                   src="/logos/logo.png"
                   alt="Saunders Simmons Ltd Logo"
                   width={400}
                   height={400}
                   className="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-contain"
-                  priority
-                />
+          priority
+        />
               </div>
             </div>
             
@@ -305,7 +305,7 @@ export default function Home() {
               Featured <span className="text-blue-600">Customer Success Stories</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See how we've helped businesses like yours grow online with professional websites 
+              See how we&apos;ve helped businesses like yours grow online with professional websites 
               and ongoing digital marketing support.
             </p>
           </div>
@@ -384,8 +384,8 @@ export default function Home() {
                     </div>
                     <Link 
                       href="https://jjmobilevaleting.co.uk"
-                      target="_blank"
-                      rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                       Visit Website →
                     </Link>
@@ -455,8 +455,8 @@ export default function Home() {
                     </div>
                     <Link 
                       href="https://www.tevyservices.co.uk"
-                      target="_blank"
-                      rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                       className="text-green-600 hover:text-green-700 text-sm font-medium">
                       Visit Website →
                     </Link>
