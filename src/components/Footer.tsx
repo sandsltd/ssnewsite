@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BookCallButton from './BookCallButton';
 
 export default function Footer() {
   return (
@@ -42,9 +43,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#pricing" className="text-gray-600 hover:text-orange-600 transition-colors duration-200">
-                  Get Quote
-                </Link>
+                <BookCallButton className="text-gray-600 hover:text-orange-600 transition-colors duration-200">
+                  Book a Call
+                </BookCallButton>
               </li>
               <li>
                 <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
@@ -91,9 +92,9 @@ export default function Footer() {
               <Link href="/blog" className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200">
                 Blog
               </Link>
-              <Link href="#pricing" className="text-gray-500 hover:text-orange-600 text-sm transition-colors duration-200">
-                Get Quote
-              </Link>
+              <BookCallButton className="text-gray-500 hover:text-orange-600 text-sm transition-colors duration-200">
+                Book a Call
+              </BookCallButton>
             </div>
           </div>
         </div>

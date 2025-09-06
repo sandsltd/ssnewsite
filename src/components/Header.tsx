@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import BookCallButton from './BookCallButton';
 
 export default function Header() {
   return (
@@ -59,12 +60,9 @@ export default function Header() {
                 </svg>
                 <span className="text-sm font-medium">0330 043 6608</span>
               </a>
-              <Link
-                href="#pricing"
-                className="bg-orange-600 text-white hover:bg-orange-700 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
-              >
-                Get Quote
-              </Link>
+              <BookCallButton className="bg-orange-600 text-white hover:bg-orange-700 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg">
+                Book a Call
+              </BookCallButton>
             </div>
 
             {/* Mobile menu button */}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import BookCallButton from "../components/BookCallButton";
 
 export default function Home() {
   return (
@@ -57,20 +58,11 @@ export default function Home() {
                 <span className="text-gray-600 font-medium">5.0 Google Rating</span>
               </div>
               
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Link
-                  href="#pricing"
-                  className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200"
-                >
-                  Our Services
-                </Link>
-                <Link
-                  href="/contact"
-                  className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Get In Touch
-                </Link>
+              {/* CTA Button */}
+              <div className="flex justify-center lg:justify-start mb-8">
+                <BookCallButton className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
+                  Book a Call
+                </BookCallButton>
               </div>
               
               {/* Welcome Message */}
@@ -167,7 +159,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4 pt-4">
+                <div className="flex items-center gap-4 pt-4 mb-6">
                   <div className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -178,6 +170,12 @@ export default function Home() {
                   <div className="text-gray-600">100+ Happy Clients</div>
                   <div className="text-gray-500">•</div>
                   <div className="text-gray-600">Est. 2020</div>
+                </div>
+                
+                <div className="text-center">
+                  <BookCallButton className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
+                    Book a Call
+                  </BookCallButton>
                 </div>
               </div>
             </div>
@@ -386,6 +384,12 @@ export default function Home() {
             </div>
 
           </div>
+          
+          <div className="text-center mt-16">
+            <BookCallButton className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
+              Book a Call
+            </BookCallButton>
+          </div>
         </div>
       </section>
 
@@ -546,12 +550,9 @@ export default function Home() {
             <p className="text-gray-600 mb-6 text-lg">
               Ready to join our growing community of successful businesses?
             </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
-            >
-              Start Your Success Story
-            </Link>
+            <BookCallButton className="inline-block bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
+              Book a Call
+            </BookCallButton>
           </div>
         </div>
       </section>
@@ -751,19 +752,10 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Get your professional website built, then continue with ongoing support to grow your business online.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact?service=complete"
-                  className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200"
-                >
-                  Start Your Website Project
-                </Link>
-                <Link
-                  href="/contact?enquiry=consultation"
-                  className="border-2 border-orange-600 text-orange-700 px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:text-white transition-colors duration-200"
-                >
-                  Free Consultation
-                </Link>
+              <div className="flex justify-center">
+                <BookCallButton className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
+                  Book a Call
+                </BookCallButton>
               </div>
             </div>
           </div>
@@ -880,19 +872,10 @@ export default function Home() {
             Join the growing community of businesses we partner with for long-term success. 
             Start with our complete website solution, then grow together with ongoing support.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact?package=consultation"
-              className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl text-lg"
-            >
-              Get Free Consultation
-            </Link>
-            <Link
-              href="#pricing"
-              className="border-2 border-orange-600 text-orange-700 px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 hover:text-white transition-all duration-300 text-lg"
-            >
-              Compare Packages
-            </Link>
+          <div className="flex justify-center">
+            <BookCallButton className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl text-lg">
+              Book a Call
+            </BookCallButton>
           </div>
           <p className="text-sm text-gray-600 mt-4">
             No commitment • Free quote • Quick 2-week turnaround
