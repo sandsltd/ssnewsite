@@ -68,9 +68,9 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="text-gray-600">
                 <span className="block">Email:</span>
-                <a href="mailto:info@saunderssimmons.com" className="text-blue-600 hover:text-blue-700">
-                  info@saunderssimmons.com
-                </a>
+                      <a href="mailto:hello@saunders-simmons.co.uk" className="text-blue-600 hover:text-blue-700">
+                        hello@saunders-simmons.co.uk
+                      </a>
               </li>
               <li className="text-gray-600">
                 <span className="block">Phone:</span>
