@@ -42,22 +42,12 @@ export default function Header() {
             {/* Navigation */}
             <nav className="hidden md:flex space-x-6">
               <Link
-                href="/"
+                href="https://portal.saunders-simmons.co.uk/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-blue-50"
               >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-blue-50"
-              >
-                About
-              </Link>
-              <Link
-                href="/services"
-                className="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-green-50"
-              >
-                Services
+                Client Portal
               </Link>
             </nav>
 
@@ -70,7 +60,7 @@ export default function Header() {
                 <span className="text-sm font-medium">0330 043 6608</span>
               </a>
               <Link
-                href="/contact"
+                href="#pricing"
                 className="bg-orange-600 text-white hover:bg-orange-700 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 Get Quote

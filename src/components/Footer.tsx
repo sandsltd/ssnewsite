@@ -42,23 +42,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-gray-600 hover:text-green-600 transition-colors duration-200">
-                  Marketing
+                <Link href="#pricing" className="text-gray-600 hover:text-orange-600 transition-colors duration-200">
+                  Get Quote
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  Web Design
+                <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors duration-200">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-600 hover:text-orange-600 transition-colors duration-200">
-                  Contact
+                <Link href="tel:03300436608" className="text-gray-600 hover:text-green-600 transition-colors duration-200">
+                  Call Us
                 </Link>
               </li>
             </ul>
@@ -78,8 +73,8 @@ export default function Footer() {
               </li>
               <li className="text-gray-600">
                 <span className="block">Phone:</span>
-                <a href="tel:+1234567890" className="text-blue-600 hover:text-blue-700">
-                  +1 (234) 567-8900
+                <a href="tel:03300436608" className="text-blue-600 hover:text-blue-700">
+                  0330 043 6608
                 </a>
               </li>
             </ul>
@@ -93,11 +88,11 @@ export default function Footer() {
               © {new Date().getFullYear()} Saunders Simmons Ltd. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <Link href="/privacy" className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200">
-                Privacy Policy
+              <Link href="/blog" className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200">
+                Blog
               </Link>
-              <Link href="/terms" className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200">
-                Terms of Service
+              <Link href="#pricing" className="text-gray-500 hover:text-orange-600 text-sm transition-colors duration-200">
+                Get Quote
               </Link>
             </div>
           </div>
