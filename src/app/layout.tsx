@@ -150,7 +150,9 @@ export default function RootLayout({
                 "worstRating": "1"
               },
               "sameAs": [
-                "https://portal.saunders-simmons.co.uk"
+                "https://portal.saunders-simmons.co.uk",
+                "https://www.facebook.com/profile.php?id=61560266678495",
+                "https://www.instagram.com/saunderssimmonswebsolutions/"
               ],
               "foundingDate": "2020",
               "numberOfEmployees": "2-10",
