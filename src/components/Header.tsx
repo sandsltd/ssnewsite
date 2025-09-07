@@ -10,8 +10,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-lg">
-      {/* Top Bar - Contact Info & Social Proof */}
-      <div className="bg-gray-50 border-b border-gray-200">
+      {/* Top Bar - Contact Info & Social Proof - Hidden on Mobile */}
+      <div className="hidden sm:block bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-2 text-sm">
             {/* Left - Contact Info */}
@@ -55,19 +55,19 @@ export default function Header() {
           <div className="flex justify-between items-center h-16">
             {/* Logo & Company */}
             <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center space-x-3">
+              <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
                 <Image
                   src="/logos/logo.png"
                   alt="Saunders Simmons Ltd Logo"
                   width={50}
                   height={50}
-                  className="w-12 h-12 object-contain"
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                 />
-                <div>
-                  <h1 className="text-lg font-bold text-gray-900">
+                <div className="min-w-0">
+                  <h1 className="text-sm sm:text-lg font-bold text-gray-900 truncate">
                     Saunders Simmons Ltd
                   </h1>
-                  <p className="text-xs text-gray-500">Web Design & Marketing</p>
+                  <p className="hidden sm:block text-xs text-gray-500">Web Design & Marketing</p>
                 </div>
               </Link>
             </div>
@@ -114,9 +114,10 @@ export default function Header() {
                </nav>
 
             {/* Right Side - CTA */}
-            <div className="flex items-center space-x-4">
-              <BookCallButton className="bg-orange-600 text-white hover:bg-orange-700 px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg">
-                Book a Call
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <BookCallButton className="bg-orange-600 text-white hover:bg-orange-700 px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base">
+                <span className="hidden sm:inline">Book a Call</span>
+                <span className="sm:hidden">Call</span>
               </BookCallButton>
 
               {/* Mobile menu button */}
