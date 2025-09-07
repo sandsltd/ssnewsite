@@ -26,6 +26,79 @@ export const metadata: Metadata = {
 export default function WebsiteRedesignROIPost() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "The ROI of Website Redesign: Why Somerset & Dorset Businesses See 300% Returns",
+            "description": "Think a website redesign is expensive? Think again. Discover why businesses across Somerset and Dorset are seeing massive returns on their web design investments.",
+            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "author": {
+              "@type": "Organization",
+              "name": "Saunders Simmons Team",
+              "sameAs": "https://www.saunders-simmons.co.uk"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Saunders Simmons Ltd",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+              }
+            },
+            "datePublished": "2025-01-02",
+            "dateModified": "2025-01-02",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.saunders-simmons.co.uk/blog/website-redesign-roi"
+            },
+            "articleSection": "Business Strategy",
+            "keywords": ["Website Redesign", "ROI", "Somerset Business", "Dorset Business", "web design investment"],
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Website Redesign"
+              },
+              {
+                "@type": "Thing",
+                "name": "Return on Investment"
+              },
+              {
+                "@type": "Thing",
+                "name": "Business Strategy"
+              }
+            ],
+            "mentions": [
+              {
+                "@type": "Place",
+                "name": "Somerset",
+                "containedInPlace": {
+                  "@type": "Country",
+                  "name": "United Kingdom"
+                }
+              },
+              {
+                "@type": "Place",
+                "name": "Dorset",
+                "containedInPlace": {
+                  "@type": "Country",
+                  "name": "United Kingdom"
+                }
+              },
+              {
+                "@type": "Service",
+                "name": "Website Redesign",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Saunders Simmons Ltd"
+                }
+              }
+            ]
+          })
+        }}
+      />
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -372,14 +445,27 @@ export default function WebsiteRedesignROIPost() {
           {/* Related Articles */}
           <section className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Link href="/blog/web-design-yeovil-case-study" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                  Case Study
+                </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Yeovil Case Study</h4>
-                <p className="text-gray-600">How we increased a business's revenue by 200%</p>
+                <p className="text-gray-600">Real ROI: How we increased a business's revenue by 200%</p>
+              </Link>
+              <Link href="/blog/web-design-somerset-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                  Web Design
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Somerset Web Design 2025</h4>
+                <p className="text-gray-600">Why Somerset businesses need professional websites</p>
               </Link>
               <Link href="/blog/mobile-first-design-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                  Web Design
+                </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Mobile-First Design</h4>
-                <p className="text-gray-600">Essential for Somerset & Dorset businesses</p>
+                <p className="text-gray-600">Essential mobile strategies for Somerset & Dorset businesses</p>
               </Link>
             </div>
           </section>

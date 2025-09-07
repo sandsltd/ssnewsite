@@ -43,9 +43,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <BookCallButton className="text-gray-600 hover:text-orange-600 transition-colors duration-200">
-                  Book a Call
-                </BookCallButton>
+                <Link href="/services" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                  Services
+                </Link>
               </li>
               <li>
                 <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
@@ -53,9 +53,64 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/faq" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <BookCallButton className="text-gray-600 hover:text-orange-600 transition-colors duration-200">
+                  Book a Call
+                </BookCallButton>
+              </li>
+              <li>
                 <Link href="tel:03300436608" className="text-gray-600 hover:text-green-600 transition-colors duration-200">
                   Call Us
                 </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Google Business */}
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              Find Us Online
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <a 
+                  href="https://www.google.co.uk/search?sca_esv=e618e5e4341fb9f4&kgmid=/g/11vzcf0_hc&q=Saunders+Simmons+Ltd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.042-3.441.219-.937 1.404-5.965 1.404-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.688 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                  </svg>
+                  View on Google
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://g.page/r/CdluHcIbwlCMEBM/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-green-600 transition-colors duration-200 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  Leave a Review
+                </a>
+              </li>
+              <li className="text-sm text-gray-500 flex items-center gap-1">
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                5.0 • 9 reviews
               </li>
             </ul>
           </div>
@@ -77,6 +132,23 @@ export default function Footer() {
                 <a href="tel:03300436608" className="text-blue-600 hover:text-blue-700">
                   0330 043 6608
                 </a>
+              </li>
+              <li className="text-gray-600">
+                <span className="block">Address:</span>
+                <div className="text-sm">
+                  15 Oxford Road<br />
+                  Pen Mill Trading Estate<br />
+                  Yeovil, Somerset<br />
+                  BA21 5HR
+                </div>
+              </li>
+              <li className="text-gray-600">
+                <span className="block">Service Area:</span>
+                <div className="text-sm">
+                  Based in Yeovil covering<br />
+                  Somerset, Dorset and<br />
+                  surrounding counties
+                </div>
               </li>
             </ul>
           </div>

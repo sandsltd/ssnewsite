@@ -26,6 +26,72 @@ export const metadata: Metadata = {
 export default function YeovilCaseStudyPost() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Web Design Yeovil Case Study: How We Increased a Local Business's Revenue by 200%",
+            "description": "See how our professional web design services helped a Yeovil business double their online revenue. Real results, real numbers, and the strategies that made it happen.",
+            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "author": {
+              "@type": "Person",
+              "name": "Nick Saunders",
+              "jobTitle": "Web Design Specialist & Co-Founder",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Saunders Simmons Ltd"
+              }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Saunders Simmons Ltd",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+              }
+            },
+            "datePublished": "2025-01-04",
+            "dateModified": "2025-01-04",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.saunders-simmons.co.uk/blog/web-design-yeovil-case-study"
+            },
+            "articleSection": "Case Studies",
+            "keywords": ["Web Design Yeovil", "Case Study", "Business Growth", "Yeovil web design", "200% revenue increase"],
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Web Design"
+              },
+              {
+                "@type": "Place",
+                "name": "Yeovil"
+              },
+              {
+                "@type": "Thing",
+                "name": "Business Growth"
+              }
+            ],
+            "mentions": [
+              {
+                "@type": "Place",
+                "name": "Yeovil",
+                "addressRegion": "Somerset"
+              },
+              {
+                "@type": "Service",
+                "name": "Website Design",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Saunders Simmons Ltd"
+                }
+              }
+            ]
+          })
+        }}
+      />
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">

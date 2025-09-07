@@ -74,6 +74,91 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://www.saunders-simmons.co.uk",
+              "name": "Saunders Simmons Ltd",
+              "description": "Professional website design and marketing solutions to help your business grow and succeed online.",
+              "url": "https://www.saunders-simmons.co.uk",
+              "logo": "https://www.saunders-simmons.co.uk/logos/logo.png",
+              "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+              "telephone": "03300436608",
+              "email": "hello@saunders-simmons.co.uk",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "15 Oxford Road, Pen Mill Trading Estate",
+                "addressLocality": "Yeovil",
+                "addressRegion": "Somerset", 
+                "postalCode": "BA21 5HR",
+                "addressCountry": "GB"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 50.9429,
+                "longitude": -2.6309
+              },
+              "openingHours": [
+                "Mo-Fr 09:00-17:00"
+              ],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "17:00"
+                }
+              ],
+              "areaServed": [
+                {
+                  "@type": "GeoCircle",
+                  "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 50.9429,
+                    "longitude": -2.6309
+                  },
+                  "geoRadius": "65 miles"
+                },
+                {
+                  "@type": "Place",
+                  "name": "United Kingdom"
+                },
+                {
+                  "@type": "Place", 
+                  "name": "Yeovil"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Somerset"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Dorset"
+                }
+              ],
+              "serviceType": ["Website Design", "Web Development", "SEO", "Digital Marketing"],
+              "priceRange": "££",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "9",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "sameAs": [
+                "https://portal.saunders-simmons.co.uk"
+              ],
+              "foundingDate": "2020",
+              "numberOfEmployees": "2-10",
+              "slogan": "Building long-term digital partnerships"
+            })
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >

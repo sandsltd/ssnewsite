@@ -26,6 +26,83 @@ export const metadata: Metadata = {
 export default function MobileFirstDesignPost() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Mobile-First Web Design: Essential for Somerset & Dorset Businesses in 2025",
+            "description": "With 70% of local searches happening on mobile, your website must be mobile-first. Learn why responsive design is crucial for Somerset and Dorset businesses.",
+            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "author": {
+              "@type": "Person",
+              "name": "Dan Simmons",
+              "jobTitle": "Marketing Director & Co-Founder",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Saunders Simmons Ltd"
+              }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Saunders Simmons Ltd",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+              }
+            },
+            "datePublished": "2024-12-30",
+            "dateModified": "2024-12-30",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.saunders-simmons.co.uk/blog/mobile-first-design-2025"
+            },
+            "articleSection": "Web Design",
+            "keywords": ["Mobile Design", "Responsive Web Design", "User Experience", "mobile-first", "Somerset businesses"],
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Mobile-First Design"
+              },
+              {
+                "@type": "Thing",
+                "name": "Responsive Web Design"
+              },
+              {
+                "@type": "Thing",
+                "name": "User Experience"
+              }
+            ],
+            "mentions": [
+              {
+                "@type": "Place",
+                "name": "Somerset",
+                "containedInPlace": {
+                  "@type": "Country",
+                  "name": "United Kingdom"
+                }
+              },
+              {
+                "@type": "Place",
+                "name": "Dorset",
+                "containedInPlace": {
+                  "@type": "Country",
+                  "name": "United Kingdom"
+                }
+              },
+              {
+                "@type": "Service",
+                "name": "Mobile Web Design",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Saunders Simmons Ltd"
+                }
+              }
+            ]
+          })
+        }}
+      />
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -149,6 +226,34 @@ export default function MobileFirstDesignPost() {
               </BookCallButton>
             </div>
           </div>
+
+          {/* Related Articles */}
+          <section className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/blog/web-design-somerset-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                  Web Design
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Somerset Web Design 2025</h4>
+                <p className="text-gray-600">Why Somerset businesses need professional websites in 2025</p>
+              </Link>
+              <Link href="/blog/web-design-yeovil-case-study" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                  Case Study
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Mobile Success Story</h4>
+                <p className="text-gray-600">How mobile-first design increased a Yeovil business revenue by 200%</p>
+              </Link>
+              <Link href="/blog/website-redesign-roi" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                  Business Strategy
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Website Redesign ROI</h4>
+                <p className="text-gray-600">Why mobile-first redesigns deliver 300% returns</p>
+              </Link>
+            </div>
+          </section>
 
           {/* Back to Blog */}
           <div className="mt-8 text-center">
