@@ -83,7 +83,7 @@ export default function Header() {
                   <h1 className="text-sm sm:text-lg font-bold text-gray-900 truncate">
                     Saunders Simmons Ltd
                   </h1>
-                  <p className="hidden sm:block text-xs text-gray-500">Web Design & Marketing</p>
+                  <p className="text-xs text-gray-500">Web Design & Marketing</p>
                 </div>
               </Link>
             </div>
