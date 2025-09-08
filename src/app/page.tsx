@@ -107,16 +107,14 @@ export default function Home() {
             {/* Video Section */}
             <div className="order-2 lg:order-1">
               <div className="aspect-video bg-gray-900 relative overflow-hidden rounded-2xl shadow-xl">
-                <video 
-                  className="w-full h-full object-cover"
-                  controls
-                  preload="metadata"
-                  poster="/Screenshot 2025-09-06 at 20.45.40.png"
-                >
-                  <source src="/sandsd4 - final.mov" type="video/quicktime" />
-                  <source src="/sandsd4 - final.mov" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <iframe
+                  src="https://www.youtube.com/embed/TZvty_HAWCY"
+                  title="Meet Nick & Dan - Saunders Simmons Ltd"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
                 <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
                   Meet Nick & Dan
                 </div>
