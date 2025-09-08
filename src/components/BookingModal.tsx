@@ -98,7 +98,30 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     setFormData(prev => ({ ...prev, selectedSlot: slotString }));
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
+    // Send lead capture email when proceeding to step 2
+    try {
+      await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          businessName: formData.businessName,
+          currentWebsite: formData.currentWebsite,
+          businessDescription: formData.businessDescription,
+          postcode: formData.postcode,
+        }),
+      });
+      // Continue to step 2 regardless of email success/failure
+    } catch (error) {
+      console.error('Lead capture failed:', error);
+      // Continue to step 2 even if lead capture fails
+    }
+    
     setStep(2);
   };
 
