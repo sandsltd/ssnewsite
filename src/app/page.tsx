@@ -108,7 +108,7 @@ export default function Home() {
             <div className="order-2 lg:order-1">
               <div className="aspect-video bg-gray-900 relative overflow-hidden rounded-2xl shadow-xl">
                 <iframe
-                  src="https://www.youtube.com/embed/TZvty_HAWCY"
+                  src="https://www.youtube.com/embed/TZvty_HAWCY?rel=0"
                   title="Meet Nick & Dan - Saunders Simmons Ltd"
                   className="w-full h-full"
                   frameBorder="0"
@@ -256,7 +256,7 @@ export default function Home() {
                 {/* Video Section */}
                 <div className="aspect-video lg:aspect-square bg-gray-900 relative overflow-hidden">
                   <iframe
-                    src="https://www.youtube.com/embed/LUIwCdluBUc?start=12"
+                    src="https://www.youtube.com/embed/LUIwCdluBUc?start=12&rel=0"
                     title="JJ Mobile Valeting Customer Testimonial"
                     className="w-full h-full"
                     frameBorder="0"
@@ -405,7 +405,7 @@ export default function Home() {
                 {/* Video Section */}
                 <div className="aspect-video lg:aspect-square bg-gray-900 relative overflow-hidden order-1 lg:order-2">
                   <iframe
-                    src="https://www.youtube.com/embed/_caDlpmEQGA?start=1"
+                    src="https://www.youtube.com/embed/_caDlpmEQGA?start=1&rel=0"
                     title="Tevy Services Customer Testimonial"
                     className="w-full h-full"
                     frameBorder="0"
