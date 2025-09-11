@@ -668,105 +668,126 @@ export default function Portfolio() {
               More <span className="text-blue-600">Success Stories</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Additional client testimonials and success stories from businesses we've helped transform.
+              Real reviews from our satisfied clients across diverse industries
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Success Story 1 */}
-            <div className="bg-gray-50 p-6 rounded-xl">
+          {/* Reviews Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Review 1 - Sheldon J. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 mb-4">
-                "The website has completely transformed our online presence. We're now ranking on page 1 of Google for our main keywords and bookings have doubled."
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "These guys built my website so well and fast that I was shocked. Literally helped so much for business."
               </p>
-              <div className="font-semibold text-gray-900">Rachel Green</div>
-              <div className="text-sm text-gray-600">Fitness Studio Owner</div>
+              <div>
+                <p className="text-gray-900 font-semibold">Sheldon J.</p>
+                <p className="text-gray-600 text-sm">Barber Shop Owner</p>
+              </div>
             </div>
 
-            {/* Success Story 2 */}
-            <div className="bg-gray-50 p-6 rounded-xl">
+            {/* Review 2 - Natalie L. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 mb-4">
-                "Amazing ROI on our website investment. Within 3 months we'd generated enough new business to pay for the entire project twice over."
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "From start to finish Nick and Dan have been fab! All package options were explained from day 1 with zero hidden fees. They brought my vision to life!"
               </p>
-              <div className="font-semibold text-gray-900">Michael Chen</div>
-              <div className="text-sm text-gray-600">Accounting Firm</div>
+              <div>
+                <p className="text-gray-900 font-semibold">Natalie L.</p>
+                <p className="text-gray-600 text-sm">Hair & Beauty Salon</p>
+              </div>
             </div>
 
-            {/* Success Story 3 */}
-            <div className="bg-gray-50 p-6 rounded-xl">
+            {/* Review 3 - Nicky S. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-orange-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 mb-4">
-                "Professional service from start to finish. The team understood our needs perfectly and delivered a website that truly represents our brand."
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "Absolutely brilliant, Nick & Dan are very helpful & have made a fantastic website for me, I am so pleased with it, definitely recommend."
               </p>
-              <div className="font-semibold text-gray-900">Sophie Turner</div>
-              <div className="text-sm text-gray-600">Interior Designer</div>
+              <div>
+                <p className="text-gray-900 font-semibold">Nicky S.</p>
+                <p className="text-gray-600 text-sm">Kinesiology Practitioner</p>
+              </div>
             </div>
 
-            {/* Success Story 4 */}
-            <div className="bg-gray-50 p-6 rounded-xl">
+            {/* Review 4 - Emily S. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 mb-4">
-                "Our online sales have increased by 250% since launching the new website. The mobile experience is fantastic and customers love it."
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "I'm so thrilled with the website! Nick and Dan have been approachable, flexible, creative and thoughtful throughout. I cannot recommend them more highly!"
               </p>
-              <div className="font-semibold text-gray-900">Tom Richards</div>
-              <div className="text-sm text-gray-600">E-commerce Business</div>
+              <div>
+                <p className="text-gray-900 font-semibold">Emily S.</p>
+                <p className="text-gray-600 text-sm">Forest School</p>
+              </div>
             </div>
 
-            {/* Success Story 5 */}
-            <div className="bg-gray-50 p-6 rounded-xl">
+            {/* Review 5 - Tracy Y. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 mb-4">
-                "Excellent communication throughout the project. They kept us informed at every stage and delivered exactly what we asked for, on time and on budget."
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "From Day 1 communication was so easy. Being a 'technophobe', they explained everything clearly and made the whole process simple and stress-free."
               </p>
-              <div className="font-semibold text-gray-900">Amanda Foster</div>
-              <div className="text-sm text-gray-600">Property Management</div>
+              <div>
+                <p className="text-gray-900 font-semibold">Tracy Y.</p>
+                <p className="text-gray-600 text-sm">Cafe Owner</p>
+              </div>
             </div>
 
-            {/* Success Story 6 */}
-            <div className="bg-gray-50 p-6 rounded-xl">
+            {/* Review 6 - Jeannette H. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-orange-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 mb-4">
-                "The website perfectly captures our company culture and values. We've received so many compliments from clients and partners."
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "In just a few days I had a fantastic, well written and user friendly website. It was like magic. Dan and Nick make it all look so easy."
               </p>
-              <div className="font-semibold text-gray-900">David Martinez</div>
-              <div className="text-sm text-gray-600">Construction Company</div>
+              <div>
+                <p className="text-gray-900 font-semibold">Jeannette H.</p>
+                <p className="text-gray-600 text-sm">Animal Rescue Centre</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Google Rating Summary */}
+          <div className="text-center">
+            <div className="inline-flex items-center gap-3 bg-gray-50 px-8 py-4 rounded-xl shadow-lg border-l-4 border-yellow-400">
+              <span className="text-3xl font-bold text-gray-900">5.0 stars</span>
+              <span className="text-gray-600">from 100+ happy clients on Google</span>
             </div>
           </div>
         </div>
