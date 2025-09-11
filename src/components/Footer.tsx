@@ -57,7 +57,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/digital-marketing-dorset" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                <Link href="/web-design-dorset" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                   Web Design Dorset
                 </Link>
               </li>

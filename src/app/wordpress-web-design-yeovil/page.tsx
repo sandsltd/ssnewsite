@@ -3,6 +3,7 @@ import Link from 'next/link'
 import BookCallButton from '@/components/BookCallButton'
 import PricingSection from '@/components/PricingSection'
 import AboutUsSection from '@/components/AboutUsSection'
+import CustomerSuccessSection from '@/components/CustomerSuccessSection'
 
 export const metadata: Metadata = {
   title: 'WordPress Web Design Yeovil | Saunders Simmons Ltd',
@@ -368,6 +369,13 @@ export default function WordPressWebDesignYeovil() {
         subtitle="The founders of Saunders Simmons Ltd, dedicated to helping businesses succeed online through professional websites and digital marketing."
         showVideo={true}
         showCredentials={true}
+      />
+
+      <CustomerSuccessSection 
+        title="WordPress Success Stories"
+        subtitle="See how we've helped WordPress websites in Yeovil and across Somerset perform better and drive more business."
+        showVideoTestimonials={true}
+        showMoreSuccessStories={true}
       />
 
       {/* FAQ Section */}

@@ -6,12 +6,12 @@ import AboutUsSection from "../../components/AboutUsSection";
 import CustomerSuccessSection from "../../components/CustomerSuccessSection";
 
 export const metadata: Metadata = {
-  title: "Web Design Yeovil | Professional Website Design Services | Saunders Simmons",
-  description: "Professional web design services in Yeovil, Somerset. Local website designers creating stunning, SEO-optimised websites for businesses. From £249 + VAT.",
-  keywords: "web design Yeovil, website design Yeovil, web designers Yeovil, website designers Yeovil, professional web design Somerset",
+  title: "Web Design Dorset | Professional Website Design Services | Saunders Simmons",
+  description: "Expert web design services across Dorset. Local website designers creating stunning, mobile-responsive websites for Dorset businesses. From £249 + VAT.",
+  keywords: "web design Dorset, website design Dorset, web designers Dorset, website designers Dorset, professional web design services Dorset",
 };
 
-export default function WebDesignYeovil() {
+export default function WebDesignDorset() {
   return (
     <div className="bg-white">
       {/* Schema Markup for Local Web Design Service */}
@@ -21,8 +21,8 @@ export default function WebDesignYeovil() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Web Design Yeovil",
-            "description": "Professional website design services in Yeovil, Somerset. Local website designers creating stunning, SEO-optimised websites for businesses.",
+            "name": "Web Design Dorset",
+            "description": "Expert web design services across Dorset. Local website designers creating stunning, mobile-responsive websites for Dorset businesses.",
             "provider": {
               "@type": "LocalBusiness",
               "@id": "https://www.saunders-simmons.co.uk",
@@ -48,15 +48,27 @@ export default function WebDesignYeovil() {
             "areaServed": [
               {
                 "@type": "Place",
-                "name": "Yeovil",
+                "name": "Dorset",
                 "containedInPlace": {
-                  "@type": "Place",
-                  "name": "Somerset"
+                  "@type": "Country",
+                  "name": "United Kingdom"
                 }
               },
               {
                 "@type": "Place", 
-                "name": "Somerset"
+                "name": "Dorchester"
+              },
+              {
+                "@type": "Place", 
+                "name": "Weymouth"
+              },
+              {
+                "@type": "Place", 
+                "name": "Poole"
+              },
+              {
+                "@type": "Place", 
+                "name": "Bournemouth"
               }
             ],
             "serviceType": "Web Design",
@@ -74,11 +86,11 @@ export default function WebDesignYeovil() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              Web Design <span className="text-blue-600">Yeovil</span>
+              Web Design <span className="text-blue-600">Dorset</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Professional website design services in Yeovil, Somerset. We create stunning, 
-              mobile-responsive websites that help local businesses grow online.
+              Professional website design services across Dorset. We create stunning, 
+              mobile-responsive websites that help local businesses from Weymouth to Dorchester succeed online.
             </p>
             
             {/* Google Rating */}
@@ -90,7 +102,7 @@ export default function WebDesignYeovil() {
                   </svg>
                 ))}
               </div>
-              <span className="text-gray-600 font-medium">5.0 Google Rating • Based in Yeovil, Somerset</span>
+              <span className="text-gray-600 font-medium">5.0 Google Rating • Serving All of Dorset</span>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -113,10 +125,10 @@ export default function WebDesignYeovil() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              What We Do for <span className="text-blue-600">Yeovil Businesses</span>
+              What We Do for <span className="text-blue-600">Dorset Businesses</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive web design services tailored to help local Yeovil businesses succeed online.
+              Comprehensive web design services tailored to help businesses across Dorset succeed online.
             </p>
           </div>
 
@@ -130,7 +142,7 @@ export default function WebDesignYeovil() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Website Design & Development</h3>
               <p className="text-gray-600 mb-4">
-                Custom-built websites designed specifically for Yeovil businesses, optimised for performance and local SEO.
+                Custom-built websites designed specifically for Dorset businesses, optimised for performance and local SEO.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
@@ -149,7 +161,7 @@ export default function WebDesignYeovil() {
                   <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  Local SEO optimisation
+                  Local Dorset SEO
                 </li>
               </ul>
             </div>
@@ -163,7 +175,7 @@ export default function WebDesignYeovil() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Ongoing Support & Maintenance</h3>
               <p className="text-gray-600 mb-4">
-                Keep your Yeovil business website running smoothly with our comprehensive support packages.
+                Keep your Dorset business website running smoothly with our comprehensive support packages.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
@@ -196,7 +208,7 @@ export default function WebDesignYeovil() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Local SEO & Marketing</h3>
               <p className="text-gray-600 mb-4">
-                Help your Yeovil business get found online with targeted local SEO and digital marketing.
+                Help your Dorset business get found online with targeted local SEO and digital marketing.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
@@ -223,9 +235,67 @@ export default function WebDesignYeovil() {
         </div>
       </section>
 
+      {/* Local Areas Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Serving <span className="text-blue-600">Dorset Communities</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              We're proud to serve businesses across Dorset with professional web design services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Dorchester</h3>
+              <p className="text-sm text-gray-600">Web Design Dorchester</p>
+            </div>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Weymouth</h3>
+              <p className="text-sm text-gray-600">Web Design Weymouth</p>
+            </div>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Poole</h3>
+              <p className="text-sm text-gray-600">Web Design Poole</p>
+            </div>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Bournemouth</h3>
+              <p className="text-sm text-gray-600">Web Design Bournemouth</p>
+            </div>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Sherborne</h3>
+              <p className="text-sm text-gray-600">Web Design Sherborne</p>
+            </div>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Blandford</h3>
+              <p className="text-sm text-gray-600">Web Design Blandford</p>
+            </div>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Bridport</h3>
+              <p className="text-sm text-gray-600">Web Design Bridport</p>
+            </div>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900">Swanage</h3>
+              <p className="text-sm text-gray-600">Web Design Swanage</p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-6">
+              Don't see your area? We serve businesses throughout Dorset and surrounding counties.
+            </p>
+            <BookCallButton className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
+              Discuss Your Project
+            </BookCallButton>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <PricingSection 
-        title="Affordable Web Design Packages for Yeovil Businesses"
+        title="Affordable Web Design Packages for Dorset Businesses"
         subtitle="Transparent pricing with no hidden costs. Professional websites from just £249 + VAT."
         showProcessOverview={true}
         ctaText="Ready to Get Started?"
@@ -234,16 +304,16 @@ export default function WebDesignYeovil() {
 
       {/* About Us Section */}
       <AboutUsSection 
-        title="Meet Your Local Yeovil Web Design Team"
-        subtitle="Nick & Dan from Saunders Simmons Ltd - your dedicated local web design partners serving Yeovil and surrounding Somerset areas."
+        title="Meet Your Dorset Web Design Team"
+        subtitle="Nick & Dan from Saunders Simmons Ltd - your dedicated local web design partners serving businesses across Dorset."
         showVideo={true}
         showCredentials={true}
       />
 
       {/* Customer Success Stories */}
       <CustomerSuccessSection 
-        title="Real Client Success Stories"
-        subtitle="Genuine testimonials from satisfied Yeovil clients who chose Saunders Simmons for their web design needs."
+        title="Dorset Client Success Stories"
+        subtitle="Genuine testimonials from satisfied Dorset clients who chose Saunders Simmons for their web design needs."
         showVideoTestimonials={true}
         showMoreSuccessStories={true}
       />
@@ -256,11 +326,21 @@ export default function WebDesignYeovil() {
               Frequently Asked <span className="text-blue-600">Questions</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Common questions about our web design services in Yeovil
+              Common questions about our web design services across Dorset
             </p>
           </div>
 
           <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Do you work with businesses throughout Dorset?
+              </h3>
+              <p className="text-gray-700">
+                Yes! We serve businesses across all of Dorset, from Dorchester to Weymouth, Poole to Bournemouth. 
+                We can work remotely or meet in person depending on your preference.
+              </p>
+            </div>
+
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 How long does it take to build a website?
@@ -283,31 +363,21 @@ export default function WebDesignYeovil() {
 
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Will my website work on mobile devices?
+                Can you help with local SEO for Dorset businesses?
               </h3>
               <p className="text-gray-700">
-                Absolutely! All our websites are built with mobile-first design principles and achieve 98% performance scores. 
-                Your site will look and work perfectly on all devices.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Can you help with SEO for my Yeovil business?
-              </h3>
-              <p className="text-gray-700">
-                Yes! We specialise in local SEO for Yeovil and Somerset businesses. Every website includes basic SEO setup, 
+                Absolutely! We specialise in local SEO for Dorset businesses. Every website includes basic SEO setup, 
                 and our Continuous Growth package provides ongoing SEO improvements and monthly reporting.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                What makes you different from other web designers?
+                What makes you different from other web design agencies?
               </h3>
               <p className="text-gray-700">
-                We're local to Yeovil, understand the Somerset business landscape, and focus on building long-term partnerships. 
-                Our transparent pricing, proven results, and 5-star Google rating speak for themselves.
+                We understand the Dorset business landscape, work with local companies, and focus on building long-term partnerships. 
+                Our transparent pricing, proven results, and 5-star Google rating set us apart.
               </p>
             </div>
           </div>
@@ -318,10 +388,10 @@ export default function WebDesignYeovil() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Transform Your Yeovil Business Online?
+            Ready to Transform Your Dorset Business Online?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join the 100+ local businesses who trust Saunders Simmons for their web design needs.
+            Join the 100+ local businesses across Dorset who trust Saunders Simmons for their web design needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <BookCallButton className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
