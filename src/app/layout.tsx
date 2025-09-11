@@ -195,11 +195,22 @@ export default function RootLayout({
                 }
               };
               
-              // Load Facebook SDK after page load
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', window.fbAsyncInit);
+              // Load Facebook SDK after page load and idle time
+              function loadFacebookPixel() {
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(window.fbAsyncInit, 1000);
+                  });
+                } else {
+                  setTimeout(window.fbAsyncInit, 1000);
+                }
+              }
+              
+              // Use requestIdleCallback if available, otherwise setTimeout
+              if (window.requestIdleCallback) {
+                requestIdleCallback(loadFacebookPixel, { timeout: 3000 });
               } else {
-                setTimeout(window.fbAsyncInit, 100);
+                setTimeout(loadFacebookPixel, 2000);
               }
             `
           }}
