@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import BookCallButton from './BookCallButton';
+import YouTubeFacade from './YouTubeFacade';
 
 interface CustomerSuccessSectionProps {
   title?: string;
@@ -187,20 +188,15 @@ export default function CustomerSuccessSection({
                   </div>
                   
                   {/* Video Section */}
-                  <div className="aspect-video lg:aspect-square bg-gray-900 relative overflow-hidden order-1 lg:order-2">
-                    <iframe
-                      src="https://www.youtube.com/embed/_caDlpmEQGA?start=1&rel=0"
+                  <div className="order-1 lg:order-2">
+                    <YouTubeFacade
+                      videoId="_caDlpmEQGA"
                       title="Tevy Services Customer Testimonial"
-                      className="w-full h-full"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      loading="lazy"
-                      style={{ minHeight: '200px' }}
-                    ></iframe>
-                    <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
-                      Customer Testimonial
-                    </div>
+                      start={1}
+                      aspectRatio="square"
+                      className="lg:aspect-square"
+                      badgeText="Customer Testimonial"
+                    />
                   </div>
                 </div>
               </div>

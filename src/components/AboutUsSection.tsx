@@ -1,4 +1,5 @@
 import BookCallButton from './BookCallButton';
+import YouTubeFacade from './YouTubeFacade';
 
 interface AboutUsSectionProps {
   title?: string;
@@ -37,21 +38,13 @@ export default function AboutUsSection({
             {/* Video Section - Only show if showVideo is true */}
             {showVideo && (
               <div className="order-2 lg:order-1">
-                <div className="aspect-video bg-gray-900 relative overflow-hidden rounded-2xl shadow-xl">
-                  <iframe
-                    src="https://www.youtube.com/embed/TZvty_HAWCY?rel=0"
-                    title="Meet Nick & Dan - Saunders Simmons Ltd"
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                    style={{ minHeight: '200px' }}
-                  ></iframe>
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
-                    Meet Nick & Dan
-                  </div>
-                </div>
+                <YouTubeFacade
+                  videoId="TZvty_HAWCY"
+                  title="Meet Nick & Dan - Saunders Simmons Ltd"
+                  aspectRatio="video"
+                  className="rounded-2xl shadow-xl overflow-hidden"
+                  badgeText="Meet Nick & Dan"
+                />
               </div>
             )}
 

@@ -180,12 +180,11 @@ export default function RootLayout({
         {/* Preload critical resources */}
         <link rel="preload" as="image" href="/logos/logo.png" fetchPriority="high" />
         
-        {/* Optimize resource loading for better performance */}
+        {/* Defer non-critical resource hints */}
         <link rel="dns-prefetch" href="https://www.youtube.com" />
-        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="" />
-        <link rel="preconnect" href="https://www.google.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
         
-        {/* Critical CSS for above-the-fold content */}
+        {/* Critical CSS for above-the-fold content - inline to prevent render blocking */}
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Critical styles for immediate rendering */
@@ -242,43 +241,48 @@ export default function RootLayout({
           `
         }} />
         
-        {/* Meta Pixel Code - Optimized with defer */}
+        {/* Meta Pixel Code - Ultra-optimized with facade pattern */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.fbAsyncInit = function() {
-                if(!window.fbq) {
-                  !function(f,b,e,v,n,t,s)
-                  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                  n.queue=[];t=b.createElement(e);t.async=!0;
-                  t.src=v;s=b.getElementsByTagName(e)[0];
-                  s.parentNode.insertBefore(t,s)}(window, document,'script',
-                  'https://connect.facebook.net/en_US/fbevents.js');
-                  fbq('init', '232014927976021');
-                  fbq('track', 'PageView');
-                }
+              // Lightweight facade - only load when user interacts
+              window.fbq = window.fbq || function() {
+                (window.fbq.queue = window.fbq.queue || []).push(arguments);
               };
+              window.fbq.loaded = false;
+              window.fbq.queue = [];
               
-              // Load Facebook SDK after page load and idle time
-              function loadFacebookPixel() {
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', function() {
-                    setTimeout(window.fbAsyncInit, 1000);
-                  });
-                } else {
-                  setTimeout(window.fbAsyncInit, 1000);
-                }
+              // Track pageview immediately with facade
+              fbq('init', '232014927976021');
+              fbq('track', 'PageView');
+              
+              // Load real Facebook Pixel only when user shows intent
+              function loadRealFacebookPixel() {
+                if (window.fbq.loaded) return;
+                window.fbq.loaded = true;
+                
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+                script.onload = function() {
+                  // Process queued events
+                  window.fbq.queue.forEach(args => fbq.apply(null, args));
+                  window.fbq.queue = [];
+                };
+                document.head.appendChild(script);
               }
               
-              // Use requestIdleCallback if available, otherwise setTimeout
+              // Load on user interaction (scroll, click, touch, or after 3 seconds)
+              const events = ['scroll', 'click', 'touchstart', 'mousemove', 'keypress'];
+              const loadOnInteraction = () => {
+                events.forEach(event => document.removeEventListener(event, loadOnInteraction));
+                loadRealFacebookPixel();
+              };
+              
               if (typeof window !== 'undefined') {
-                if (window.requestIdleCallback) {
-                  requestIdleCallback(loadFacebookPixel, { timeout: 3000 });
-                } else {
-                  setTimeout(loadFacebookPixel, 2000);
-                }
+                events.forEach(event => document.addEventListener(event, loadOnInteraction, { passive: true, once: true }));
+                // Fallback - load after 3 seconds if no interaction
+                setTimeout(loadRealFacebookPixel, 3000);
               }
             `
           }}

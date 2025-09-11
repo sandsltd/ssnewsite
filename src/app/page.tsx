@@ -3,6 +3,7 @@ import Image from "next/image";
 import BookCallButton from "../components/BookCallButton";
 import PricingSection from "../components/PricingSection";
 import AboutUsSection from "../components/AboutUsSection";
+import YouTubeFacade from "../components/YouTubeFacade";
 
 export default function Home() {
   return (
@@ -528,21 +529,14 @@ export default function Home() {
             <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 {/* Video Section */}
-                <div className="aspect-video lg:aspect-square bg-gray-900 relative overflow-hidden">
-                  <iframe
-                    src="https://www.youtube.com/embed/LUIwCdluBUc?start=12&rel=0"
-                    title="JJ Mobile Valeting Customer Testimonial"
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                    style={{ minHeight: '200px' }}
-                  ></iframe>
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
-                    Customer Testimonial
-                  </div>
-                </div>
+                <YouTubeFacade
+                  videoId="LUIwCdluBUc"
+                  title="JJ Mobile Valeting Customer Testimonial"
+                  start={12}
+                  aspectRatio="square"
+                  className="lg:aspect-square"
+                  badgeText="Customer Testimonial"
+                />
                 
                 {/* Customer Info */}
                 <div className="p-8">
