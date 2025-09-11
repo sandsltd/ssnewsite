@@ -172,12 +172,66 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         
-        {/* Preconnect to Google Fonts for faster loading */}
+        {/* Preconnect to critical domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href={process.env.NODE_ENV === 'production' ? 'https://www.saunders-simmons.co.uk' : 'http://localhost:3000'} />
         
-        {/* Preload critical LCP image */}
+        {/* Preload critical resources */}
         <link rel="preload" as="image" href="/logos/logo.png" fetchPriority="high" />
+        
+        {/* Critical CSS for above-the-fold content */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical styles for immediate rendering */
+            html { font-family: ui-sans-serif, system-ui, sans-serif; }
+            body { margin: 0; background: #ffffff; color: #171717; }
+            .min-h-screen { min-height: 100vh; }
+            .flex { display: flex; }
+            .flex-col { flex-direction: column; }
+            .flex-grow { flex-grow: 1; }
+            .sticky { position: sticky; }
+            .top-0 { top: 0; }
+            .z-50 { z-index: 50; }
+            .bg-white { background-color: #ffffff; }
+            .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+            .max-w-7xl { max-width: 80rem; }
+            .mx-auto { margin-left: auto; margin-right: auto; }
+            .px-4 { padding-left: 1rem; padding-right: 1rem; }
+            .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+            .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+            .font-bold { font-weight: 700; }
+            .text-gray-900 { color: #111827; }
+            .text-blue-600 { color: #2563eb; }
+            .grid { display: grid; }
+            .gap-12 { gap: 3rem; }
+            .items-center { align-items: center; }
+            .justify-center { justify-content: center; }
+            .text-center { text-align: center; }
+            .relative { position: relative; }
+            .overflow-hidden { overflow: hidden; }
+            .rounded-full { border-radius: 9999px; }
+            .border-4 { border-width: 4px; }
+            .border-white { border-color: #ffffff; }
+            .p-3 { padding: 0.75rem; }
+            .object-contain { object-fit: contain; }
+            .w-60 { width: 15rem; }
+            .h-60 { height: 15rem; }
+            @media (min-width: 640px) {
+              .sm\\:w-72 { width: 18rem; }
+              .sm\\:h-72 { height: 18rem; }
+              .sm\\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+              .sm\\:text-5xl { font-size: 3rem; line-height: 1; }
+            }
+            @media (min-width: 1024px) {
+              .lg\\:w-80 { width: 20rem; }
+              .lg\\:h-80 { height: 20rem; }
+              .lg\\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+              .lg\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+              .lg\\:text-left { text-align: left; }
+            }
+          `
+        }} />
         
         {/* Meta Pixel Code - Optimized with defer */}
         <script

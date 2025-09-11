@@ -9,6 +9,11 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   
+  // Optimize CSS loading
+  experimental: {
+    optimizeCss: true,
+  },
+  
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
