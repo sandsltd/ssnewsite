@@ -105,6 +105,13 @@ export default function Header() {
                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
                  </Link>
                  <Link
+                   href="/portfolio"
+                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                 >
+                   Portfolio
+                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+                 </Link>
+                 <Link
                    href="/blog"
                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
                  >
@@ -181,6 +188,13 @@ export default function Header() {
                    onClick={() => setIsMenuOpen(false)}
                  >
                    Services
+                 </Link>
+                 <Link
+                   href="/portfolio"
+                   className="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                   onClick={() => setIsMenuOpen(false)}
+                 >
+                   Portfolio
                  </Link>
                  <Link
                    href="/blog"
