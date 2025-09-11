@@ -160,20 +160,37 @@ export default function RootLayout({
             })
           }}
         />
-        {/* Meta Pixel Code */}
+        {/* DNS Prefetch for third-party domains */}
+        <link rel="dns-prefetch" href="//connect.facebook.net" />
+        <link rel="dns-prefetch" href="//www.facebook.com" />
+        <link rel="dns-prefetch" href="//static.doubleclick.net" />
+        <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
+        
+        {/* Meta Pixel Code - Optimized with defer */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '232014927976021');
-              fbq('track', 'PageView');
+              window.fbAsyncInit = function() {
+                if(!window.fbq) {
+                  !function(f,b,e,v,n,t,s)
+                  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                  n.queue=[];t=b.createElement(e);t.async=!0;
+                  t.src=v;s=b.getElementsByTagName(e)[0];
+                  s.parentNode.insertBefore(t,s)}(window, document,'script',
+                  'https://connect.facebook.net/en_US/fbevents.js');
+                  fbq('init', '232014927976021');
+                  fbq('track', 'PageView');
+                }
+              };
+              
+              // Load Facebook SDK after page load
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', window.fbAsyncInit);
+              } else {
+                setTimeout(window.fbAsyncInit, 100);
+              }
             `
           }}
         />
