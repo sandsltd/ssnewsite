@@ -61,6 +61,11 @@ export default function Footer() {
                   Web Design Dorset
                 </Link>
               </li>
+              <li>
+                <Link href="/wordpress-web-design-yeovil" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                  WordPress Yeovil
+                </Link>
+              </li>
             </ul>
           </div>
 
