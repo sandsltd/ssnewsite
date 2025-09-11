@@ -176,6 +176,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
+        {/* Preload critical LCP image */}
+        <link rel="preload" as="image" href="/logos/logo.png" fetchPriority="high" />
+        
         {/* Meta Pixel Code - Optimized with defer */}
         <script
           dangerouslySetInnerHTML={{

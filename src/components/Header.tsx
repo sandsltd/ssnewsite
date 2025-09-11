@@ -78,6 +78,7 @@ export default function Header() {
                   width={50}
                   height={50}
                   className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                  fetchPriority="high"
                 />
                 <div className="min-w-0">
                   <h1 className="text-sm sm:text-lg font-bold text-gray-900 truncate">

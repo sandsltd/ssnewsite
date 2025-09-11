@@ -30,7 +30,8 @@ export default function Home() {
                   width={400}
                   height={400}
                   className="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-contain"
-          priority
+                  priority
+                  fetchPriority="high"
         />
               </div>
             </div>
