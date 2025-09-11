@@ -33,12 +33,12 @@ const faqs = [
   },
   {
     question: "How much does a website cost?",
-    answer: "Our website service has two parts: First, we build your professional website for £795 + VAT (one-time cost). This includes everything you need for a stunning online presence. Then, we provide ongoing support and growth for £250/month + VAT, which includes hosting, security, updates, and continuous optimization. This partnership approach ensures your website stays current and continues to drive results for your business.",
+    answer: "Our website service has two parts: First, we build your professional website for £249 + VAT (one-time cost). This includes everything you need for a stunning online presence. Then, you can choose from our ongoing support options: Basic Hosting at £25/month + VAT for essential maintenance, or our Continuous Growth package at £250/month + VAT for comprehensive support, security, updates, and optimisation. This flexible approach lets you choose the level of support that fits your business needs.",
     category: "Pricing"
   },
   {
     question: "How much does a website cost in Somerset?",
-    answer: "For Somerset businesses, our website costs are transparent and competitive: £795 + VAT for professional website design and development, plus £250/month + VAT for ongoing support. This pricing is the same whether you're in Yeovil, Taunton, Bridgwater, or anywhere across Somerset. We understand the local market and provide exceptional value for Somerset businesses wanting a professional online presence. Unlike some London agencies charging £3000+, we offer premium quality at fair prices that work for local businesses.",
+    answer: "For Somerset businesses, our website costs are transparent and competitive: £249 + VAT for professional website design and development, plus your choice of ongoing support - Basic Hosting at £25/month + VAT or Continuous Growth at £250/month + VAT. This pricing is the same whether you're in Yeovil, Taunton, Bridgwater, or anywhere across Somerset. We understand the local market and provide exceptional value for Somerset businesses wanting a professional online presence. Unlike some London agencies charging £3000+, we offer premium quality at fair prices that work for local businesses.",
     category: "Pricing"
   },
   {
@@ -48,12 +48,12 @@ const faqs = [
   },
   {
     question: "Do you provide ongoing website maintenance?",
-    answer: "Absolutely! We believe in long-term partnerships. Our ongoing support is £250/month + VAT and includes hosting, security updates, content updates, performance monitoring, backup management, technical support, and continuous optimization. This ensures your website stays secure, fast, and up-to-date while continuously improving your online results.",
+    answer: "Absolutely! We believe in long-term partnerships and offer two ongoing support options: Basic Hosting at £25/month + VAT covers essential hosting, security, and basic maintenance. For comprehensive support, our Continuous Growth package at £250/month + VAT includes hosting, security updates, content updates, performance monitoring, backup management, technical support, and continuous optimisation. This ensures your website stays secure, fast, and up-to-date while continuously improving your online results.",
     category: "Maintenance"
   },
   {
     question: "Can you help improve my existing website's SEO?",
-    answer: "Yes, we specialise in SEO for Somerset and Dorset businesses. We can audit your current website, identify improvement opportunities, and implement local SEO strategies to help you rank higher in Google. Our SEO services include keyword research, on-page optimization, local SEO, and ongoing monitoring.",
+    answer: "Yes, we specialise in SEO for Somerset and Dorset businesses. We can audit your current website, identify improvement opportunities, and implement local SEO strategies to help you rank higher in Google. Our SEO services include keyword research, on-page optimisation, local SEO, and ongoing monitoring.",
     category: "SEO"
   },
   {
@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     question: "What's included in your web design service?",
-    answer: "Our complete service includes strategy consultation, custom design, professional development, content creation assistance, SEO optimization, mobile responsiveness, security setup, performance optimization, training, and launch support. We handle everything so you can focus on running your business.",
+    answer: "Our complete service includes strategy consultation, custom design, professional development, content creation assistance, SEO optimisation, mobile responsiveness, security setup, performance optimisation, training, and launch support. We handle everything so you can focus on running your business.",
     category: "Services"
   },
   {
@@ -88,7 +88,7 @@ const faqs = [
   },
   {
     question: "Can you help with Google My Business and local listings?",
-    answer: "Yes! Local SEO is crucial for Somerset businesses. We help optimize your Google My Business profile, manage local citations, and ensure your business appears in local search results. This is especially important for businesses serving Yeovil, Taunton, Bridgwater, Dorchester, and surrounding areas.",
+    answer: "Yes! Local SEO is crucial for Somerset businesses. We help optimise your Google My Business profile, manage local citations, and ensure your business appears in local search results. This is especially important for businesses serving Yeovil, Taunton, Bridgwater, Dorchester, and surrounding areas.",
     category: "Local SEO"
   },
   {
