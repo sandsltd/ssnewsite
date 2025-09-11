@@ -28,27 +28,126 @@ export default function PricingSection({
         </div>
         
         {showProcessOverview && (
-          <div className="max-w-4xl mx-auto">
-            {/* Process Overview */}
-            <div className="text-center mb-12">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-3">1</div>
-                  <span className="text-lg font-semibold text-blue-600">Website Build</span>
+          <div className="max-w-6xl mx-auto mb-16">
+            {/* Elegant Process Overview */}
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-semibold text-gray-700 mb-8">How It Works</h3>
+            </div>
+            
+            {/* Desktop Layout */}
+            <div className="hidden md:flex items-center justify-center">
+              <div className="flex items-center space-x-8">
+                {/* Step 1 */}
+                <div className="flex flex-col items-center max-w-xs">
+                  <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 shadow-lg">
+                    1
+                  </div>
+                  <h4 className="text-lg font-bold text-blue-600 mb-2">Website Build</h4>
+                  <p className="text-sm text-gray-600 text-center leading-relaxed">
+                    Professional website designed and built to your requirements
+                  </p>
                 </div>
-                <div className="hidden md:block">
-                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                
+                {/* Arrow */}
+                <div className="flex flex-col items-center mx-6">
+                  <svg className="w-12 h-12 text-gray-300 mb-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mr-3">2A</div>
-                  <span className="text-lg font-semibold text-purple-600">Basic Hosting</span>
+                
+                {/* Step 2 - Choice */}
+                <div className="flex flex-col items-center">
+                  <div className="text-center mb-6">
+                    <h4 className="text-lg font-bold text-gray-700 mb-4">Choose Your Support Level</h4>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    {/* Option A */}
+                    <div className="flex flex-col items-center max-w-xs p-4 border-2 border-purple-200 rounded-lg bg-purple-50">
+                      <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mb-3">
+                        2A
+                      </div>
+                      <h5 className="text-sm font-bold text-purple-600 mb-2">Basic Hosting</h5>
+                      <p className="text-xs text-gray-600 text-center">
+                        Essential hosting and maintenance
+                      </p>
+                    </div>
+                    
+                    {/* OR divider */}
+                    <div className="px-4">
+                      <span className="text-gray-400 font-bold text-sm">OR</span>
+                    </div>
+                    
+                    {/* Option B */}
+                    <div className="flex flex-col items-center max-w-xs p-4 border-2 border-green-200 rounded-lg bg-green-50">
+                      <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mb-3">
+                        2B
+                      </div>
+                      <h5 className="text-sm font-bold text-green-600 mb-2">Continuous Growth</h5>
+                      <p className="text-xs text-gray-600 text-center">
+                        Full marketing and growth support
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="hidden md:block text-gray-400 font-bold">OR</div>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-3">2B</div>
-                  <span className="text-lg font-semibold text-green-600">Continuous Growth</span>
+              </div>
+            </div>
+            
+            {/* Mobile Layout */}
+            <div className="md:hidden space-y-8">
+              {/* Step 1 Mobile */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg">
+                  1
+                </div>
+                <h4 className="text-lg font-bold text-blue-600 mb-2">Website Build</h4>
+                <p className="text-sm text-gray-600 max-w-sm mx-auto">
+                  Professional website designed and built to your requirements
+                </p>
+              </div>
+              
+              {/* Arrow Down Mobile */}
+              <div className="flex justify-center">
+                <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
+              
+              {/* Choice Mobile */}
+              <div className="text-center">
+                <h4 className="text-lg font-bold text-gray-700 mb-6">Choose Your Support Level</h4>
+                
+                <div className="space-y-4 max-w-sm mx-auto">
+                  {/* Option A Mobile */}
+                  <div className="p-4 border-2 border-purple-200 rounded-lg bg-purple-50">
+                    <div className="flex items-center justify-center space-x-3 mb-2">
+                      <div className="w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        2A
+                      </div>
+                      <h5 className="text-md font-bold text-purple-600">Basic Hosting</h5>
+                    </div>
+                    <p className="text-xs text-gray-600 text-center">
+                      Essential hosting and maintenance
+                    </p>
+                  </div>
+                  
+                  {/* OR Mobile */}
+                  <div className="text-center">
+                    <span className="text-gray-400 font-bold text-sm">OR</span>
+                  </div>
+                  
+                  {/* Option B Mobile */}
+                  <div className="p-4 border-2 border-green-200 rounded-lg bg-green-50">
+                    <div className="flex items-center justify-center space-x-3 mb-2">
+                      <div className="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        2B
+                      </div>
+                      <h5 className="text-md font-bold text-green-600">Continuous Growth</h5>
+                    </div>
+                    <p className="text-xs text-gray-600 text-center">
+                      Full marketing and growth support
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
