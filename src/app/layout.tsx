@@ -180,6 +180,11 @@ export default function RootLayout({
         {/* Preload critical resources */}
         <link rel="preload" as="image" href="/logos/logo.png" fetchPriority="high" />
         
+        {/* Optimize resource loading for better performance */}
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.google.com" crossOrigin="" />
+        
         {/* Critical CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -230,6 +235,10 @@ export default function RootLayout({
               .lg\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
               .lg\\:text-left { text-align: left; }
             }
+            /* Performance optimizations */
+            img { content-visibility: auto; }
+            iframe { content-visibility: auto; }
+            .lazy-load { content-visibility: auto; }
           `
         }} />
         

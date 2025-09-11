@@ -253,10 +253,15 @@ export default function Portfolio() {
               
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
-                <img 
+                <Image 
                   src="/portfolio/diamondvisionexteriorcleaning.png" 
                   alt="Diamond Vision Cleaning Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 right-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
@@ -272,10 +277,15 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
-                <img 
+                <Image 
                   src="/portfolio/lotusbeautylounge.png" 
                   alt="Lotus Beauty Lounge Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 left-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
@@ -463,10 +473,15 @@ export default function Portfolio() {
               
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
-                <img 
+                <Image 
                   src="/portfolio/sktaxis.png" 
                   alt="SK Taxi Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 right-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
@@ -482,10 +497,15 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
-                <img 
+                <Image 
                   src="/portfolio/chrislettsplumbing.png" 
                   alt="Chris Letts Plumbing Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 left-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
@@ -649,10 +669,15 @@ export default function Portfolio() {
               
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
-                <img 
+                <Image 
                   src="/portfolio/bickerstaffsolutions.png" 
                   alt="Bickerstaff Solutions Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 right-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
@@ -815,10 +840,15 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
-                <img 
+                <Image 
                   src="/portfolio/crosscutshreddingltd.png" 
                   alt="Cross Cut Shredding Ltd Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 left-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
@@ -986,10 +1016,15 @@ export default function Portfolio() {
               
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
-                <img 
+                <Image 
                   src="/portfolio/lodgehouseb&b.png" 
                   alt="Lodge House B&B Somerset Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 right-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
