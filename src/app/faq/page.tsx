@@ -12,7 +12,11 @@ export const metadata: Metadata = {
     'web development pricing',
     'website maintenance costs',
     'local web designer Yeovil',
-    'professional website Somerset'
+    'professional website Somerset',
+    'website cost Somerset',
+    'web design vs web development',
+    'how much does a website cost Somerset',
+    'difference between web design and development'
   ],
   openGraph: {
     title: 'FAQ - Web Design & SEO Services | Saunders Simmons Ltd',
@@ -30,6 +34,11 @@ const faqs = [
   {
     question: "How much does a website cost?",
     answer: "Our website service has two parts: First, we build your professional website for £795 + VAT (one-time cost). This includes everything you need for a stunning online presence. Then, we provide ongoing support and growth for £250/month + VAT, which includes hosting, security, updates, and continuous optimization. This partnership approach ensures your website stays current and continues to drive results for your business.",
+    category: "Pricing"
+  },
+  {
+    question: "How much does a website cost in Somerset?",
+    answer: "For Somerset businesses, our website costs are transparent and competitive: £795 + VAT for professional website design and development, plus £250/month + VAT for ongoing support. This pricing is the same whether you're in Yeovil, Taunton, Bridgwater, or anywhere across Somerset. We understand the local market and provide exceptional value for Somerset businesses wanting a professional online presence. Unlike some London agencies charging £3000+, we offer premium quality at fair prices that work for local businesses.",
     category: "Pricing"
   },
   {
@@ -55,6 +64,11 @@ const faqs = [
   {
     question: "What's included in your web design service?",
     answer: "Our complete service includes strategy consultation, custom design, professional development, content creation assistance, SEO optimization, mobile responsiveness, security setup, performance optimization, training, and launch support. We handle everything so you can focus on running your business.",
+    category: "Services"
+  },
+  {
+    question: "What's the difference between web design and web development?",
+    answer: "Web design focuses on the visual appearance, user experience, and layout of your website - the creative and aesthetic elements that users see and interact with. Web development is the technical coding that makes the design functional, including programming, databases, and behind-the-scenes functionality. At Saunders Simmons, we handle both web design and web development as part of our complete service, so you get a beautiful website that works perfectly. Many agencies specialise in just one area, but we provide the full package for Somerset businesses.",
     category: "Services"
   },
   {
