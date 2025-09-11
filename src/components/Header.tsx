@@ -75,10 +75,12 @@ export default function Header() {
                 <Image
                   src="/logos/logo.png"
                   alt="Saunders Simmons Ltd Logo"
-                  width={50}
-                  height={50}
+                  width={48}
+                  height={48}
                   className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                   fetchPriority="high"
+                  sizes="(max-width: 640px) 40px, 48px"
+                  quality={85}
                 />
                 <div className="min-w-0">
                   <h1 className="text-sm sm:text-lg font-bold text-gray-900 truncate">

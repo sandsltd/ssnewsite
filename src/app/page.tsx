@@ -27,11 +27,13 @@ export default function Home() {
         <Image
                   src="/logos/logo.png"
                   alt="Saunders Simmons Ltd Logo"
-                  width={400}
-                  height={400}
+                  width={320}
+                  height={320}
                   className="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-contain"
                   priority
                   fetchPriority="high"
+                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 320px"
+                  quality={85}
         />
               </div>
             </div>

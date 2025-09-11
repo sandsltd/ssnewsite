@@ -25,9 +25,11 @@ export default function NotFound() {
             <Image
               src="/logos/logo.png"
               alt="Saunders Simmons Ltd Logo"
-              width={120}
-              height={120}
+              width={96}
+              height={96}
               className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
+              sizes="(max-width: 640px) 80px, 96px"
+              quality={85}
             />
           </div>
         </div>

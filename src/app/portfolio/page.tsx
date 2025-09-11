@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import CustomerSuccessSection from '@/components/CustomerSuccessSection'
 import BookCallButton from '@/components/BookCallButton'
 
@@ -80,10 +81,15 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
-                <img 
+                <Image 
                   src="/portfolio/bsrdecorating.png" 
                   alt="BSR Decorating Website Design"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={80}
+                  loading="lazy"
                 />
                 <div className="absolute top-8 left-8">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
