@@ -7,11 +7,15 @@ import Footer from "@/components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -165,6 +169,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.facebook.com" />
         <link rel="dns-prefetch" href="//static.doubleclick.net" />
         <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        {/* Preconnect to Google Fonts for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Meta Pixel Code - Optimized with defer */}
         <script
