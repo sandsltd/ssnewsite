@@ -9,6 +9,9 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   
+  // Modern JavaScript output for better performance  
+  serverExternalPackages: [],
+  
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
