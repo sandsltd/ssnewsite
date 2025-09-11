@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import BookCallButton from "../components/BookCallButton";
+import PricingSection from "../components/PricingSection";
+import AboutUsSection from "../components/AboutUsSection";
 
 export default function Home() {
   return (

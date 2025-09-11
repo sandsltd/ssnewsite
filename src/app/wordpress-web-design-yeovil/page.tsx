@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import BookCallButton from '@/components/BookCallButton'
+import PricingSection from '@/components/PricingSection'
+import AboutUsSection from '@/components/AboutUsSection'
 
 export const metadata: Metadata = {
   title: 'WordPress Web Design Yeovil | Saunders Simmons Ltd',
@@ -353,193 +355,20 @@ export default function WordPressWebDesignYeovil() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            WordPress Web Design Pricing in Yeovil
-          </h2>
-          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Transparent pricing for WordPress support and custom website rebuilds. 
-            Choose the option that best fits your business needs and budget.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* WordPress Maintenance */}
-            <div className="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-100">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">WordPress Support</h3>
-                <p className="text-gray-600 mb-4">Keep your existing site running</p>
-                <div className="flex items-baseline justify-center mb-6">
-                  <span className="text-3xl font-bold text-green-600">£25</span>
-                  <span className="text-lg text-green-600 ml-1">/month + VAT</span>
-                </div>
-              </div>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  WordPress updates & security
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Daily backups & hosting
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Emergency fixes
-                </li>
-              </ul>
-            </div>
+      <PricingSection 
+        title="WordPress Web Design Pricing in Yeovil"
+        subtitle="Transparent pricing for WordPress support and custom website rebuilds. Choose the option that best fits your business needs and budget."
+        showProcessOverview={false}
+        ctaText="Ready to Get Started?"
+        ctaSubtext="Get your professional website built for just £249, or let us help maintain your existing WordPress site. All pricing includes VAT where applicable."
+      />
 
-            {/* Custom Rebuild */}
-            <div className="bg-white p-6 rounded-2xl shadow-xl border-2 border-blue-300 relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                  Most Popular
-                </span>
-              </div>
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Custom Website Rebuild</h3>
-                <p className="text-gray-600 mb-4">Replace with faster solution</p>
-                <div className="flex items-baseline justify-center mb-6">
-                  <span className="text-3xl font-bold text-blue-600">£249</span>
-                  <span className="text-lg text-blue-600 ml-1">+ VAT</span>
-                </div>
-              </div>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  5 professionally designed pages
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Lightning-fast performance
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Enhanced security
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Content migration included
-                </li>
-              </ul>
-            </div>
-
-            {/* Comprehensive Management */}
-            <div className="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-100">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Continuous Growth</h3>
-                <p className="text-gray-600 mb-4">Complete ongoing support</p>
-                <div className="flex items-baseline justify-center mb-6">
-                  <span className="text-3xl font-bold text-purple-600">£250</span>
-                  <span className="text-lg text-purple-600 ml-1">/month + VAT</span>
-                </div>
-              </div>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Everything in WordPress Support
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Content updates & changes
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Ongoing SEO improvements
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Priority technical support
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-gray-600 mb-4">
-              All pricing includes VAT where applicable. No hidden costs for Yeovil businesses.
-            </p>
-            <BookCallButton className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
-              Get Your Custom Quote
-            </BookCallButton>
-          </div>
-        </div>
-      </section>
-
-      {/* About Us Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            About Saunders Simmons Ltd
-          </h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Your Local WordPress Experts in Yeovil
-              </h3>
-              <div className="space-y-4 text-gray-700">
-                <p>
-                  Based in Yeovil, Somerset, Saunders Simmons Ltd has been helping local businesses 
-                  succeed online since 2020. We specialise in both WordPress support and custom website 
-                  development, giving us a unique perspective on what works best for different businesses.
-                </p>
-                <p>
-                  We believe in building long-term partnerships with our clients, providing ongoing 
-                  support to ensure your website continues to perform well and drive results for 
-                  your Yeovil business.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-blue-50 rounded-lg p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">Why Choose Us</h4>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center">
-                  <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">5.0</span>
-                  <span>5-Star Google Rating from local businesses</span>
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Fully registered & insured (Companies House: 15839557)</span>
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  </svg>
-                  <span>Local Yeovil team with face-to-face meetings available</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutUsSection 
+        title="Meet Nick & Dan"
+        subtitle="The founders of Saunders Simmons Ltd, dedicated to helping businesses succeed online through professional websites and digital marketing."
+        showVideo={true}
+        showCredentials={true}
+      />
 
       {/* FAQ Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
