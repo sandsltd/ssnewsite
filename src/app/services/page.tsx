@@ -105,10 +105,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              How Our Service Works
+              Affordable Web Design Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We start by building your professional website, then you choose the support level that's right for your business
+              We start by building your professional website, then you choose the support level that's right for your business. Includes local SEO services in Somerset & Dorset.
             </p>
           </div>
           
@@ -143,8 +143,8 @@ export default function ServicesPage() {
             <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-100 hover:border-blue-300 transition-all duration-300">
               <div className="text-center mb-6">
                 <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4">1</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Website Build</h3>
-                <p className="text-gray-600 mb-4">Everything you need for a stunning online presence</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Website Build</h3>
+                <p className="text-gray-600 mb-4">Everything you need for a stunning online presence at an affordable price</p>
                 <div className="flex items-baseline justify-center mb-6">
                   <span className="text-sm text-gray-500 mr-2">One-time cost</span>
                   <span className="text-4xl font-bold text-blue-600">£249</span>
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>Monthly SEO optimisation & reporting</span>
+                  <span>Local SEO services in Somerset & Dorset</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">

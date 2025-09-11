@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saunders Simmons Ltd - Website Design & Marketing",
+  title: "Website Design Yeovil | Web Design Somerset | Digital Marketing Dorset | Saunders Simmons Ltd",
   description: "Professional website design and marketing solutions to help your business grow and succeed online.",
   metadataBase: new URL('https://www.saunders-simmons.co.uk'),
   icons: {

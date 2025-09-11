@@ -96,7 +96,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              How Our Service Works
+              Affordable Web Design Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We start by building your professional website, then you choose the support level that's right for your business
@@ -134,8 +134,8 @@ export default function Home() {
             <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-100 hover:border-blue-300 transition-all duration-300">
               <div className="text-center mb-6">
                 <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4">1</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Website Build</h3>
-                <p className="text-gray-600 mb-4">Everything you need for a stunning online presence</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Website Build</h3>
+                <p className="text-gray-600 mb-4">Everything you need for a stunning online presence at an affordable price</p>
                 <div className="flex items-baseline justify-center mb-6">
                   <span className="text-sm text-gray-500 mr-2">One-time cost</span>
                   <span className="text-4xl font-bold text-blue-600">£249</span>
@@ -329,7 +329,7 @@ export default function Home() {
                 Ready to Get Started?
               </h3>
               <p className="text-gray-600 mb-6">
-                Get your professional website built for just £249, then choose between our Basic Hosting or Continuous Growth support options.
+                Get your professional website built for just £249 with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options.
               </p>
               <div className="flex justify-center">
                 <BookCallButton className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
