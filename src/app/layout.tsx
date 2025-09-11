@@ -175,7 +175,7 @@ export default function RootLayout({
         {/* Preconnect to critical domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href={process.env.NODE_ENV === 'production' ? 'https://www.saunders-simmons.co.uk' : 'http://localhost:3000'} />
+        <link rel="preconnect" href="https://www.saunders-simmons.co.uk" />
         
         {/* Preload critical resources */}
         <link rel="preload" as="image" href="/logos/logo.png" fetchPriority="high" />
@@ -264,10 +264,12 @@ export default function RootLayout({
               }
               
               // Use requestIdleCallback if available, otherwise setTimeout
-              if (window.requestIdleCallback) {
-                requestIdleCallback(loadFacebookPixel, { timeout: 3000 });
-              } else {
-                setTimeout(loadFacebookPixel, 2000);
+              if (typeof window !== 'undefined') {
+                if (window.requestIdleCallback) {
+                  requestIdleCallback(loadFacebookPixel, { timeout: 3000 });
+                } else {
+                  setTimeout(loadFacebookPixel, 2000);
+                }
               }
             `
           }}
