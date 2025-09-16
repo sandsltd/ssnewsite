@@ -13,7 +13,7 @@ export default function PricingSection({
   subtitle = "We start by building your professional website, then you choose the support level that's right for your business",
   showProcessOverview = true,
   ctaText = "Ready to Get Started?",
-  ctaSubtext = "Get your professional website built for just £249 with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options."
+  ctaSubtext = "Get your professional website built for just £795 ex VAT with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options."
 }: PricingSectionProps) {
   return (
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -170,8 +170,8 @@ export default function PricingSection({
               <p className="text-gray-600 mb-4">Everything you need for a stunning online presence at an affordable price</p>
               <div className="flex items-baseline justify-center mb-6">
                 <span className="text-sm text-gray-500 mr-2">One-time cost</span>
-                <span className="text-4xl font-bold text-blue-600">£249</span>
-                <span className="text-lg text-blue-600 ml-1">+ VAT</span>
+                <span className="text-4xl font-bold text-blue-600">£795</span>
+                <span className="text-lg text-blue-600 ml-1">ex VAT</span>
               </div>
             </div>
             

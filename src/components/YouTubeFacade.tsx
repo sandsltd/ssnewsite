@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 interface YouTubeFacadeProps {
   videoId: string;
@@ -58,13 +57,10 @@ export default function YouTubeFacade({
       onClick={handleLoad}
       style={{ minHeight: '200px' }}
     >
-      <Image
+      <img
         src={thumbnailUrl}
         alt={title}
-        fill
-        className="object-cover transition-transform duration-300 group-hover:scale-105"
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
-        quality={75}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       />
       

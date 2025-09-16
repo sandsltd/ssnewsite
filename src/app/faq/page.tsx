@@ -33,12 +33,12 @@ const faqs = [
   },
   {
     question: "How much does a website cost?",
-    answer: "Our website service has two parts: First, we build your professional website for £249 + VAT (one-time cost). This includes everything you need for a stunning online presence. Then, you can choose from our ongoing support options: Basic Hosting at £25/month + VAT for essential maintenance, or our Continuous Growth package at £250/month + VAT for comprehensive support, security, updates, and optimisation. This flexible approach lets you choose the level of support that fits your business needs.",
+    answer: "Our website service has two parts: First, we build your professional website for £795 ex VAT (one-time cost). This includes everything you need for a stunning online presence. Then, you can choose from our ongoing support options: Basic Hosting at £25/month + VAT for essential maintenance, or our Continuous Growth package at £250/month + VAT for comprehensive support, security, updates, and optimisation. This flexible approach lets you choose the level of support that fits your business needs.",
     category: "Pricing"
   },
   {
     question: "How much does a website cost in Somerset?",
-    answer: "For Somerset businesses, our website costs are transparent and competitive: £249 + VAT for professional website design and development, plus your choice of ongoing support - Basic Hosting at £25/month + VAT or Continuous Growth at £250/month + VAT. This pricing is the same whether you're in Yeovil, Taunton, Bridgwater, or anywhere across Somerset. We understand the local market and provide exceptional value for Somerset businesses wanting a professional online presence. Unlike some London agencies charging £3000+, we offer premium quality at fair prices that work for local businesses.",
+    answer: "For Somerset businesses, our website costs are transparent and competitive: £795 ex VAT for professional website design and development, plus your choice of ongoing support - Basic Hosting at £25/month + VAT or Continuous Growth at £250/month + VAT. This pricing is the same whether you're in Yeovil, Taunton, Bridgwater, or anywhere across Somerset. We understand the local market and provide exceptional value for Somerset businesses wanting a professional online presence. Unlike some London agencies charging £3000+, we offer premium quality at fair prices that work for local businesses.",
     category: "Pricing"
   },
   {

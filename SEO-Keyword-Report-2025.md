@@ -55,7 +55,7 @@ According to your analysis:
 5. **"website development Somerset"** - New opportunity
 
 ### **Commercial Intent Keywords:**
-- **"affordable web design"** - ✅ **IMPLEMENTED** with £249 pricing clearly displayed
+- **"affordable web design"** - ✅ **IMPLEMENTED** with £795 ex VAT pricing clearly displayed
 - **"website packages"** - ✅ **ACTIVE** with tiered pricing structure
 - **"website maintenance"** - ✅ **OPTIMISED** with £25 and £250 monthly options
 - **"local SEO services"** - Strong opportunity
@@ -67,7 +67,7 @@ According to your analysis:
 
 ### **Phase 1: Strengthen Existing (COMPLETED ✅)**
 1. ✅ **DONE:** "website design Yeovil" in homepage meta description
-2. ✅ **DONE:** "affordable web design Somerset" in pricing section (£249 pricing)
+2. ✅ **DONE:** "affordable web design Somerset" in pricing section (£795 ex VAT pricing)
 3. ✅ **DONE:** Service page optimised for "web design packages"
 
 ### **Phase 2: Expand Content (PARTIALLY COMPLETED ✅)**
@@ -94,7 +94,7 @@ According to your analysis:
 ### **✅ FAQ Page Enhancements:**
 - **Added:** "How much does a website cost in Somerset?" - targeting local pricing queries
 - **Added:** "What's the difference between web design and web development?" - capturing educational searches
-- **Updated:** All pricing to reflect £249 website build cost (was £795)
+- **Updated:** All pricing to reflect £795 ex VAT website build cost (updated from £249)
 - **Converted:** All content to UK English spellings (optimisation, optimise, etc.)
 
 ### **✅ Technical Improvements:**
@@ -103,7 +103,7 @@ According to your analysis:
 - **Optimised:** All keyword metadata with new FAQ topics
 
 ### **✅ Pricing Consistency:**
-- **Standardised:** £249 + VAT website build pricing across all pages
+- **Standardised:** £795 ex VAT website build pricing across all pages
 - **Clarified:** Two-tier support: £25/month Basic Hosting + £250/month Continuous Growth
 - **Improved:** Value proposition messaging with competitive positioning
 

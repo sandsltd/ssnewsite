@@ -7,7 +7,7 @@ import CustomerSuccessSection from "../../components/CustomerSuccessSection";
 
 export const metadata: Metadata = {
   title: "Web Design Dorset | Professional Website Design Services | Saunders Simmons",
-  description: "Expert web design services across Dorset. Local website designers creating stunning, mobile-responsive websites for Dorset businesses. From £249 + VAT.",
+  description: "Expert web design services across Dorset. Local website designers creating stunning, mobile-responsive websites for Dorset businesses. From £795 ex VAT.",
   keywords: "web design Dorset, website design Dorset, web designers Dorset, website designers Dorset, professional web design services Dorset",
 };
 
@@ -74,7 +74,7 @@ export default function WebDesignDorset() {
             "serviceType": "Web Design",
             "offers": {
               "@type": "Offer",
-              "price": "249",
+              "price": "795",
               "priceCurrency": "GBP",
               "description": "Professional website build with ongoing support options"
             }
@@ -296,10 +296,10 @@ export default function WebDesignDorset() {
       {/* Pricing Section */}
       <PricingSection 
         title="Affordable Web Design Packages for Dorset Businesses"
-        subtitle="Transparent pricing with no hidden costs. Professional websites from just £249 + VAT."
+        subtitle="Transparent pricing with no hidden costs. Professional websites from just £795 ex VAT."
         showProcessOverview={true}
         ctaText="Ready to Get Started?"
-        ctaSubtext="Get your professional website built for just £249 with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options."
+        ctaSubtext="Get your professional website built for just £795 ex VAT with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options."
       />
 
       {/* About Us Section */}

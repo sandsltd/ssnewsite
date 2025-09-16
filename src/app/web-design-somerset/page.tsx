@@ -7,7 +7,7 @@ import CustomerSuccessSection from "../../components/CustomerSuccessSection";
 
 export const metadata: Metadata = {
   title: "Web Design Somerset | Professional Website Design Services | Saunders Simmons",
-  description: "Expert web design services across Somerset. Local website designers creating stunning, mobile-responsive websites for Somerset businesses. From £249 + VAT.",
+  description: "Expert web design services across Somerset. Local website designers creating stunning, mobile-responsive websites for Somerset businesses. From £795 ex VAT.",
   keywords: "web design Somerset, website design Somerset, web designers Somerset, website designers Somerset, professional web design services Somerset",
 };
 
@@ -74,7 +74,7 @@ export default function WebDesignSomerset() {
             "serviceType": "Web Design",
             "offers": {
               "@type": "Offer",
-              "price": "249",
+              "price": "795",
               "priceCurrency": "GBP",
               "description": "Professional website build with ongoing support options"
             }
@@ -296,10 +296,10 @@ export default function WebDesignSomerset() {
       {/* Pricing Section */}
       <PricingSection 
         title="Affordable Web Design Packages for Somerset Businesses"
-        subtitle="Transparent pricing with no hidden costs. Professional websites from just £249 + VAT."
+        subtitle="Transparent pricing with no hidden costs. Professional websites from just £795 ex VAT."
         showProcessOverview={true}
         ctaText="Ready to Get Started?"
-        ctaSubtext="Get your professional website built for just £249 with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options."
+        ctaSubtext="Get your professional website built for just £795 ex VAT with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options."
       />
 
       {/* About Us Section */}

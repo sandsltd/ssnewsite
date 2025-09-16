@@ -144,8 +144,8 @@ export default function Home() {
                 <p className="text-gray-600 mb-4">Everything you need for a stunning online presence at an affordable price</p>
                 <div className="flex items-baseline justify-center mb-6">
                   <span className="text-sm text-gray-500 mr-2">One-time cost</span>
-                  <span className="text-4xl font-bold text-blue-600">£249</span>
-                  <span className="text-lg text-blue-600 ml-1">+ VAT</span>
+                  <span className="text-4xl font-bold text-blue-600">£795</span>
+                  <span className="text-lg text-blue-600 ml-1">ex VAT</span>
                 </div>
               </div>
               
@@ -335,7 +335,7 @@ export default function Home() {
                 Ready to Get Started?
               </h3>
               <p className="text-gray-600 mb-6">
-                Get your professional website built for just £249 with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options.
+                Get your professional website built for just £795 ex VAT with our affordable web design packages, then choose between our Basic Hosting or Continuous Growth support options.
               </p>
               <div className="flex justify-center">
                 <BookCallButton className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">

@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "How much does a new WordPress website cost in Yeovil?",
-    answer: "Our WordPress services vary by need: For maintaining an existing WordPress site, we offer support from £25/month for basic hosting and maintenance, or £250/month for comprehensive management. If rebuilding your WordPress site with a custom-coded solution, we charge £249 + VAT for the new website build, then choose from our ongoing support options. We provide transparent pricing for all Yeovil businesses with no hidden costs."
+    answer: "Our WordPress services vary by need: For maintaining an existing WordPress site, we offer support from £25/month for basic hosting and maintenance, or £250/month for comprehensive management. If rebuilding your WordPress site with a custom-coded solution, we charge £795 ex VAT for the new website build, then choose from our ongoing support options. We provide transparent pricing for all Yeovil businesses with no hidden costs."
   }
 ]
 
@@ -308,7 +308,7 @@ export default function WordPressWebDesignYeovil() {
                 and business goals.
               </p>
               <ul className="space-y-2 text-gray-600 text-sm">
-                <li>• Fixed pricing for website builds (£249 + VAT)</li>
+                <li>• Fixed pricing for website builds (£795 ex VAT)</li>
                 <li>• Flexible ongoing support options</li>
                 <li>• No surprise charges or hidden fees</li>
               </ul>
@@ -361,7 +361,7 @@ export default function WordPressWebDesignYeovil() {
         subtitle="Transparent pricing for WordPress support and custom website rebuilds. Choose the option that best fits your business needs and budget."
         showProcessOverview={false}
         ctaText="Ready to Get Started?"
-        ctaSubtext="Get your professional website built for just £249, or let us help maintain your existing WordPress site. All pricing includes VAT where applicable."
+        ctaSubtext="Get your professional website built for just £795 ex VAT, or let us help maintain your existing WordPress site. All pricing includes VAT where applicable."
       />
 
       <AboutUsSection 
