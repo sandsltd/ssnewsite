@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-async function getBlogPost(slug: string) {
+async function getBlogPost(slug: string): Promise<any> {
   const postsDirectory = path.join(process.cwd(), '.blog-generator/content/posts');
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   
