@@ -2,8 +2,9 @@ name: Generate Blog Post
 
 on:
   schedule:
-    # Runs every 12 hours (9am and 9pm UTC)
-    - cron: '0 9,21 * * *'
+    # Run every 30 minutes during UK business hours (9am-6pm UTC/BST aware)
+    # This gives us chances to post throughout the workday
+    - cron: '*/30 9-17 * * 1-5'
   workflow_dispatch: # Allow manual triggering
 
 jobs:
@@ -16,16 +17,71 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       
+      - name: Check if we should generate a post
+        id: should_generate
+        run: |
+          # Get current UK time (handles BST/GMT automatically)
+          CURRENT_HOUR=$(TZ=Europe/London date +%H)
+          CURRENT_MIN=$(TZ=Europe/London date +%M)
+          CURRENT_DAY=$(TZ=Europe/London date +%u)
+          
+          echo "Current UK time: ${CURRENT_HOUR}:${CURRENT_MIN}"
+          echo "Current day: ${CURRENT_DAY} (1=Monday, 7=Sunday)"
+          
+          # Check if it's a weekday (1-5) and within business hours (9:00-17:30)
+          if [ $CURRENT_DAY -ge 1 ] && [ $CURRENT_DAY -le 5 ]; then
+            if [ $CURRENT_HOUR -ge 9 ] && [ $CURRENT_HOUR -le 17 ]; then
+              if [ $CURRENT_HOUR -eq 17 ] && [ $CURRENT_MIN -gt 30 ]; then
+                echo "Outside business hours (after 17:30)"
+                echo "should_run=false" >> $GITHUB_OUTPUT
+              else
+                # Check last post time to ensure 2-3 hour gap
+                if [ -f "last-post-time.txt" ]; then
+                  LAST_POST=$(cat last-post-time.txt)
+                  CURRENT_TIMESTAMP=$(date +%s)
+                  TIME_DIFF=$((CURRENT_TIMESTAMP - LAST_POST))
+                  MIN_GAP=7200  # 2 hours in seconds
+                  MAX_GAP=10800 # 3 hours in seconds
+                  
+                  # Add random delay (0-30 minutes) to vary posting times
+                  RANDOM_DELAY=$((RANDOM % 1800))
+                  EFFECTIVE_DIFF=$((TIME_DIFF - RANDOM_DELAY))
+                  
+                  if [ $EFFECTIVE_DIFF -ge $MIN_GAP ]; then
+                    echo "Enough time has passed, generating post"
+                    echo "should_run=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "Too soon since last post (${TIME_DIFF} seconds)"
+                    echo "should_run=false" >> $GITHUB_OUTPUT
+                  fi
+                else
+                  # No previous post record, generate one
+                  echo "No previous post record, generating first post"
+                  echo "should_run=true" >> $GITHUB_OUTPUT
+                fi
+              fi
+            else
+              echo "Outside business hours"
+              echo "should_run=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "Weekend - no posts"
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          fi
+      
       - name: Setup Node.js
+        if: steps.should_generate.outputs.should_run == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: '20'
       
       - name: Install dependencies
+        if: steps.should_generate.outputs.should_run == 'true'
         run: |
           npm ci
       
       - name: Setup blog generator
+        if: steps.should_generate.outputs.should_run == 'true'
         run: |
           # Remove submodule and clone fresh
           rm -rf .blog-generator
@@ -33,20 +89,33 @@ jobs:
           
           # Copy config files
           cp blog-generator.config.js .blog-generator/
-          cp topic-history.json .blog-generator/
+          cp topic-history.json .blog-generator/ || echo "{}" > .blog-generator/topic-history.json
           
           # Install dependencies
           cd .blog-generator
           npm install --production
       
+      - name: Add random delay for natural posting
+        if: steps.should_generate.outputs.should_run == 'true'
+        run: |
+          # Add random delay between 0-15 minutes to make posting look natural
+          DELAY=$((RANDOM % 900))
+          echo "Waiting ${DELAY} seconds for natural timing..."
+          sleep $DELAY
+      
       - name: Generate blog post
+        if: steps.should_generate.outputs.should_run == 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           cd .blog-generator
           npm run generate
+          
+          # Record the time of this post
+          date +%s > ../last-post-time.txt
       
       - name: Copy generated content
+        if: steps.should_generate.outputs.should_run == 'true'
         run: |
           # Create directories if they don't exist
           mkdir -p .blog-generator/content/posts
@@ -55,13 +124,17 @@ jobs:
           # The posts are already in .blog-generator/content/posts (created by generate)
           # Images are already in public/images/blog (created by generate)
           
-      - name: Rebuild static pages
+      - name: Rebuild static pages and sitemap
+        if: steps.should_generate.outputs.should_run == 'true'
         run: |
           npm run build
+          # Generate updated sitemap
+          npm run postbuild || echo "No postbuild script"
       
       - name: Commit and push if changed
+        if: steps.should_generate.outputs.should_run == 'true'
         run: |
-          # Copy updated topic history back
+          # Copy updated topic history and last post time back
           cp .blog-generator/topic-history.json .
           
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -69,15 +142,18 @@ jobs:
           
           # Force add the blog-generator folder (it's not tracked)
           git add -f .blog-generator/content/posts/ 
-          git add public/images/blog/ topic-history.json
+          git add public/images/blog/ topic-history.json last-post-time.txt
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Add new blog post: $(date +'%Y-%m-%d') [automated]
+            # Get current UK time for commit message
+            UK_TIME=$(TZ=Europe/London date +'%Y-%m-%d %H:%M')
+            git commit -m "Add new blog post: ${UK_TIME} [automated]
             
             Generated by SEO Blog Generator
             Business: Saunders Simmons Ltd
-            Location: Yeovil, Somerset"
+            Location: Yeovil, Somerset
+            Natural posting schedule: Mon-Fri 9am-5:30pm"
             git push
           fi

@@ -86,7 +86,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                <Link href="/blogs" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                   Blog
                 </Link>
               </li>
@@ -199,7 +199,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Saunders Simmons Ltd. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <Link href="/blog" className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200">
+              <Link href="/blogs" className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200">
                 Blog
               </Link>
               <BookCallButton className="text-gray-500 hover:text-orange-600 text-sm transition-colors duration-200">
