@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -27,9 +28,16 @@ jobs:
       
       - name: Setup blog generator
         run: |
+          # Remove submodule and clone fresh
+          rm -rf .blog-generator
+          git clone https://github.com/sandsltd/autoblogger_2.git .blog-generator
+          
+          # Copy config files
+          cp blog-generator.config.js .blog-generator/
+          cp topic-history.json .blog-generator/
+          
+          # Install dependencies
           cd .blog-generator
-          # Update to latest version
-          git pull origin main || true
           npm install --production
       
       - name: Generate blog post
@@ -45,9 +53,12 @@ jobs:
       
       - name: Commit and push if changed
         run: |
+          # Copy updated topic history back
+          cp .blog-generator/topic-history.json .
+          
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add .blog-generator/content/posts/ public/images/blog/ .blog-generator/topic-history.json
+          git add .blog-generator/content/posts/ public/images/blog/ topic-history.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
