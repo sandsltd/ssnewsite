@@ -2,8 +2,8 @@ name: Generate Blog Post
 
 on:
   schedule:
-    # Runs daily at 9am UTC
-    - cron: '0 9 * * *'
+    # Runs every hour
+    - cron: '0 * * * *'
   workflow_dispatch: # Allow manual triggering
 
 jobs:
@@ -21,23 +21,25 @@ jobs:
         with:
           node-version: '20'
       
-      - name: Install dependencies
-        run: |
-          npm ci
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       
-      - name: Setup blog generator
+      - name: Install blog generator
         run: |
-          # Remove submodule and clone fresh
-          rm -rf .blog-generator
+          # Clone the generator (or install from npm when published)
           git clone https://github.com/sandsltd/autoblogger_2.git .blog-generator
-          
-          # Copy config files
-          cp blog-generator.config.js .blog-generator/
-          cp topic-history.json .blog-generator/
-          
-          # Install dependencies
           cd .blog-generator
-          npm install --production
+          npm ci --production
+      
+      - name: Copy configuration
+        run: |
+          cp blog-generator.config.js .blog-generator/
+          cp .env .blog-generator/ 2>/dev/null || true
       
       - name: Generate blog post
         env:
@@ -46,18 +48,30 @@ jobs:
           cd .blog-generator
           npm run generate
       
+      - name: Copy generated content
+        run: |
+          # Copy new blog posts
+          cp -r .blog-generator/content/posts/* content/posts/
+          
+          # Copy new images
+          mkdir -p public/images/blog
+          if ls .blog-generator/public/images/blog/* 1> /dev/null 2>&1; then
+            cp -r .blog-generator/public/images/blog/* public/images/blog/
+          fi
+          
+          # Update topic history
+          cp .blog-generator/topic-history.json ./
+      
       - name: Rebuild static pages
         run: |
+          npm ci
           npm run build
       
       - name: Commit and push if changed
         run: |
-          # Copy updated topic history back
-          cp .blog-generator/topic-history.json .
-          
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add .blog-generator/content/posts/ public/images/blog/ topic-history.json
+          git add content/posts/ public/images/blog/ topic-history.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
