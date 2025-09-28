@@ -27,10 +27,9 @@ jobs:
       
       - name: Setup blog generator
         run: |
-          if [ ! -d ".blog-generator" ]; then
-            git clone https://github.com/sandsltd/autoblogger_2.git .blog-generator
-          fi
           cd .blog-generator
+          # Update to latest version
+          git pull origin main || true
           npm install --production
       
       - name: Generate blog post
