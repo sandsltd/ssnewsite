@@ -46,6 +46,15 @@ jobs:
           cd .blog-generator
           npm run generate
       
+      - name: Copy generated content
+        run: |
+          # Create directories if they don't exist
+          mkdir -p .blog-generator/content/posts
+          mkdir -p public/images/blog
+          
+          # The posts are already in .blog-generator/content/posts (created by generate)
+          # Images are already in public/images/blog (created by generate)
+          
       - name: Rebuild static pages
         run: |
           npm run build
@@ -57,7 +66,11 @@ jobs:
           
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add .blog-generator/content/posts/ public/images/blog/ topic-history.json
+          
+          # Force add the blog-generator folder (it's not tracked)
+          git add -f .blog-generator/content/posts/ 
+          git add public/images/blog/ topic-history.json
+          
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
