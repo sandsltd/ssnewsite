@@ -2,8 +2,8 @@ name: Generate Blog Post
 
 on:
   schedule:
-    # Runs daily at 9am UTC
-    - cron: '0 9 * * *'
+    # Runs every 12 hours (9am and 9pm UTC)
+    - cron: '0 9,21 * * *'
   workflow_dispatch: # Allow manual triggering
 
 jobs:
