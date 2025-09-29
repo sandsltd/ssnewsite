@@ -124,12 +124,18 @@ jobs:
         if: steps.should_generate.outputs.should_run == 'true'
         run: |
           # Create directories if they don't exist
-          mkdir -p .blog-generator/content/posts
+          mkdir -p content/posts
           mkdir -p public/images/blog
           
+          # CRITICAL: Copy blog posts from .blog-generator to a tracked directory
+          echo "Copying blog posts from .blog-generator to content/posts"
+          cp -r .blog-generator/content/posts/* content/posts/ || echo "No posts to copy"
+          
           # List generated content for debugging
-          echo "Generated blog posts:"
+          echo "Generated blog posts in .blog-generator:"
           ls -la .blog-generator/content/posts/ || echo "No posts found"
+          echo "Copied blog posts in content/posts:"
+          ls -la content/posts/ || echo "No posts found"
           echo "Generated images:"
           ls -la public/images/blog/ || echo "No images found"
           
@@ -150,14 +156,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           
           # Debug: Show what files we're trying to add
-          echo "Files to add:"
-          ls -la .blog-generator/content/posts/
+          echo "Files in content/posts:"
+          ls -la content/posts/
           
-          # CRITICAL: Force add the blog-generator directory including all contents
-          # The -f flag overrides .gitignore, and we need to be explicit
-          git add -f .blog-generator/content/posts/*.md
-          git add -f .blog-generator/content/
-          git add -f public/images/blog/
+          # Add the content/posts directory which is NOT inside .blog-generator
+          git add content/posts/
+          git add public/images/blog/
           git add topic-history.json last-post-time.txt
           
           # Show what was staged

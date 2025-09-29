@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   let blogPosts: MetadataRoute.Sitemap = []
   
   try {
-    const postsDirectory = path.join(process.cwd(), '.blog-generator', 'content', 'posts')
+    const postsDirectory = path.join(process.cwd(), 'content', 'posts')
     
     if (fs.existsSync(postsDirectory)) {
       const files = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'))
