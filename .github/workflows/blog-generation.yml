@@ -20,53 +20,59 @@ jobs:
       - name: Check if we should generate a post
         id: should_generate
         run: |
-          # Get current UK time (handles BST/GMT automatically)
-          CURRENT_HOUR=$(TZ=Europe/London date +%H)
-          CURRENT_MIN=$(TZ=Europe/London date +%M)
-          CURRENT_DAY=$(TZ=Europe/London date +%u)
-          
-          echo "Current UK time: ${CURRENT_HOUR}:${CURRENT_MIN}"
-          echo "Current day: ${CURRENT_DAY} (1=Monday, 7=Sunday)"
-          
-          # Check if it's a weekday (1-5) and within business hours (9:00-17:30)
-          if [ $CURRENT_DAY -ge 1 ] && [ $CURRENT_DAY -le 5 ]; then
-            if [ $CURRENT_HOUR -ge 9 ] && [ $CURRENT_HOUR -le 17 ]; then
-              if [ $CURRENT_HOUR -eq 17 ] && [ $CURRENT_MIN -gt 30 ]; then
-                echo "Outside business hours (after 17:30)"
-                echo "should_run=false" >> $GITHUB_OUTPUT
-              else
-                # Check last post time to ensure 2-3 hour gap
-                if [ -f "last-post-time.txt" ]; then
-                  LAST_POST=$(cat last-post-time.txt)
-                  CURRENT_TIMESTAMP=$(date +%s)
-                  TIME_DIFF=$((CURRENT_TIMESTAMP - LAST_POST))
-                  MIN_GAP=7200  # 2 hours in seconds
-                  MAX_GAP=10800 # 3 hours in seconds
-                  
-                  # Add random delay (0-30 minutes) to vary posting times
-                  RANDOM_DELAY=$((RANDOM % 1800))
-                  EFFECTIVE_DIFF=$((TIME_DIFF - RANDOM_DELAY))
-                  
-                  if [ $EFFECTIVE_DIFF -ge $MIN_GAP ]; then
-                    echo "Enough time has passed, generating post"
-                    echo "should_run=true" >> $GITHUB_OUTPUT
-                  else
-                    echo "Too soon since last post (${TIME_DIFF} seconds)"
-                    echo "should_run=false" >> $GITHUB_OUTPUT
-                  fi
+          # Check if this is a manual trigger
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual trigger detected - bypassing all time checks"
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          else
+            # Get current UK time (handles BST/GMT automatically)
+            CURRENT_HOUR=$(TZ=Europe/London date +%H)
+            CURRENT_MIN=$(TZ=Europe/London date +%M)
+            CURRENT_DAY=$(TZ=Europe/London date +%u)
+            
+            echo "Current UK time: ${CURRENT_HOUR}:${CURRENT_MIN}"
+            echo "Current day: ${CURRENT_DAY} (1=Monday, 7=Sunday)"
+            
+            # Check if it's a weekday (1-5) and within business hours (9:00-17:30)
+            if [ $CURRENT_DAY -ge 1 ] && [ $CURRENT_DAY -le 5 ]; then
+              if [ $CURRENT_HOUR -ge 9 ] && [ $CURRENT_HOUR -le 17 ]; then
+                if [ $CURRENT_HOUR -eq 17 ] && [ $CURRENT_MIN -gt 30 ]; then
+                  echo "Outside business hours (after 17:30)"
+                  echo "should_run=false" >> $GITHUB_OUTPUT
                 else
-                  # No previous post record, generate one
-                  echo "No previous post record, generating first post"
-                  echo "should_run=true" >> $GITHUB_OUTPUT
+                  # Check last post time to ensure 2-3 hour gap
+                  if [ -f "last-post-time.txt" ]; then
+                    LAST_POST=$(cat last-post-time.txt)
+                    CURRENT_TIMESTAMP=$(date +%s)
+                    TIME_DIFF=$((CURRENT_TIMESTAMP - LAST_POST))
+                    MIN_GAP=7200  # 2 hours in seconds
+                    MAX_GAP=10800 # 3 hours in seconds
+                    
+                    # Add random delay (0-30 minutes) to vary posting times
+                    RANDOM_DELAY=$((RANDOM % 1800))
+                    EFFECTIVE_DIFF=$((TIME_DIFF - RANDOM_DELAY))
+                    
+                    if [ $EFFECTIVE_DIFF -ge $MIN_GAP ]; then
+                      echo "Enough time has passed, generating post"
+                      echo "should_run=true" >> $GITHUB_OUTPUT
+                    else
+                      echo "Too soon since last post (${TIME_DIFF} seconds)"
+                      echo "should_run=false" >> $GITHUB_OUTPUT
+                    fi
+                  else
+                    # No previous post record, generate one
+                    echo "No previous post record, generating first post"
+                    echo "should_run=true" >> $GITHUB_OUTPUT
+                  fi
                 fi
+              else
+                echo "Outside business hours"
+                echo "should_run=false" >> $GITHUB_OUTPUT
               fi
             else
-              echo "Outside business hours"
+              echo "Weekend - no posts"
               echo "should_run=false" >> $GITHUB_OUTPUT
             fi
-          else
-            echo "Weekend - no posts"
-            echo "should_run=false" >> $GITHUB_OUTPUT
           fi
       
       - name: Setup Node.js
@@ -96,7 +102,7 @@ jobs:
           npm install --production
       
       - name: Add random delay for natural posting
-        if: steps.should_generate.outputs.should_run == 'true'
+        if: steps.should_generate.outputs.should_run == 'true' && github.event_name != 'workflow_dispatch'
         run: |
           # Add random delay between 0-15 minutes to make posting look natural
           DELAY=$((RANDOM % 900))
