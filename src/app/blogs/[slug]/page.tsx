@@ -30,11 +30,24 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 async function getBlogPost(slug: string): Promise<any> {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
   
-  // First try to find the exact file
+  // First try to find the exact file with .md extension
   let fullPath = path.join(postsDirectory, `${slug}.md`);
   
   if (!fs.existsSync(fullPath)) {
-    return null;
+    // If not found, the slug might already include the full filename
+    // Try to find any file that matches the slug pattern
+    if (fs.existsSync(postsDirectory)) {
+      const files = fs.readdirSync(postsDirectory);
+      const matchingFile = files.find(file => file.replace('.md', '') === slug);
+      
+      if (matchingFile) {
+        fullPath = path.join(postsDirectory, matchingFile);
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
   }
   
   const fileContents = fs.readFileSync(fullPath, 'utf8');

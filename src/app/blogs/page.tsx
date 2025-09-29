@@ -93,11 +93,8 @@ async function getBlogPosts(): Promise<BlogPost[]> {
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { data } = matter(fileContents);
         
-        // Extract clean slug from filename
-        const slug = fileName
-          .replace(/^\d{4}-\d{2}-\d{2}-/, '') // Remove date prefix
-          .replace('.md', '') // Remove extension
-          .replace(/-\d+$/, ''); // Remove timestamp suffix
+        // Use the full filename as slug (just remove .md extension)
+        const slug = fileName.replace('.md', '');
         
         return {
           slug: slug,

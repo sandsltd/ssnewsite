@@ -48,8 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         const fileContent = fs.readFileSync(filePath, 'utf8')
         const { data } = matter(fileContent)
         
-        // Extract slug from filename (remove date prefix and .md extension)
-        const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace('.md', '').replace(/-\d+$/, '')
+        // Use full filename as slug (just remove .md extension)
+        const slug = file.replace('.md', '')
         
         return {
           url: `${baseUrl}/blogs/${slug}`,
