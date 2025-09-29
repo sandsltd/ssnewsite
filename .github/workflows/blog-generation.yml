@@ -121,8 +121,11 @@ jobs:
           mkdir -p .blog-generator/content/posts
           mkdir -p public/images/blog
           
-          # The posts are already in .blog-generator/content/posts (created by generate)
-          # Images are already in public/images/blog (created by generate)
+          # List generated content for debugging
+          echo "Generated blog posts:"
+          ls -la .blog-generator/content/posts/ || echo "No posts found"
+          echo "Generated images:"
+          ls -la public/images/blog/ || echo "No images found"
           
       - name: Rebuild static pages and sitemap
         if: steps.should_generate.outputs.should_run == 'true'
@@ -140,9 +143,10 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           
-          # Force add the blog-generator folder (it's not tracked)
-          git add -f .blog-generator/content/posts/ 
-          git add public/images/blog/ topic-history.json last-post-time.txt
+          # Force add all generated content
+          git add -f .blog-generator/content/posts/*.md || echo "No markdown files to add"
+          git add public/images/blog/*.png public/images/blog/*.jpg || echo "No images to add"
+          git add topic-history.json last-post-time.txt
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
