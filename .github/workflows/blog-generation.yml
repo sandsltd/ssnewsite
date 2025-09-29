@@ -153,14 +153,20 @@ jobs:
           echo "Files to add:"
           ls -la .blog-generator/content/posts/
           
-          # Force add all generated content (use . to ensure subdirectories are included)
-          git add -f .blog-generator/content/posts/
+          # CRITICAL: Force add the blog-generator directory including all contents
+          # The -f flag overrides .gitignore, and we need to be explicit
+          git add -f .blog-generator/content/posts/*.md
+          git add -f .blog-generator/content/
           git add -f public/images/blog/
           git add topic-history.json last-post-time.txt
           
           # Show what was staged
           echo "Staged files:"
           git status --short
+          
+          # Also show full status for debugging
+          echo "Full git status:"
+          git status
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
