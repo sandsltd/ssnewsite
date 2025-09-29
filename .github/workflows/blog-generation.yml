@@ -149,10 +149,18 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           
-          # Force add all generated content
-          git add -f .blog-generator/content/posts/*.md || echo "No markdown files to add"
-          git add public/images/blog/*.png public/images/blog/*.jpg || echo "No images to add"
+          # Debug: Show what files we're trying to add
+          echo "Files to add:"
+          ls -la .blog-generator/content/posts/
+          
+          # Force add all generated content (use . to ensure subdirectories are included)
+          git add -f .blog-generator/content/posts/
+          git add -f public/images/blog/
           git add topic-history.json last-post-time.txt
+          
+          # Show what was staged
+          echo "Staged files:"
+          git status --short
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
