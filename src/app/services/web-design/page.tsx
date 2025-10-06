@@ -1,0 +1,861 @@
+import Link from 'next/link';
+import BookCallButton from '@/components/BookCallButton';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Web Design & Marketing Services - Yeovil, Somerset | Saunders Simmons Ltd",
+  description: "Professional website design and ongoing marketing support for businesses in Yeovil, Somerset, and Dorset. Complete digital partnership from £795 ex VAT + ongoing support.",
+  openGraph: {
+    title: "Web Design & Marketing Services - Yeovil, Somerset | Saunders Simmons Ltd",
+    description: "Professional website design and ongoing marketing support for businesses in Yeovil, Somerset, and Dorset.",
+    url: 'https://www.saunders-simmons.co.uk/services/web-design',
+    siteName: 'Saunders Simmons Ltd',
+    images: [
+      {
+        url: '/logos/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Saunders Simmons Ltd Services',
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Web Design & Marketing Services - Yeovil, Somerset | Saunders Simmons Ltd",
+    description: "Professional website design and ongoing marketing support for businesses in Yeovil, Somerset, and Dorset.",
+    images: ['/logos/logo.png'],
+  },
+};
+
+export default function ServicesPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Professional Web Design & Marketing Services",
+            "description": "Complete website design and ongoing marketing support for businesses in Yeovil, Somerset, and Dorset",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Saunders Simmons Ltd",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "15 Oxford Road, Pen Mill Trading Estate",
+                "addressLocality": "Yeovil",
+                "addressRegion": "Somerset",
+                "postalCode": "BA21 5HR",
+                "addressCountry": "GB"
+              }
+            },
+            "areaServed": [
+              {
+                "@type": "Place",
+                "name": "Yeovil"
+              },
+              {
+                "@type": "Place",
+                "name": "Somerset"
+              },
+              {
+                "@type": "Place",
+                "name": "Dorset"
+              }
+            ],
+            "serviceType": "Web Design",
+            "offers": {
+              "@type": "Offer",
+              "price": "795",
+              "priceCurrency": "GBP",
+              "description": "Website design starting from £795 ex VAT"
+            }
+          })
+        }}
+      />
+
+      {/* Hero Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Your Long-Term Digital <span style={{color: '#51AACD'}}>Partnership</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Complete support for your business online from your local web design team based in Yeovil. 
+            We build your website, then partner with you for ongoing growth and success.
+          </p>
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span className="text-gray-600 font-medium">5.0 Google Rating • Based in Yeovil, Somerset</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Service Offering */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{backgroundColor: '#C4E3EA'}}>
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Affordable Web Design
+              <span className="block" style={{color: '#51AACD'}}>Packages</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We start by building your professional website, then you choose the support level that's right for your business. Includes local SEO services in Somerset & Dorset.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Choose Your Support Level</h3>
+              <p className="text-gray-600">After we build your website, select the ongoing support that fits your needs</p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Step 1: Website Build */}
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300" style={{borderColor: '#C4E3EA'}}>
+              <div className="text-center mb-6">
+                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4" style={{backgroundColor: '#51AACD'}}>1</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Website Build</h3>
+                <p className="text-gray-600 mb-4">Everything you need for a stunning online presence at an affordable price</p>
+                <div className="flex items-baseline justify-center mb-6">
+                  <span className="text-sm text-gray-500 mr-2">One-time cost</span>
+                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£795</span>
+                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>ex VAT</span>
+                </div>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>5 professionally designed pages</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Mobile-responsive design (98% performance)</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>SEO optimisation for Google rankings</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Contact forms & lead capture</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Google Maps integration</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Social media integration</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>SSL security certificate</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-semibold">2 weeks turnaround time</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Step 2A: Basic Hosting */}
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300 relative" style={{borderColor: '#C4E3EA'}}>
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="text-white px-4 py-2 rounded-full text-xs font-semibold" style={{backgroundColor: '#51AACD'}}>Best Value</span>
+              </div>
+              
+              <div className="text-center mb-6 mt-4">
+                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4" style={{backgroundColor: '#51AACD'}}>2A</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Basic Hosting</h3>
+                <p className="text-gray-600 mb-4">Essential hosting and maintenance</p>
+                <div className="flex items-baseline justify-center mb-6">
+                  <span className="text-sm text-gray-500 mr-2">Monthly</span>
+                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£25</span>
+                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>/month + VAT</span>
+                </div>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Reliable web hosting</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>SSL certificate maintenance</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Basic security monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Technical updates</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>99.9% uptime guarantee</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Email support</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-semibold">Cancel anytime (no lock-in)</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Step 2B: Continuous Growth & Support */}
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300 relative" style={{borderColor: '#C4E3EA'}}>
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="text-white px-4 py-2 rounded-full text-xs font-semibold" style={{backgroundColor: '#51AACD'}}>Best for Growth</span>
+              </div>
+              
+              <div className="text-center mb-6 mt-4">
+                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4" style={{backgroundColor: '#51AACD'}}>2B</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Continuous Growth</h3>
+                <p className="text-gray-600 mb-4">Complete support and marketing</p>
+                <div className="flex items-baseline justify-center mb-6">
+                  <span className="text-sm text-gray-500 mr-2">Monthly</span>
+                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£250</span>
+                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>/month + VAT</span>
+                </div>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-semibold">Everything in Basic Hosting</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Local SEO services in Somerset & Dorset</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Unlimited content updates</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Performance optimisation</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Google Analytics reporting</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Priority IT support</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-semibold">Cancel anytime (no lock-in)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          {/* Single CTA for the complete service */}
+          <div className="text-center mt-12">
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 max-w-2xl mx-auto" style={{borderColor: '#C4E3EA'}}>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Ready to Get Started?
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Get your professional website built for just £795 ex VAT, then choose between our Basic Hosting or Continuous Growth support options.
+              </p>
+              <div className="flex justify-center">
+                <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                  Book a Call
+                </BookCallButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cog Section Divider */}
+      <div className="py-8 bg-white flex justify-center items-center">
+        <div className="flex items-center gap-6">
+          <svg className="w-8 h-8 text-blue-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+          <div className="h-px bg-gray-300 w-24"></div>
+          <svg className="w-6 h-6 text-green-500 animate-spin-reverse" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+          <div className="h-px bg-gray-300 w-24"></div>
+          <svg className="w-8 h-8 text-orange-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+        </div>
+      </div>
+
+      {/* Our Process Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our Proven <span style={{color: '#51AACD'}}>Process</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From initial consultation to ongoing success, here's exactly how we work with our Somerset, Dorset, and Yeovil clients
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Step 1: Welcome Call */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+                1
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Welcome Call</h3>
+              <p className="text-gray-600 text-center mb-4">
+                We start with a friendly consultation to understand your business, goals, and vision for your website.
+              </p>
+              <div className="text-center">
+                <span className="px-3 py-1 rounded-full text-sm font-medium" style={{backgroundColor: '#C4E3EA', color: '#51AACD'}}>
+                  30-45 minutes
+                </span>
+              </div>
+            </div>
+
+            {/* Step 2: Research */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+                2
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">We Research</h3>
+              <p className="text-gray-600 text-center mb-4">
+                Our team researches your industry, competitors, and local market to create the perfect strategy.
+              </p>
+              <div className="text-center">
+                <span className="px-3 py-1 rounded-full text-sm font-medium" style={{backgroundColor: '#C4E3EA', color: '#51AACD'}}>
+                  1-2 days
+                </span>
+              </div>
+            </div>
+
+            {/* Step 3: Proposal */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+                3
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Proposal</h3>
+              <p className="text-gray-600 text-center mb-4">
+                You receive a detailed proposal with mockups, timeline, and clear pricing - no hidden costs.
+              </p>
+              <div className="text-center">
+                <span className="px-3 py-1 rounded-full text-sm font-medium" style={{backgroundColor: '#C4E3EA', color: '#51AACD'}}>
+                  2-3 days
+                </span>
+              </div>
+            </div>
+
+            {/* Step 4: Build */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+                4
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Build</h3>
+              <p className="text-gray-600 text-center mb-4">
+                We build your professional website with regular updates so you can see progress every step of the way.
+              </p>
+              <div className="text-center">
+                <span className="px-3 py-1 rounded-full text-sm font-medium" style={{backgroundColor: '#C4E3EA', color: '#51AACD'}}>
+                  1-2 weeks
+                </span>
+              </div>
+            </div>
+
+            {/* Step 5: Approval */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+                5
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Approval</h3>
+              <p className="text-gray-600 text-center mb-4">
+                You review the finished website and request any final changes before we go live.
+              </p>
+              <div className="text-center">
+                <span className="px-3 py-1 rounded-full text-sm font-medium" style={{backgroundColor: '#C4E3EA', color: '#51AACD'}}>
+                  2-3 days
+                </span>
+              </div>
+            </div>
+
+            {/* Step 6: Launch */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+                6
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Launch</h3>
+              <p className="text-gray-600 text-center mb-4">
+                Your website goes live! We handle all technical aspects and provide you with training and documentation.
+              </p>
+              <div className="text-center">
+                <span className="px-3 py-1 rounded-full text-sm font-medium" style={{backgroundColor: '#C4E3EA', color: '#51AACD'}}>
+                  Launch day
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 7: Ongoing Updates - Full Width */}
+          <div className="mt-8">
+            <div className="p-8 rounded-xl shadow-lg text-white" style={{background: 'linear-gradient(135deg, #51AACD 0%, #4A9BC4 100%)'}}>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white bg-opacity-20 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto text-xl">
+                  7
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Regular Updates & Ongoing Support</h3>
+                <p className="text-lg mb-6 max-w-3xl mx-auto">
+                  This is where the real partnership begins! We provide monthly SEO updates, content changes, 
+                  performance monitoring, and continuous improvements to help your business grow online.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                    Monthly SEO Reports
+                  </span>
+                  <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                    Unlimited Updates
+                  </span>
+                  <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                    Priority Support
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cog Section Divider */}
+      <div className="py-8 bg-gray-50 flex justify-center items-center">
+        <div className="flex items-center gap-6">
+          <svg className="w-8 h-8 text-purple-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+          <div className="h-px bg-gray-300 w-24"></div>
+          <svg className="w-6 h-6 text-teal-500 animate-spin-reverse" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+          <div className="h-px bg-gray-300 w-24"></div>
+          <svg className="w-8 h-8 text-red-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+        </div>
+      </div>
+
+      {/* Additional Services */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              We Can Also Help With
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Beyond web design, we offer comprehensive digital solutions to support your business growth and online presence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Branding */}
+            <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Branding</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Logo Design
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Brand Design
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Flyers & Marketing Materials
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Business Cards
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Media */}
+            <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Social Media</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Post Creation
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Content Planning
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Customer Interaction
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Account Management
+                </li>
+              </ul>
+            </div>
+
+            {/* SEO */}
+            <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">SEO</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Local Google Business Profile
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Profile Management
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Local Google Ranking Support
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  National Google Ranking Support
+                </li>
+              </ul>
+            </div>
+
+            {/* WordPress Support */}
+            <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">WordPress Support</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  WordPress Maintenance
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Security Updates & Fixes
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Performance Optimisation
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <Link href="/wordpress-web-design-yeovil" className="text-orange-600 hover:text-orange-700">
+                    Custom Rebuilds
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-6">
+              All additional services can be included in your ongoing support package or provided as standalone solutions.
+            </p>
+            <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+              Book a Call to Discuss
+            </BookCallButton>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Serving Businesses Across <span style={{color: '#51AACD'}}>Somerset & Dorset</span>
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Based in Yeovil, we're proud to support businesses throughout Somerset, Dorset, and surrounding counties
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Local Presence</h3>
+              <p className="text-gray-600">Based in Yeovil with deep understanding of the local market</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Wide Coverage</h3>
+              <p className="text-gray-600">Serving Somerset, Dorset, and surrounding counties</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Remote Capable</h3>
+              <p className="text-gray-600">Video calls enable us to serve clients across the UK</p>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <p className="text-gray-700 text-sm">
+              <strong>Primary Service Area:</strong> Yeovil, Taunton, Bridgwater, Glastonbury, Street, Chard, Crewkerne, 
+              Dorchester, Weymouth, Sherborne, Blandford Forum, and surrounding areas within 65 miles
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cog Section Divider */}
+      <div className="py-8 bg-white flex justify-center items-center">
+        <div className="flex items-center gap-6">
+          <svg className="w-8 h-8 text-indigo-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+          <div className="h-px bg-gray-300 w-24"></div>
+          <svg className="w-6 h-6 text-yellow-500 animate-spin-reverse" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+          <div className="h-px bg-gray-300 w-24"></div>
+          <svg className="w-8 h-8 text-pink-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
+          </svg>
+        </div>
+      </div>
+
+      {/* Professional Credentials */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{backgroundColor: '#C4E3EA'}}>
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Professional & Trusted Business
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Your peace of mind is our priority. We're fully registered, insured, and committed to delivering excellence.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Registered Company */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 hover:border-blue-200">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Registered Company</h3>
+                <p className="text-gray-600 mb-4">Companies House registered for your security and peace of mind</p>
+                <div className="px-4 py-2 rounded-lg" style={{backgroundColor: '#C4E3EA'}}>
+                  <span className="text-sm font-semibold" style={{color: '#51AACD'}}>Company No: 15839557</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Fully Insured */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-green-100 hover:border-green-200">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.586-2H6a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2v-4.586a1 1 0 00-.293-.707l-2-2a1 1 0 00-.707-.293z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Fully Insured</h3>
+                <p className="text-gray-600 mb-4">Comprehensive business insurance covering all our services</p>
+                <div className="px-4 py-2 rounded-lg" style={{backgroundColor: '#C4E3EA'}}>
+                  <span className="text-sm font-semibold" style={{color: '#51AACD'}}>Professional Indemnity</span>
+                </div>
+              </div>
+            </div>
+
+            {/* VAT Registered */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-200">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">VAT Registered</h3>
+                <p className="text-gray-600 mb-4">Fully compliant with all tax regulations and requirements</p>
+                <div className="px-4 py-2 rounded-lg" style={{backgroundColor: '#C4E3EA'}}>
+                  <span className="text-sm font-semibold" style={{color: '#51AACD'}}>VAT No: 15839557</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-2xl mx-auto">
+              <p className="text-gray-600 mb-2">
+                <span className="font-semibold text-gray-900">Established 2020</span> • 
+                <span className="font-semibold text-gray-900"> Based in Yeovil, Somerset</span>
+              </p>
+              <p className="text-sm text-gray-500">
+                Serving businesses across the South West with professional web design and digital marketing services
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: '#C4E3EA'}}>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Ready to Start Your Digital Partnership?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Join the growing community of Somerset and Dorset businesses we partner with for long-term success.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <BookCallButton className="text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg shadow-lg" style={{backgroundColor: '#51AACD'}}>
+              Book Your Welcome Call
+            </BookCallButton>
+            <Link
+              href="/blog"
+              className="bg-white border-2 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg" style={{color: '#51AACD', borderColor: '#51AACD'}}
+            >
+              Read Success Stories
+            </Link>
+          </div>
+          <p className="text-sm text-gray-500 mt-4">
+            No commitment • Free consultation • Quick 2-week turnaround
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}

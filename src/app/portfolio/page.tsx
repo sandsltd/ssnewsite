@@ -1,0 +1,1178 @@
+import { Metadata } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
+import CustomerSuccessSection from '@/components/CustomerSuccessSection'
+import BookCallButton from '@/components/BookCallButton'
+
+export const metadata: Metadata = {
+  title: 'Portfolio | Our Work | Saunders Simmons Ltd',
+  description: 'View our portfolio of successful web design projects across Somerset and Dorset. Real client testimonials and case studies from businesses we\'ve helped grow online.',
+  keywords: [
+    'web design portfolio',
+    'client work examples',
+    'Somerset web design case studies',
+    'Dorset website examples',
+    'Yeovil web design portfolio',
+    'customer testimonials',
+    'website redesign before after',
+    'business growth case studies'
+  ].join(', '),
+}
+
+export default function Portfolio() {
+  return (
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
+            Our <span style={{color: '#51AACD'}}>Portfolio</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Discover how we've helped businesses across Somerset and Dorset transform their online presence 
+            and achieve remarkable growth through professional web design and digital marketing.
+          </p>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="p-6 rounded-xl shadow-lg border" style={{backgroundColor: 'white', borderColor: '#51AACD'}}>
+              <div className="text-3xl font-bold mb-2" style={{color: '#51AACD'}}>100's</div>
+              <div className="text-gray-600">Happy Clients</div>
+            </div>
+            <div className="p-6 rounded-xl shadow-lg border" style={{backgroundColor: 'white', borderColor: '#51AACD'}}>
+              <div className="text-3xl font-bold mb-2" style={{color: '#51AACD'}}>5.0</div>
+              <div className="text-gray-600">Google Rating</div>
+            </div>
+            <div className="p-6 rounded-xl shadow-lg border" style={{backgroundColor: 'white', borderColor: '#51AACD'}}>
+              <div className="text-3xl font-bold mb-2" style={{color: '#51AACD'}}>300%</div>
+              <div className="text-gray-600">Average ROI</div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <BookCallButton className="text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg" style={{backgroundColor: '#51AACD'}}>
+              Start Your Project
+            </BookCallButton>
+            <Link 
+              href="#success-stories"
+              className="bg-white border-2 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg"
+              style={{color: '#51AACD', borderColor: '#51AACD'}}
+            >
+              View Our Work
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Featured Case Studies */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Featured <span style={{color: '#51AACD'}}>Case Studies</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real projects, real results. See how we've transformed businesses across Somerset and Dorset.
+            </p>
+          </div>
+
+          {/* BSR Decorating Case Study */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center">
+                <Image 
+                  src="/portfolio/bsrdecorating.png" 
+                  alt="BSR Decorating Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={80}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 left-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+              
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    BSR Decorating
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Decorating Services</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    A modern, professional website for a leading decorating company, designed to showcase 
+                    their expertise and attract new customers across Somerset and the surrounding areas.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Modern</div>
+                    <div className="text-sm text-gray-600">Design</div>
+                  </div>
+                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Mobile</div>
+                    <div className="text-sm text-gray-600">Optimised</div>
+                  </div>
+                </div>
+
+                {/* Services Provided */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Services Provided:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Custom Website Design
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Mobile Responsive Development
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      SEO Optimisation
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Professional Hosting
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.bsrdecorating.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Diamond Vision Cleaning Case Study */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    Diamond Vision Cleaning
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Exterior Cleaning Services</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    A comprehensive website for a leading exterior cleaning company serving Yeovil and surrounding areas. 
+                    Features advanced booking systems, before/after galleries, and comprehensive service showcases.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>25+</div>
+                    <div className="text-xs text-gray-600">Service Areas</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>8</div>
+                    <div className="text-xs text-gray-600">Services</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Pro</div>
+                    <div className="text-xs text-gray-600">Features</div>
+                  </div>
+                </div>
+
+                {/* Key Features */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Before & After Image Gallery
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Free Quote System
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Customer Testimonials
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Service Area Coverage Map
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.diamondvisioncleaning.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+              
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
+                <Image 
+                  src="/portfolio/diamondvisionexteriorcleaning.png" 
+                  alt="Diamond Vision Cleaning Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 right-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Lotus Beauty Lounge Case Study */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center">
+                <Image 
+                  src="/portfolio/lotusbeautylounge.png" 
+                  alt="Lotus Beauty Lounge Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 left-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+              
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    Lotus Beauty Lounge
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Premium Beauty & Wellness Services</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    An elegant and sophisticated website for a premium beauty salon, designed to showcase luxury 
+                    treatments and create an online booking experience that matches their high-end service quality.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Elegant</div>
+                    <div className="text-sm text-gray-600">Design</div>
+                  </div>
+                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Luxury</div>
+                    <div className="text-sm text-gray-600">Experience</div>
+                  </div>
+                </div>
+
+                {/* Services Provided */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Services Provided:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Luxury Website Design
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Online Booking System
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Service Showcase
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Mobile Optimisation
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.lotusbeautylounge.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Success Stories Break */}
+      <div id="success-stories">
+        <CustomerSuccessSection 
+          title="Client Success Stories & Testimonials"
+          subtitle="Real results from real businesses. Hear directly from our clients about how our web design and digital marketing solutions have transformed their companies."
+          showVideoTestimonials={true}
+          showMoreSuccessStories={false}
+        />
+      </div>
+
+      {/* More Portfolio Projects */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              More <span style={{color: '#51AACD'}}>Portfolio Projects</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Continuing our showcase of successful projects across diverse industries and business types.
+            </p>
+          </div>
+
+          {/* SK Taxi Case Study */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    SK Taxi
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Taxi & Transport Services</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    A modern, user-friendly website for a reliable taxi service, designed to make booking quick and easy 
+                    while showcasing their professional transport solutions across Somerset and surrounding areas.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>24/7</div>
+                    <div className="text-xs text-gray-600">Service</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Easy</div>
+                    <div className="text-xs text-gray-600">Booking</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Local</div>
+                    <div className="text-xs text-gray-600">Coverage</div>
+                  </div>
+                </div>
+
+                {/* Key Features */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Quick Booking System
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Service Area Coverage
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Contact Integration
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Mobile-First Design
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.sktaxi.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+              
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
+                <Image 
+                  src="/portfolio/sktaxis.png" 
+                  alt="SK Taxi Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 right-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Chris Letts Plumbing Case Study */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center">
+                <Image 
+                  src="/portfolio/chrislettsplumbing.png" 
+                  alt="Chris Letts Plumbing Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 left-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+              
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    Chris Letts Plumbing
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Plumbing & Heating Services</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    A professional website for an experienced plumber, designed to build trust and make it easy for 
+                    customers to find reliable plumbing services across Somerset and surrounding areas.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Trusted</div>
+                    <div className="text-sm text-gray-600">Local Expert</div>
+                  </div>
+                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Emergency</div>
+                    <div className="text-sm text-gray-600">Call-outs</div>
+                  </div>
+                </div>
+
+                {/* Services Provided */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Services Provided:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Professional Website Design
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Service Showcase
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Emergency Contact System
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Local SEO Optimisation
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.chrislettsplumbing.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bickerstaff Solutions Case Study */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    Bickerstaff Solutions
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Business Solutions</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    A sophisticated corporate website designed to showcase professional business solutions and 
+                    consulting services, built to establish credibility and attract high-value clients.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Pro</div>
+                    <div className="text-xs text-gray-600">Corporate</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Expert</div>
+                    <div className="text-xs text-gray-600">Solutions</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>B2B</div>
+                    <div className="text-xs text-gray-600">Focus</div>
+                  </div>
+                </div>
+
+                {/* Key Features */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Corporate Website Design
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Professional Credibility
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Service Portfolio
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Lead Generation Forms
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.bickerstaffsolutions.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+              
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
+                <Image 
+                  src="/portfolio/bickerstaffsolutions.png" 
+                  alt="Bickerstaff Solutions Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 right-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* More Success Stories Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              More <span style={{color: '#51AACD'}}>Success Stories</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real reviews from our satisfied clients across diverse industries
+            </p>
+          </div>
+
+          {/* Reviews Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Review 1 - Sheldon J. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4" style={{borderLeftColor: '#51AACD'}}>
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "These guys built my website so well and fast that I was shocked. Literally helped so much for business."
+              </p>
+              <div>
+                <p className="text-gray-900 font-semibold">Sheldon J.</p>
+                <p className="text-gray-600 text-sm">Barber Shop Owner</p>
+              </div>
+            </div>
+
+            {/* Review 2 - Natalie L. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "From start to finish Nick and Dan have been fab! All package options were explained from day 1 with zero hidden fees. They brought my vision to life!"
+              </p>
+              <div>
+                <p className="text-gray-900 font-semibold">Natalie L.</p>
+                <p className="text-gray-600 text-sm">Hair & Beauty Salon</p>
+              </div>
+            </div>
+
+            {/* Review 3 - Nicky S. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-orange-500">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "Absolutely brilliant, Nick & Dan are very helpful & have made a fantastic website for me, I am so pleased with it, definitely recommend."
+              </p>
+              <div>
+                <p className="text-gray-900 font-semibold">Nicky S.</p>
+                <p className="text-gray-600 text-sm">Kinesiology Practitioner</p>
+              </div>
+            </div>
+
+            {/* Review 4 - Emily S. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4" style={{borderLeftColor: '#51AACD'}}>
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "I'm so thrilled with the website! Nick and Dan have been approachable, flexible, creative and thoughtful throughout. I cannot recommend them more highly!"
+              </p>
+              <div>
+                <p className="text-gray-900 font-semibold">Emily S.</p>
+                <p className="text-gray-600 text-sm">Forest School</p>
+              </div>
+            </div>
+
+            {/* Review 5 - Tracy Y. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "From Day 1 communication was so easy. Being a 'technophobe', they explained everything clearly and made the whole process simple and stress-free."
+              </p>
+              <div>
+                <p className="text-gray-900 font-semibold">Tracy Y.</p>
+                <p className="text-gray-600 text-sm">Cafe Owner</p>
+              </div>
+            </div>
+
+            {/* Review 6 - Jeannette H. */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-orange-500">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4 leading-relaxed">
+                "In just a few days I had a fantastic, well written and user friendly website. It was like magic. Dan and Nick make it all look so easy."
+              </p>
+              <div>
+                <p className="text-gray-900 font-semibold">Jeannette H.</p>
+                <p className="text-gray-600 text-sm">Animal Rescue Centre</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Google Rating Summary */}
+          <div className="text-center">
+            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-xl shadow-lg border-l-4" style={{backgroundColor: '#C4E3EA', borderLeftColor: '#51AACD'}}>
+              <span className="text-3xl font-bold text-gray-900">5.0 stars</span>
+              <span className="text-gray-600">from 100+ happy clients on Google</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cross Cut Shredding Case Study */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Additional <span style={{color: '#51AACD'}}>Portfolio Project</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Another successful project showcasing our expertise across different business sectors.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center">
+                <Image 
+                  src="/portfolio/crosscutshreddingltd.png" 
+                  alt="Cross Cut Shredding Ltd Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 left-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+              
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    Cross Cut Shredding Ltd
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Document Shredding Services</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    A secure and professional website for a leading document shredding company, designed to build trust 
+                    and showcase their comprehensive data destruction and confidential waste management services.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Secure</div>
+                    <div className="text-xs text-gray-600">Data Destruction</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Trust</div>
+                    <div className="text-xs text-gray-600">Building</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>GDPR</div>
+                    <div className="text-xs text-gray-600">Compliant</div>
+                  </div>
+                </div>
+
+                {/* Key Features */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Professional Website Design
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Security & Trust Focus
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Service Area Coverage
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      GDPR Compliance Focus
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.crosscutshredding.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Lodge House B&B Somerset Case Study */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                <div className="mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                    Lodge House B&B Somerset
+                  </h3>
+                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Luxury Bed & Breakfast Accommodation</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    An elegant and welcoming website for a premium bed & breakfast in Somerset, designed to showcase 
+                    luxury accommodations and attract guests seeking a peaceful countryside retreat.
+                  </p>
+                </div>
+
+                {/* Key Results */}
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Luxury</div>
+                    <div className="text-xs text-gray-600">Experience</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Booking</div>
+                    <div className="text-xs text-gray-600">System</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
+                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Local</div>
+                    <div className="text-xs text-gray-600">Tourism</div>
+                  </div>
+                </div>
+
+                {/* Key Features */}
+                <div className="mb-8">
+                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Luxury Hospitality Design
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Room Showcase Gallery
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Online Booking Integration
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Local Area Information
+                    </li>
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://www.lodgehousebandbsomerset.co.uk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
+                    style={{backgroundColor: '#51AACD'}}
+                  >
+                    Visit Website
+                  </a>
+                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+                    Start Your Project
+                  </BookCallButton>
+                </div>
+              </div>
+              
+              {/* Image Section */}
+              <div className="relative bg-gray-100 p-4 flex items-center justify-center order-1 lg:order-2">
+                <Image 
+                  src="/portfolio/lodgehouseb&b.png" 
+                  alt="Lodge House B&B Somerset Website Design"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain max-w-full"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                />
+                <div className="absolute top-8 right-8">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Live Project
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coming Soon Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            More Case Studies <span style={{color: '#51AACD'}}>Coming Soon</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+            We're constantly working on exciting new projects and gathering amazing results for our clients. 
+            Check back soon for more detailed case studies, before & after showcases, and client stories.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Coming Soon Item 1 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2" style={{borderColor: '#51AACD'}}>
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Detailed Case Studies</h3>
+              <p className="text-gray-600">
+                In-depth analysis of our most successful projects, including challenges, solutions, and measurable results.
+              </p>
+            </div>
+
+            {/* Coming Soon Item 2 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2" style={{borderColor: '#51AACD'}}>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Before & After Showcases</h3>
+              <p className="text-gray-600">
+                Visual transformations showing the dramatic improvements we've made to client websites and their impact.
+              </p>
+            </div>
+
+            {/* Coming Soon Item 3 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2" style={{borderColor: '#51AACD'}}>
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">ROI & Performance Data</h3>
+              <p className="text-gray-600">
+                Real metrics and performance improvements our clients have achieved, including traffic, conversions, and revenue growth.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <p className="text-gray-600 mb-6">
+              Want to be featured in our next case study?
+            </p>
+            <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
+              Start Your Success Story
+            </BookCallButton>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Reviews CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span className="text-2xl font-bold text-gray-900 ml-3">5.0</span>
+            <span className="text-lg text-gray-600">• 100's Happy Clients</span>
+          </div>
+          
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            See What Our <span style={{color: '#51AACD'}}>Real Clients</span> Say
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Read authentic reviews from businesses we've helped transform across Somerset and Dorset.
+          </p>
+          
+          <Link 
+            href="https://share.google/wcU0M8ghl2JDHbQh3" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl"
+            style={{backgroundColor: '#51AACD'}}
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            View Our Google Reviews
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #51AACD 0%, #4A9BC4 100%)'}}>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Ready to Join Our Portfolio?
+          </h2>
+          <p className="text-xl mb-8" style={{color: '#C4E3EA'}}>
+            Let's create your success story. From website design to digital marketing, 
+            we'll help your business achieve remarkable growth online.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: 'white', color: '#51AACD'}}>
+              Book Your Free Consultation
+            </BookCallButton>
+            <Link 
+              href="/services"
+              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:opacity-90 transition-all duration-200"
+              style={{'--hover-text-color': '#51AACD'} as React.CSSProperties}
+            >
+              View Our Services
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
