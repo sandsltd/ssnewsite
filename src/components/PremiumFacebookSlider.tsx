@@ -25,6 +25,7 @@ export default function PremiumFacebookSlider() {
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [expandedPosts, setExpandedPosts] = useState<Set<string>>(new Set());
   
   const postsPerPage = 3; // Show 3 posts at a time
   const totalPages = Math.ceil(posts.length / postsPerPage);
@@ -98,6 +99,37 @@ export default function PremiumFacebookSlider() {
   const getCurrentPosts = () => {
     const startIndex = currentPage * postsPerPage;
     return posts.slice(startIndex, startIndex + postsPerPage);
+  };
+
+  const togglePostExpansion = (postId: string) => {
+    setExpandedPosts(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(postId)) {
+        newSet.delete(postId);
+      } else {
+        newSet.add(postId);
+      }
+      return newSet;
+    });
+  };
+
+  const isPostExpanded = (postId: string) => expandedPosts.has(postId);
+  
+  const getDisplayMessage = (post: FacebookPost) => {
+    if (!post.message) return "Check out our latest update! 🚀";
+    
+    const isExpanded = isPostExpanded(post.id);
+    const maxLength = 120;
+    
+    if (post.message.length <= maxLength || isExpanded) {
+      return post.message;
+    }
+    
+    return post.message.slice(0, maxLength) + '...';
+  };
+
+  const shouldShowMoreButton = (post: FacebookPost) => {
+    return post.message && post.message.length > 120;
   };
 
   if (loading) {
@@ -259,11 +291,18 @@ export default function PremiumFacebookSlider() {
 
                   {/* Post Message */}
                   <p className="text-gray-800 text-sm leading-relaxed mb-4">
-                    {post.message 
-                      ? truncateMessage(post.message)
-                      : "Check out our latest update! 🚀"
-                    }
+                    {getDisplayMessage(post)}
                   </p>
+
+                  {/* Show More/Less Button */}
+                  {shouldShowMoreButton(post) && (
+                    <button
+                      onClick={() => togglePostExpansion(post.id)}
+                      className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors duration-200 mb-3 block"
+                    >
+                      {isPostExpanded(post.id) ? 'Show Less' : 'Show More'}
+                    </button>
+                  )}
 
                   {/* View Post Button */}
                   {post.permalink_url && (
