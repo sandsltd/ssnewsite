@@ -510,17 +510,6 @@ export default function Home() {
           
           <PremiumFacebookSlider />
           
-          <div className="text-center mt-12">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/services"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold shadow-lg"
-              >
-                Get Similar Results
-              </a>
-              <BookCallButton>Book a Call</BookCallButton>
-            </div>
-          </div>
         </div>
       </section>
 

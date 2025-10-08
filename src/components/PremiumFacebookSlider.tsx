@@ -216,12 +216,22 @@ export default function PremiumFacebookSlider() {
                     />
                   </div>
                 ) : (
-                  <div className="aspect-video bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <svg className="w-12 h-12 text-blue-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 8h10m0 0V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2m10 0v10a2 2 0 01-2 2H9a2 2 0 01-2-2V8m4 7h4" />
-                      </svg>
-                      <p className="text-blue-600 text-sm font-medium">Text Post</p>
+                  <div className="aspect-video bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 flex items-center justify-center relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full opacity-20"></div>
+                      <div className="absolute bottom-6 left-6 w-6 h-6 bg-white rounded-full opacity-15"></div>
+                      <div className="absolute top-8 left-8 w-4 h-4 bg-white rounded-full opacity-25"></div>
+                    </div>
+                    
+                    <div className="text-center relative z-10">
+                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
+                        <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                      </div>
+                      <p className="text-white font-semibold text-sm">Saunders Simmons</p>
+                      <p className="text-blue-200 text-xs">Business Update</p>
                     </div>
                   </div>
                 )}
