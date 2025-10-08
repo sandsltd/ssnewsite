@@ -27,7 +27,7 @@ export default function FacebookTimeline() {
           <div
             className="fb-page"
             data-href="https://www.facebook.com/p/Saunders-Simmons-Ltd-61560266678495/"
-            data-tabs="timeline"
+            data-tabs="timeline,events,messages"
             data-width="600"
             data-height="500"
             data-small-header="false"
