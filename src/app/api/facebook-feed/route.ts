@@ -70,7 +70,8 @@ export async function GET() {
     // Check if we have the required Page Access Token
     if (!PAGE_ACCESS_TOKEN) {
       console.log('Missing Page Access Token - attempting to get fresh token');
-      PAGE_ACCESS_TOKEN = await refreshTokenIfNeeded();
+      const refreshedToken = await refreshTokenIfNeeded();
+      PAGE_ACCESS_TOKEN = refreshedToken || undefined;
       
       if (!PAGE_ACCESS_TOKEN) {
         console.log('Unable to get valid token - using mock data');
