@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import BookCallButton from "../components/BookCallButton";
-import CustomFacebookFeed from "../components/CustomFacebookFeed";
+import PremiumFacebookSlider from "../components/PremiumFacebookSlider";
 
 export default function Home() {
   return (
@@ -508,7 +508,7 @@ export default function Home() {
             </p>
           </div>
           
-          <CustomFacebookFeed />
+          <PremiumFacebookSlider />
           
           <div className="text-center mt-12">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

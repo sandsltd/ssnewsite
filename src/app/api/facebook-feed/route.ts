@@ -1,8 +1,66 @@
 import { NextResponse } from 'next/server';
 
+async function refreshTokenIfNeeded(): Promise<string | null> {
+  try {
+    console.log('Attempting to refresh Facebook token...');
+    const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3002';
+    const refreshResponse = await fetch(`${baseUrl}/api/facebook-refresh-token`, {
+      method: 'POST',
+    });
+
+    if (refreshResponse.ok) {
+      const refreshData = await refreshResponse.json();
+      if (refreshData.success) {
+        // Try page token first, then user token
+        const newToken = refreshData.pageToken || refreshData.userToken;
+        if (newToken) {
+          console.log('Token refreshed successfully');
+          return newToken;
+        }
+      } else {
+        console.log('Token refresh failed:', refreshData.error);
+      }
+    }
+    
+    console.log('Token refresh failed');
+    return null;
+  } catch (error) {
+    console.error('Error refreshing token:', error);
+    return null;
+  }
+}
+
+async function fetchFacebookPosts(token: string, pageId: string, retryCount = 0): Promise<any> {
+  const response = await fetch(
+    `https://graph.facebook.com/v18.0/${pageId}/posts?fields=id,message,created_time,permalink_url,likes.summary(true),comments.summary(true),full_picture&access_token=${token}&limit=5`,
+    {
+      next: { revalidate: 300 } // Cache for 5 minutes
+    }
+  );
+
+  if (response.ok) {
+    return await response.json();
+  }
+
+  // If token is invalid and we haven't retried yet, try refreshing
+  if (response.status === 401 && retryCount === 0) {
+    console.log('Token appears to be expired, attempting refresh...');
+    const newToken = await refreshTokenIfNeeded();
+    
+    if (newToken) {
+      console.log('Retrying with refreshed token...');
+      return await fetchFacebookPosts(newToken, pageId, retryCount + 1);
+    }
+  }
+
+  const errorText = await response.text();
+  console.log('Facebook API failed with status:', response.status, 'Response:', errorText);
+  throw new Error(`Facebook API error: ${response.status}`);
+}
+
 export async function GET() {
   try {
-    const PAGE_ACCESS_TOKEN = process.env.FB_TOKEN;
+    let PAGE_ACCESS_TOKEN = process.env.FB_TOKEN;
     const PAGE_ID = process.env.FB_PAGE_ID || '318228154711710'; // Correct Saunders Simmons Ltd Page ID
     
     console.log('Facebook API using Page Access Token');
@@ -11,32 +69,24 @@ export async function GET() {
     
     // Check if we have the required Page Access Token
     if (!PAGE_ACCESS_TOKEN) {
-      console.log('Missing Page Access Token - using mock data');
-      throw new Error('Page Access Token not configured');
+      console.log('Missing Page Access Token - attempting to get fresh token');
+      PAGE_ACCESS_TOKEN = await refreshTokenIfNeeded();
+      
+      if (!PAGE_ACCESS_TOKEN) {
+        console.log('Unable to get valid token - using mock data');
+        throw new Error('Page Access Token not configured and refresh failed');
+      }
     }
     
-    // Fetch posts directly using the correct Page ID and Page Access Token
-    const response = await fetch(
-      `https://graph.facebook.com/v18.0/${PAGE_ID}/posts?fields=id,message,created_time,permalink_url,likes.summary(true),comments.summary(true),full_picture&access_token=${PAGE_ACCESS_TOKEN}&limit=5`,
-      {
-        next: { revalidate: 300 } // Cache for 5 minutes
-      }
-    );
-
-    if (response.ok) {
-      const data = await response.json();
-      
-      return NextResponse.json({
-        posts: data.data || [],
-        success: true,
-        source: 'facebook_page_api',
-        total: data.data?.length || 0
-      });
-    } else {
-      const errorText = await response.text();
-      console.log('Facebook API failed with status:', response.status, 'Response:', errorText);
-      throw new Error(`Facebook API error: ${response.status}`);
-    }
+    // Fetch posts with automatic token refresh on failure
+    const data = await fetchFacebookPosts(PAGE_ACCESS_TOKEN, PAGE_ID);
+    
+    return NextResponse.json({
+      posts: data.data || [],
+      success: true,
+      source: 'facebook_page_api',
+      total: data.data?.length || 0
+    });
 
   } catch (error) {
     console.error('Facebook API error:', error);
