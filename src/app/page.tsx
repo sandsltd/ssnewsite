@@ -1,19 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import BookCallButton from "../components/BookCallButton";
-import Script from "next/script";
+import CustomFacebookFeed from "../components/CustomFacebookFeed";
 
 export default function Home() {
   return (
     <div className="bg-white">
-      {/* Facebook SDK Script */}
-      <Script
-        async
-        defer
-        crossOrigin="anonymous"
-        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v23.0"
-        strategy="afterInteractive"
-      />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
         {/* Background Pattern */}
@@ -98,6 +90,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SVG Wave Transition */}
+      <div className="relative -mt-1">
+        <svg 
+          className="w-full h-20 sm:h-32" 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor:'#C4E3EA', stopOpacity:1}} />
+              <stop offset="50%" style={{stopColor:'#ffffff', stopOpacity:1}} />
+              <stop offset="100%" style={{stopColor:'#C4E3EA', stopOpacity:1}} />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="white" />
+          <path 
+            d="M0,0 C300,60 900,-40 1200,0 L1200,0 L0,0 Z" 
+            fill="url(#heroGradient)"
+          />
+        </svg>
+      </div>
 
       {/* Services Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
@@ -270,6 +284,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Flowing SVG Transition to Software */}
+      <div className="relative -mt-1">
+        <svg 
+          className="w-full h-16 sm:h-24" 
+          viewBox="0 0 1200 80" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,40 Q600,80 1200,40 L1200,80 L0,80 Z" 
+            fill="#C4E3EA"
+          />
+        </svg>
+      </div>
+
       {/* Our Software Products */}
       <section className="py-16 px-4 sm:px-6 lg:px-8" style={{backgroundColor: '#C4E3EA'}}>
         <div className="max-w-6xl mx-auto">
@@ -358,6 +386,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Layered Wave Transition to About */}
+      <div className="relative">
+        <svg 
+          className="w-full h-20 sm:h-32" 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none"
+          style={{backgroundColor: '#C4E3EA'}}
+        >
+          <path 
+            d="M0,80 C400,40 800,120 1200,80 L1200,120 L0,120 Z" 
+            fill="white"
+            opacity="0.7"
+          />
+          <path 
+            d="M0,90 C300,50 900,130 1200,90 L1200,120 L0,120 Z" 
+            fill="white"
+          />
+        </svg>
+      </div>
+
       {/* About Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -378,11 +426,10 @@ export default function Home() {
                   src="https://www.youtube.com/embed/TZvty_HAWCY?rel=0"
                   title="Meet Nick & Dan - Saunders Simmons Ltd"
                   className="w-full h-full"
-                  frameBorder="0"
+                  style={{ border: 0, minHeight: '200px' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   loading="lazy"
-                  style={{ minHeight: '200px' }}
                 ></iframe>
                 <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
                   Meet Nick & Dan
@@ -460,31 +507,11 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="flex justify-center">
-            <div 
-              className="fb-page"
-              data-href="https://www.facebook.com/profile.php?id=61560266678495"
-              data-tabs="timeline"
-              data-width="500"
-              data-height="650"
-              data-small-header="false"
-              data-hide-cover="false"
-              data-show-facepile="true"
-            >
-              <blockquote 
-                cite="https://www.facebook.com/profile.php?id=61560266678495"
-                className="fb-xfbml-parse-ignore"
-              >
-                <a href="https://www.facebook.com/profile.php?id=61560266678495">
-                  Facebook Page
-                </a>
-              </blockquote>
-            </div>
-          </div>
+          <CustomFacebookFeed />
           
           <div className="text-center mt-8">
             <a
-              href="https://www.facebook.com/profile.php?id=61560266678495"
+              href="https://www.facebook.com/p/Saunders-Simmons-Ltd-61560266678495/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
@@ -497,6 +524,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Diagonal Flow Transition to CTA */}
+      <div className="relative">
+        <svg 
+          className="w-full h-24 sm:h-40" 
+          viewBox="0 0 1200 160" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,0 L1200,80 L1200,160 L0,160 Z" 
+            fill="#C4E3EA"
+          />
+          <path 
+            d="M0,20 Q600,60 1200,100 L1200,160 L0,160 Z" 
+            fill="#C4E3EA"
+            opacity="0.8"
+          />
+        </svg>
+      </div>
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: '#C4E3EA'}}>

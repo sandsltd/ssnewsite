@@ -1,0 +1,63 @@
+Subject: Facebook Graph API Access Issue - Need Your Expertise
+
+Hi there,
+
+Hope you're doing well! I'm reaching out for some advice on a Facebook Graph API integration that's giving us trouble.
+
+**The Situation:**
+We're trying to build a custom Facebook feed for Saunders Simmons Ltd's website that fetches posts via the Graph API and displays them in a custom design. The page is accessible fine through the browser at:
+https://www.facebook.com/p/Saunders-Simmons-Ltd-61560266678495/
+
+**What We've Set Up:**
+- Facebook App ID: 662460463226099
+- App Secret: [configured in environment]
+- Successfully obtaining App Access Token via client_credentials flow
+- Using Graph API v18.0
+- Content Security Policy properly configured to allow Facebook domains
+
+**The Problem:**
+Despite having valid credentials and access token, every API call to the page returns:
+```json
+{
+  "error": {
+    "message": "Unsupported get request. Object with ID '61560266678495' does not exist, cannot be loaded due to missing permissions, or does not support this operation.",
+    "type": "GraphMethodException",
+    "code": 100,
+    "error_subcode": 33
+  }
+}
+```
+
+**What We've Tried:**
+1. ✅ Verified environment variables are loading correctly
+2. ✅ Successfully obtaining App Access Token 
+3. ✅ Tested multiple page ID variations:
+   - 61560266678495 (from URL)
+   - Saunders-Simmons-Ltd 
+   - SaundersSimmons
+   - saunders.simmons.ltd
+4. ✅ Tried both basic page info endpoint and posts endpoint
+5. ✅ Double-checked CSP headers allow Facebook domains
+
+**API Endpoints Tested:**
+- `https://graph.facebook.com/v18.0/61560266678495?fields=id,name,about&access_token={token}`
+- `https://graph.facebook.com/v18.0/61560266678495/posts?fields=id,message,created_time&access_token={token}`
+
+**Questions:**
+1. Is there something specific about this page type that prevents Graph API access?
+2. Do we need different permissions or app configuration?
+3. Could this be a personal profile vs business page issue?
+4. Is there a way to find the "real" Graph API page ID that differs from the URL ID?
+5. Do we need to submit the app for review to access public page content?
+
+The browser access works fine, but the API consistently fails. Any insights would be hugely appreciated!
+
+**Current Workaround:**
+We've implemented professional mock data that looks authentic, but would prefer real API integration if possible.
+
+Thanks for any advice you can offer!
+
+Best regards,
+[Your name]
+
+P.S. Happy to jump on a quick call if that's easier to troubleshoot.

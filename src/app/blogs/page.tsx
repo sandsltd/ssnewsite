@@ -101,7 +101,7 @@ async function getBlogPosts(): Promise<BlogPost[]> {
           title: data.title || 'Untitled',
           date: data.date || new Date().toISOString(),
           excerpt: data.excerpt || '',
-          image: data.image,
+          image: '/logos/logo.png',
           readingTime: data.readingTime,
           tags: data.tags || []
         };
