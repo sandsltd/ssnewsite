@@ -109,10 +109,6 @@ export default function CustomFacebookFeed() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-8">
-        <h4 className="text-2xl font-bold text-gray-900 mb-3">Follow Our Digital Journey</h4>
-        <p className="text-gray-600">See what we're creating for businesses across Somerset & Dorset</p>
-      </div>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {posts.slice(0, 3).map((post) => (
@@ -143,11 +139,12 @@ export default function CustomFacebookFeed() {
                 </div>
               </div>
               
-              {post.message && (
-                <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  {truncateMessage(post.message)}
-                </p>
-              )}
+              <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                {post.message 
+                  ? truncateMessage(post.message)
+                  : "Check out our latest update!"
+                }
+              </p>
               
               <div className="flex items-center justify-between text-xs text-gray-500">
                 <div className="flex items-center gap-3">
@@ -176,32 +173,6 @@ export default function CustomFacebookFeed() {
             </div>
           </article>
         ))}
-      </div>
-
-      <div className="text-center">
-        <p className="text-gray-600 mb-4">
-          This showcases the real results we deliver for our clients. 
-          <strong> Your business could be our next success story!</strong>
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="https://www.facebook.com/profile.php?id=61560266678495"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold shadow-lg"
-          >
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            Follow Us on Facebook
-          </a>
-          <a
-            href="/services"
-            className="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold"
-          >
-            Get Similar Results
-          </a>
-        </div>
       </div>
     </div>
   );
