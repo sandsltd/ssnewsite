@@ -23,42 +23,58 @@ export default function Portfolio() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-            Our <span style={{color: '#51AACD'}}>Portfolio</span>
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 portfolio-hero-gradient relative">
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">Our Work</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Our <span className="text-[#51AACD]">Portfolio</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Discover how we've helped businesses across Somerset and Dorset transform their online presence 
+          <p className="text-lg sm:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+            Discover how we've helped businesses across the UK transform their online presence 
             and achieve remarkable growth through professional web design and digital marketing.
           </p>
           
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-            <div className="p-6 rounded-xl shadow-lg border" style={{backgroundColor: 'white', borderColor: '#51AACD'}}>
-              <div className="text-3xl font-bold mb-2" style={{color: '#51AACD'}}>100's</div>
-              <div className="text-gray-600">Happy Clients</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto mb-12">
+            <div className="portfolio-stat-card p-8 rounded-2xl shadow-lg">
+              <div className="text-4xl lg:text-5xl font-extrabold mb-3 text-[#51AACD]">100's</div>
+              <div className="text-gray-700 font-semibold text-lg">Happy Clients</div>
             </div>
-            <div className="p-6 rounded-xl shadow-lg border" style={{backgroundColor: 'white', borderColor: '#51AACD'}}>
-              <div className="text-3xl font-bold mb-2" style={{color: '#51AACD'}}>5.0</div>
-              <div className="text-gray-600">Google Rating</div>
+            <div className="portfolio-stat-card p-8 rounded-2xl shadow-lg">
+              <div className="text-4xl lg:text-5xl font-extrabold mb-3 text-[#51AACD]">5.0</div>
+              <div className="text-gray-700 font-semibold text-lg">Google Rating</div>
             </div>
-            <div className="p-6 rounded-xl shadow-lg border" style={{backgroundColor: 'white', borderColor: '#51AACD'}}>
-              <div className="text-3xl font-bold mb-2" style={{color: '#51AACD'}}>300%</div>
-              <div className="text-gray-600">Average ROI</div>
+            <div className="portfolio-stat-card p-8 rounded-2xl shadow-lg">
+              <div className="text-4xl lg:text-5xl font-extrabold mb-3 text-[#51AACD]">300%</div>
+              <div className="text-gray-700 font-semibold text-lg">Average ROI</div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookCallButton className="text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg" style={{backgroundColor: '#51AACD'}}>
-              Start Your Project
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center">
+            <BookCallButton className="hero-cta-primary text-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group mx-auto sm:mx-0">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span>Start Your Project</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </BookCallButton>
             <Link 
               href="#success-stories"
-              className="bg-white border-2 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg"
-              style={{color: '#51AACD', borderColor: '#51AACD'}}
+              className="hero-cta-secondary text-[#51AACD] px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group mx-auto sm:mx-0"
             >
-              View Our Work
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              <span>View Our Work</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
         </div>
@@ -66,19 +82,23 @@ export default function Portfolio() {
 
 
       {/* Featured Case Studies */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Featured <span style={{color: '#51AACD'}}>Case Studies</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Featured Projects</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              Featured <span className="text-[#51AACD]">Case Studies</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Real projects, real results. See how we've transformed businesses across Somerset and Dorset.
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+              Real projects, real results. See how we've transformed businesses across the UK.
             </p>
           </div>
 
           {/* BSR Decorating Case Study */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
@@ -105,7 +125,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     BSR Decorating
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Decorating Services</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Professional Decorating Services</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     A modern, professional website for a leading decorating company, designed to showcase 
                     their expertise and attract new customers across Somerset and the surrounding areas.
@@ -114,13 +134,13 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Modern</div>
-                    <div className="text-sm text-gray-600">Design</div>
+                  <div className="portfolio-feature-box text-center p-5 rounded-xl">
+                    <div className="text-2xl font-bold mb-1 text-[#51AACD]">Modern</div>
+                    <div className="text-sm text-gray-700 font-medium">Design</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Mobile</div>
-                    <div className="text-sm text-gray-600">Optimised</div>
+                  <div className="portfolio-feature-box text-center p-5 rounded-xl">
+                    <div className="text-2xl font-bold mb-1 text-[#51AACD]">Mobile</div>
+                    <div className="text-sm text-gray-700 font-medium">Optimised</div>
                   </div>
                 </div>
 
@@ -161,13 +181,18 @@ export default function Portfolio() {
                     href="https://www.bsrdecorating.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -175,7 +200,7 @@ export default function Portfolio() {
           </div>
 
           {/* Diamond Vision Cleaning Case Study */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Content Section */}
               <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
@@ -183,7 +208,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     Diamond Vision Cleaning
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Exterior Cleaning Services</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Professional Exterior Cleaning Services</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     A comprehensive website for a leading exterior cleaning company serving Yeovil and surrounding areas. 
                     Features advanced booking systems, before/after galleries, and comprehensive service showcases.
@@ -192,17 +217,17 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-3 gap-3 mb-8">
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>25+</div>
-                    <div className="text-xs text-gray-600">Service Areas</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">25+</div>
+                    <div className="text-xs text-gray-700 font-medium">Service Areas</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>8</div>
-                    <div className="text-xs text-gray-600">Services</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">8</div>
+                    <div className="text-xs text-gray-700 font-medium">Services</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Pro</div>
-                    <div className="text-xs text-gray-600">Features</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Pro</div>
+                    <div className="text-xs text-gray-700 font-medium">Features</div>
                   </div>
                 </div>
 
@@ -243,13 +268,18 @@ export default function Portfolio() {
                     href="https://www.diamondvisioncleaning.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -276,7 +306,7 @@ export default function Portfolio() {
           </div>
 
           {/* Lotus Beauty Lounge Case Study */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
@@ -303,7 +333,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     Lotus Beauty Lounge
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Premium Beauty & Wellness Services</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Premium Beauty & Wellness Services</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     An elegant and sophisticated website for a premium beauty salon, designed to showcase luxury 
                     treatments and create an online booking experience that matches their high-end service quality.
@@ -312,13 +342,13 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Elegant</div>
-                    <div className="text-sm text-gray-600">Design</div>
+                  <div className="portfolio-feature-box text-center p-5 rounded-xl">
+                    <div className="text-2xl font-bold mb-1 text-[#51AACD]">Elegant</div>
+                    <div className="text-sm text-gray-700 font-medium">Design</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Luxury</div>
-                    <div className="text-sm text-gray-600">Experience</div>
+                  <div className="portfolio-feature-box text-center p-5 rounded-xl">
+                    <div className="text-2xl font-bold mb-1 text-[#51AACD]">Luxury</div>
+                    <div className="text-sm text-gray-700 font-medium">Experience</div>
                   </div>
                 </div>
 
@@ -359,13 +389,18 @@ export default function Portfolio() {
                     href="https://www.lotusbeautylounge.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -385,19 +420,23 @@ export default function Portfolio() {
       </div>
 
       {/* More Portfolio Projects */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              More <span style={{color: '#51AACD'}}>Portfolio Projects</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">More Projects</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              More <span className="text-[#51AACD]">Portfolio Projects</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               Continuing our showcase of successful projects across diverse industries and business types.
             </p>
           </div>
 
           {/* SK Taxi Case Study */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Content Section */}
               <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
@@ -405,7 +444,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     SK Taxi
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Taxi & Transport Services</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Professional Taxi & Transport Services</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     A modern, user-friendly website for a reliable taxi service, designed to make booking quick and easy 
                     while showcasing their professional transport solutions across Somerset and surrounding areas.
@@ -414,16 +453,16 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-3 gap-3 mb-8">
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>24/7</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">24/7</div>
                     <div className="text-xs text-gray-600">Service</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Easy</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Easy</div>
                     <div className="text-xs text-gray-600">Booking</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Local</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Local</div>
                     <div className="text-xs text-gray-600">Coverage</div>
                   </div>
                 </div>
@@ -465,13 +504,18 @@ export default function Portfolio() {
                     href="https://www.sktaxi.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -498,7 +542,7 @@ export default function Portfolio() {
           </div>
 
           {/* Chris Letts Plumbing Case Study */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
@@ -525,7 +569,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     Chris Letts Plumbing
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Plumbing & Heating Services</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Professional Plumbing & Heating Services</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     A professional website for an experienced plumber, designed to build trust and make it easy for 
                     customers to find reliable plumbing services across Somerset and surrounding areas.
@@ -534,13 +578,13 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Trusted</div>
-                    <div className="text-sm text-gray-600">Local Expert</div>
+                  <div className="portfolio-feature-box text-center p-5 rounded-xl">
+                    <div className="text-2xl font-bold mb-1 text-[#51AACD]">Trusted</div>
+                    <div className="text-sm text-gray-700 font-medium">Local Expert</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-2xl font-bold mb-1" style={{color: '#51AACD'}}>Emergency</div>
-                    <div className="text-sm text-gray-600">Call-outs</div>
+                  <div className="portfolio-feature-box text-center p-5 rounded-xl">
+                    <div className="text-2xl font-bold mb-1 text-[#51AACD]">Emergency</div>
+                    <div className="text-sm text-gray-700 font-medium">Call-outs</div>
                   </div>
                 </div>
 
@@ -581,13 +625,18 @@ export default function Portfolio() {
                     href="https://www.chrislettsplumbing.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -595,7 +644,7 @@ export default function Portfolio() {
           </div>
 
           {/* Bickerstaff Solutions Case Study */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Content Section */}
               <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
@@ -603,7 +652,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     Bickerstaff Solutions
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Business Solutions</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Professional Business Solutions</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     A sophisticated corporate website designed to showcase professional business solutions and 
                     consulting services, built to establish credibility and attract high-value clients.
@@ -612,16 +661,16 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-3 gap-3 mb-8">
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Pro</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Pro</div>
                     <div className="text-xs text-gray-600">Corporate</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Expert</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Expert</div>
                     <div className="text-xs text-gray-600">Solutions</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>B2B</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">B2B</div>
                     <div className="text-xs text-gray-600">Focus</div>
                   </div>
                 </div>
@@ -663,13 +712,18 @@ export default function Portfolio() {
                     href="https://www.bickerstaffsolutions.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -699,13 +753,17 @@ export default function Portfolio() {
       </section>
 
       {/* More Success Stories Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              More <span style={{color: '#51AACD'}}>Success Stories</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Client Reviews</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              More <span className="text-[#51AACD]">Success Stories</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               Real reviews from our satisfied clients across diverse industries
             </p>
           </div>
@@ -713,7 +771,7 @@ export default function Portfolio() {
           {/* Reviews Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Review 1 - Sheldon J. */}
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4" style={{borderLeftColor: '#51AACD'}}>
+            <div className="portfolio-review-card bg-white p-6 rounded-xl shadow-lg">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -731,7 +789,7 @@ export default function Portfolio() {
             </div>
 
             {/* Review 2 - Natalie L. */}
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
+            <div className="portfolio-review-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -749,7 +807,7 @@ export default function Portfolio() {
             </div>
 
             {/* Review 3 - Nicky S. */}
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-orange-500">
+            <div className="portfolio-review-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -767,7 +825,7 @@ export default function Portfolio() {
             </div>
 
             {/* Review 4 - Emily S. */}
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4" style={{borderLeftColor: '#51AACD'}}>
+            <div className="portfolio-review-card bg-white p-6 rounded-xl shadow-lg">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -785,7 +843,7 @@ export default function Portfolio() {
             </div>
 
             {/* Review 5 - Tracy Y. */}
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-green-500">
+            <div className="portfolio-review-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -803,7 +861,7 @@ export default function Portfolio() {
             </div>
 
             {/* Review 6 - Jeannette H. */}
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-orange-500">
+            <div className="portfolio-review-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -832,18 +890,22 @@ export default function Portfolio() {
       </section>
 
       {/* Cross Cut Shredding Case Study */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Additional <span style={{color: '#51AACD'}}>Portfolio Project</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Additional Projects</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              Additional <span className="text-[#51AACD]">Portfolio Project</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               Another successful project showcasing our expertise across different business sectors.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative bg-gray-100 p-4 flex items-center justify-center">
@@ -870,7 +932,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     Cross Cut Shredding Ltd
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Professional Document Shredding Services</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Professional Document Shredding Services</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     A secure and professional website for a leading document shredding company, designed to build trust 
                     and showcase their comprehensive data destruction and confidential waste management services.
@@ -879,16 +941,16 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-3 gap-3 mb-8">
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Secure</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Secure</div>
                     <div className="text-xs text-gray-600">Data Destruction</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Trust</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Trust</div>
                     <div className="text-xs text-gray-600">Building</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>GDPR</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">GDPR</div>
                     <div className="text-xs text-gray-600">Compliant</div>
                   </div>
                 </div>
@@ -930,13 +992,18 @@ export default function Portfolio() {
                     href="https://www.crosscutshredding.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -944,7 +1011,7 @@ export default function Portfolio() {
           </div>
 
           {/* Lodge House B&B Somerset Case Study */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+          <div className="portfolio-case-study-card rounded-3xl overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Content Section */}
               <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
@@ -952,7 +1019,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                     Lodge House B&B Somerset
                   </h3>
-                  <p className="font-semibold mb-4" style={{color: '#51AACD'}}>Luxury Bed & Breakfast Accommodation</p>
+                  <p className="font-semibold mb-4 text-[#51AACD]">Luxury Bed & Breakfast Accommodation</p>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     An elegant and welcoming website for a premium bed & breakfast in Somerset, designed to showcase 
                     luxury accommodations and attract guests seeking a peaceful countryside retreat.
@@ -961,16 +1028,16 @@ export default function Portfolio() {
 
                 {/* Key Results */}
                 <div className="grid grid-cols-3 gap-3 mb-8">
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Luxury</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Luxury</div>
                     <div className="text-xs text-gray-600">Experience</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Booking</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Booking</div>
                     <div className="text-xs text-gray-600">System</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                    <div className="text-xl font-bold mb-1" style={{color: '#51AACD'}}>Local</div>
+                  <div className="portfolio-feature-box text-center p-4 rounded-xl">
+                    <div className="text-xl font-bold mb-1 text-[#51AACD]">Local</div>
                     <div className="text-xs text-gray-600">Tourism</div>
                   </div>
                 </div>
@@ -1012,13 +1079,18 @@ export default function Portfolio() {
                     href="https://www.lodgehousebandbsomerset.co.uk" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-center"
-                    style={{backgroundColor: '#51AACD'}}
+                    className="hero-cta-primary text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group"
                   >
-                    Visit Website
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span>Visit Website</span>
                   </a>
-                  <BookCallButton className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                    Start Your Project
+                  <BookCallButton className="hero-cta-secondary text-[#51AACD] px-6 py-3 rounded-xl font-bold text-sm tracking-tight flex items-center justify-center gap-2 group">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>Start Your Project</span>
                   </BookCallButton>
                 </div>
               </div>
@@ -1047,19 +1119,23 @@ export default function Portfolio() {
       </section>
 
       {/* Coming Soon Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            More Case Studies <span style={{color: '#51AACD'}}>Coming Soon</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">Coming Soon</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            More Case Studies <span className="text-[#51AACD]">Coming Soon</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
             We're constantly working on exciting new projects and gathering amazing results for our clients. 
             Check back soon for more detailed case studies, before & after showcases, and client stories.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Coming Soon Item 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg border-2" style={{borderColor: '#51AACD'}}>
+            <div className="portfolio-coming-soon-card bg-white p-8 rounded-xl shadow-lg">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -1072,7 +1148,7 @@ export default function Portfolio() {
             </div>
 
             {/* Coming Soon Item 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg border-2" style={{borderColor: '#51AACD'}}>
+            <div className="portfolio-coming-soon-card bg-white p-8 rounded-xl shadow-lg">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -1085,7 +1161,7 @@ export default function Portfolio() {
             </div>
 
             {/* Coming Soon Item 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg border-2" style={{borderColor: '#51AACD'}}>
+            <div className="portfolio-coming-soon-card bg-white p-8 rounded-xl shadow-lg">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4" />
@@ -1150,25 +1226,36 @@ export default function Portfolio() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #51AACD 0%, #4A9BC4 100%)'}}>
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 portfolio-cta-gradient">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
             Ready to Join Our Portfolio?
           </h2>
-          <p className="text-xl mb-8" style={{color: '#C4E3EA'}}>
+          <p className="text-xl sm:text-2xl mb-10 text-[#C4E3EA] max-w-3xl mx-auto leading-relaxed font-medium">
             Let's create your success story. From website design to digital marketing, 
             we'll help your business achieve remarkable growth online.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: 'white', color: '#51AACD'}}>
-              Book Your Free Consultation
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center">
+            <BookCallButton className="cta-button-primary text-[#51AACD] px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Book Your Free Consultation</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </BookCallButton>
             <Link 
               href="/services"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:opacity-90 transition-all duration-200"
-              style={{'--hover-text-color': '#51AACD'} as React.CSSProperties}
+              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group hover:bg-white hover:text-[#51AACD] transition-all duration-300"
             >
-              View Our Services
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span>View Our Services</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
         </div>
