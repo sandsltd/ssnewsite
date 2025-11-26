@@ -38,7 +38,7 @@ export default function MobileFirstDesignPost() {
             "author": {
               "@type": "Person",
               "name": "Dan Simmons",
-              "jobTitle": "Marketing Director & Co-Founder",
+              "jobTitle": "Marketing Lead & Co-Founder",
               "worksFor": {
                 "@type": "Organization",
                 "name": "Saunders Simmons Ltd"

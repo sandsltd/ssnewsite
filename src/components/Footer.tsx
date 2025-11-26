@@ -3,7 +3,7 @@ import BookCallButton from './BookCallButton';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" style={{background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)'}}>
+    <footer className="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 text-white" style={{background: 'linear-gradient(135deg, #374151 0%, #4b5563 50%, #374151 100%)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -234,8 +234,7 @@ export default function Footer() {
                   <p className="text-sm" style={{color: '#C4E3EA'}}>Service Area</p>
                   <div className="text-white text-sm">
                     Based in Yeovil covering<br />
-                    Somerset, Dorset and<br />
-                    surrounding counties
+                    the whole UK
                   </div>
                 </div>
               </div>
