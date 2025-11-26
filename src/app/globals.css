@@ -625,6 +625,81 @@ body {
   box-shadow: 0 25px 50px -12px rgba(81, 170, 205, 0.3);
 }
 
+/* FAQ Page Styles */
+.faq-category-button {
+  background: rgba(196, 227, 234, 0.8);
+  border: 2px solid #51AACD;
+  color: #51AACD;
+  transition: all 0.3s ease;
+}
+
+.faq-category-button:hover {
+  background: #51AACD;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(81, 170, 205, 0.3);
+}
+
+.faq-card {
+  background: rgba(196, 227, 234, 0.6);
+  border: 2px solid #51AACD;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #51AACD, #3E8BA8);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+.faq-card:hover::before {
+  transform: scaleY(1);
+}
+
+.faq-card:hover {
+  background: rgba(196, 227, 234, 0.9);
+  transform: translateX(4px);
+  box-shadow: 0 10px 25px -5px rgba(81, 170, 205, 0.2), 0 4px 6px -2px rgba(81, 170, 205, 0.1);
+}
+
+.faq-category-header {
+  border-bottom: 3px solid #51AACD;
+  position: relative;
+}
+
+.faq-category-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #51AACD, #3E8BA8);
+}
+
+.faq-area-badge {
+  background: white;
+  border: 2px solid #51AACD;
+  color: #51AACD;
+  transition: all 0.3s ease;
+}
+
+.faq-area-badge:hover {
+  background: #51AACD;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px -3px rgba(81, 170, 205, 0.3);
+}
+
 /* CTA Section Styles */
 .cta-section {
   background: linear-gradient(135deg, #C4E3EA 0%, rgba(196, 227, 234, 0.9) 100%);

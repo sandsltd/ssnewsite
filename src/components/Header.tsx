@@ -126,7 +126,7 @@ export default function Header() {
             </div>
 
             {/* Center Navigation */}
-            <nav className="hidden lg:flex items-center space-x-12 flex-1 justify-center max-w-4xl mx-auto">
+            <nav className="hidden md:flex items-center space-x-12 flex-1 justify-center max-w-4xl mx-auto">
               <div className="relative group">
                 <Link
                   href="/about"
@@ -294,7 +294,7 @@ export default function Header() {
             {/* Right Side - CTA */}
             <div className="flex items-center space-x-4 flex-shrink-0">
               {/* Desktop CTA */}
-              <div className="hidden lg:block">
+              <div className="hidden md:block">
                 <BookCallButton className="text-white px-8 py-4 rounded-xl font-bold text-base tracking-tight btn-premium-cta flex items-center gap-2.5 group">
                   <svg className="w-5 h-5 btn-premium-cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -306,8 +306,8 @@ export default function Header() {
                 </BookCallButton>
               </div>
 
-              {/* Mobile/Tablet menu button - shows on all screens below lg */}
-              <div className="lg:hidden">
+              {/* Mobile/Tablet menu button - shows on all screens below md */}
+              <div className="md:hidden">
                 <button
                   type="button"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -336,9 +336,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile/Tablet Menu - shows on all screens below lg */}
+      {/* Mobile/Tablet Menu - shows on all screens below md */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-gray-200 shadow-premium-lg">
+        <div className="md:hidden bg-white border-b border-gray-200 shadow-premium-lg">
           <div className="px-4 py-4 space-y-4">
             {/* Mobile Navigation Links */}
             <div className="space-y-3">

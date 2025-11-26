@@ -123,36 +123,48 @@ export default function FAQ() {
       />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked <span style={{color: '#51AACD'}}>Questions</span>
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 portfolio-hero-gradient relative">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">FAQ</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Frequently Asked <span className="text-[#51AACD]">Questions</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
             Everything you need to know about our web design, SEO, and digital marketing services 
-            for businesses in Yeovil, Somerset, and beyond.
+            for businesses across the UK.
           </p>
           <div className="flex justify-center">
-            <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-              Book a Free Consultation
+            <BookCallButton className="hero-cta-primary text-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Book a Free Consultation</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </BookCallButton>
           </div>
         </div>
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
           {/* Category Navigation */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Quick Navigation</h2>
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Quick Navigation</h2>
+              <p className="text-gray-600">Jump to a specific category</p>
+            </div>
             <div className="flex flex-wrap justify-center gap-3">
               {categories.map((category) => (
                 <a
                   key={category}
                   href={`#${category.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="px-4 py-2 rounded-lg transition-colors duration-200 text-sm font-medium border hover:opacity-80"
-                  style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD', color: '#51AACD'}}
+                  className="faq-category-button px-5 py-2.5 rounded-xl text-sm font-semibold"
                 >
                   {category}
                 </a>
@@ -162,19 +174,26 @@ export default function FAQ() {
 
           {/* FAQ by Category */}
           {categories.map((category) => (
-            <div key={category} id={category.toLowerCase().replace(/\s+/g, '-')} className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 border-b-2 pb-2" style={{borderBottomColor: '#51AACD'}}>
+            <div key={category} id={category.toLowerCase().replace(/\s+/g, '-')} className="mb-16">
+              <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 pb-3 faq-category-header">
                 {category}
               </h3>
               <div className="space-y-6">
                 {faqs
                   .filter((faq) => faq.category === category)
                   .map((faq, index) => (
-                    <div key={index} className="rounded-lg p-6 hover:opacity-90 transition-all duration-200 border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                        {faq.question}
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
+                    <div key={index} className="faq-card rounded-2xl p-6 lg:p-8">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] flex items-center justify-center flex-shrink-0 shadow-lg">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h4 className="text-xl font-bold text-gray-900 flex-1">
+                          {faq.question}
+                        </h4>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed text-base ml-12">
                         {faq.answer}
                       </p>
                     </div>
@@ -183,55 +202,61 @@ export default function FAQ() {
             </div>
           ))}
 
-          {/* Cog Section Divider */}
-          <div className="mt-16 py-8 flex justify-center items-center">
-            <div className="flex items-center gap-6">
-              <svg className="w-8 h-8 text-blue-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-              </svg>
-              <div className="h-px bg-gray-300 w-24"></div>
-              <svg className="w-6 h-6 text-orange-500 animate-spin-reverse" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-              </svg>
-              <div className="h-px bg-gray-300 w-24"></div>
-              <svg className="w-8 h-8 text-green-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-              </svg>
+          {/* Premium Divider */}
+          <div className="relative py-12 sm:py-16 overflow-hidden mt-16">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#51AACD]/10 to-transparent"></div>
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center justify-center gap-4">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+                <div className="w-3 h-3 rounded-full bg-[#51AACD] shadow-lg shadow-[#51AACD]/30"></div>
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+              </div>
             </div>
           </div>
 
           {/* Contact CTA */}
-          <div className="mt-8 rounded-lg p-8 text-center text-white" style={{background: 'linear-gradient(135deg, #51AACD 0%, #4A9BC4 100%)'}}>
-            <h3 className="text-2xl font-bold mb-4">
+          <div className="mt-16 rounded-3xl p-10 lg:p-12 text-center text-white portfolio-cta-gradient shadow-xl">
+            <h3 className="text-3xl sm:text-4xl font-extrabold mb-5">
               Still Have Questions?
             </h3>
-            <p className="text-lg mb-6" style={{color: '#C4E3EA'}}>
+            <p className="text-lg sm:text-xl mb-8 text-[#C4E3EA] max-w-2xl mx-auto leading-relaxed font-medium">
               Can't find the answer you're looking for? We're here to help with any questions 
-              about web design, SEO, or digital marketing for your Somerset business.
+              about web design, SEO, or digital marketing for your business.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 bg-white hover:opacity-90" style={{color: '#51AACD'}}>
-                Book a Free Call
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center">
+              <BookCallButton className="cta-button-primary text-[#51AACD] px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Book a Free Call</span>
+                <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </BookCallButton>
               <a
                 href="mailto:hello@saunders-simmons.co.uk"
-                className="bg-transparent text-white border-2 border-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 inline-block hover:bg-white hover:opacity-90"
-                style={{'--hover-text-color': '#51AACD'} as React.CSSProperties}
+                className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group hover:bg-white hover:text-[#51AACD] transition-all duration-300"
               >
-                Email Us
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Email Us</span>
+                <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </a>
             </div>
           </div>
 
           {/* Local Areas Served */}
-          <div className="mt-12 rounded-lg p-8 border" style={{backgroundColor: '#C4E3EA', borderColor: '#51AACD'}}>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+          <div className="mt-16 rounded-2xl p-8 lg:p-10 border-2 border-[#51AACD] mission-box">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">
               Areas We Serve
             </h3>
-            <p className="text-gray-600 text-center mb-4">
-              Based in Yeovil, we provide web design and SEO services throughout:
+            <p className="text-gray-700 text-center mb-6 text-lg font-medium">
+              Based in Yeovil, we provide web design and SEO services throughout the UK:
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm mb-6">
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
               {[
                 'Yeovil', 'Taunton', 'Bridgwater', 'Glastonbury', 'Street', 'Wells', 'Burnham-on-Sea',
                 'Dorchester', 'Weymouth', 'Sherborne', 'Gillingham', 'Blandford Forum',
@@ -239,8 +264,7 @@ export default function FAQ() {
               ].map((area) => (
                 <span
                   key={area}
-                  className="px-3 py-1 rounded border text-sm font-medium"
-                  style={{backgroundColor: 'white', color: '#51AACD', borderColor: '#51AACD'}}
+                  className="faq-area-badge px-4 py-2 rounded-xl text-sm font-semibold"
                 >
                   {area}
                 </span>
@@ -248,31 +272,37 @@ export default function FAQ() {
             </div>
             
             {/* Professional Credentials */}
-            <div className="pt-6 text-center" style={{borderTopColor: '#51AACD'}}>
-              <h4 className="font-semibold text-gray-900 mb-3">Professional Credentials</h4>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 text-sm text-gray-600">
-                <div className="flex items-center justify-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Registered Company</span>
+            <div className="pt-8 text-center border-t-2 border-[#51AACD]">
+              <h4 className="font-bold text-gray-900 mb-5 text-lg">Professional Credentials</h4>
+              <div className="flex flex-wrap items-center justify-center gap-6 mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 font-semibold">Registered Company</span>
                 </div>
-                <div className="text-gray-500 hidden sm:block">•</div>
-                <div className="flex items-center justify-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.586-2H6a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2v-4.586a1 1 0 00-.293-.707l-2-2a1 1 0 00-.707-.293z" />
-                  </svg>
-                  <span>Fully Insured</span>
+                <div className="w-px h-8 bg-gray-300"></div>
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.586-2H6a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2v-4.586a1 1 0 00-.293-.707l-2-2a1 1 0 00-.707-.293z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 font-semibold">Fully Insured</span>
                 </div>
-                <div className="text-gray-500 hidden sm:block">•</div>
-                <div className="flex items-center justify-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 20 20" style={{color: '#51AACD'}}>
-                    <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                  <span>VAT Registered</span>
+                <div className="w-px h-8 bg-gray-300"></div>
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 font-semibold">VAT Registered</span>
                 </div>
               </div>
-              <p className="text-xs text-gray-500 mt-2">
+              <p className="text-sm text-gray-600 font-medium">
                 Companies House Number: 15839557
               </p>
             </div>
