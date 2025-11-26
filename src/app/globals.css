@@ -21,8 +21,132 @@
 
 body {
   background: var(--background);
-  colour: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Brand Colors */
+:root {
+  --brand-primary: #51AACD;
+  --brand-primary-dark: #3E8BA8;
+  --brand-secondary: #C4E3EA;
+  --header-top-bar-bg: linear-gradient(135deg, rgba(196, 227, 234, 0.5) 0%, rgba(255, 255, 255, 0.95) 100%);
+  --header-top-bar-border: rgba(81, 170, 205, 0.15);
+  --header-nav-border: rgba(0, 0, 0, 0.06);
+  --header-icon-bg: rgba(196, 227, 234, 0.3);
+  --header-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --header-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --header-shadow-brand: 0 10px 25px -5px rgba(81, 170, 205, 0.2), 0 4px 6px -2px rgba(81, 170, 205, 0.1);
+}
+
+/* Premium Shadows - using CSS variables for consistency */
+.shadow-premium-lg {
+  box-shadow: var(--header-shadow-lg);
+}
+
+.shadow-premium-xl {
+  box-shadow: var(--header-shadow-xl);
+}
+
+.shadow-brand {
+  box-shadow: var(--header-shadow-brand);
+}
+
+/* Header Styles - using CSS variables */
+.header-top-bar {
+  background: var(--header-top-bar-bg);
+  border-color: var(--header-top-bar-border);
+}
+
+.header-nav-border {
+  border-color: var(--header-nav-border);
+}
+
+.header-icon-bg {
+  background-color: var(--header-icon-bg);
+}
+
+.header-link-hover {
+  color: inherit;
+}
+
+.header-link-hover:hover {
+  color: var(--brand-primary);
+}
+
+.header-underline {
+  background-color: var(--brand-primary);
+}
+
+.header-dropdown-hover:hover {
+  background-color: rgba(196, 227, 234, 0.4);
+  color: var(--brand-primary);
+}
+
+/* Dropdown menu styles */
+.header-dropdown {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.group:hover .header-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header-dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+.group:hover .header-dropdown-arrow {
+  transform: translateY(2px);
+}
+
+/* Premium CTA Button */
+.btn-premium-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #51AACD 0%, #3E8BA8 100%);
+  box-shadow: 0 10px 25px -5px rgba(81, 170, 205, 0.2), 0 4px 6px -2px rgba(81, 170, 205, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-premium-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-premium-cta:hover::before {
+  left: 100%;
+}
+
+.btn-premium-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px -5px rgba(81, 170, 205, 0.3), 0 8px 10px -2px rgba(81, 170, 205, 0.15);
+}
+
+.btn-premium-cta:active {
+  transform: translateY(0);
+}
+
+.btn-premium-cta-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-premium-cta:hover .btn-premium-cta-icon {
+  transform: scale(1.1) rotate(-5deg);
 }
 
 /* Cog Animations */
