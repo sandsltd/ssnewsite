@@ -164,7 +164,7 @@ export default function SEOPage() {
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Local SEO</h3>
               <p className="text-gray-600 leading-relaxed text-base">
-                Optimize your Google Business Profile and local search rankings to attract customers in your area.
+                Optimise your Google Business Profile and local search rankings to attract customers in your area.
               </p>
             </div>
 
@@ -177,7 +177,7 @@ export default function SEOPage() {
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Content Marketing</h3>
               <p className="text-gray-600 leading-relaxed text-base">
-                Create valuable, SEO-optimized content that attracts and engages your target audience.
+                Create valuable, SEO-optimised content that attracts and engages your target audience.
               </p>
             </div>
 
@@ -190,7 +190,7 @@ export default function SEOPage() {
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Technical SEO</h3>
               <p className="text-gray-600 leading-relaxed text-base">
-                Optimize your website's technical aspects for better search engine crawling and indexing.
+                Optimise your website's technical aspects for better search engine crawling and indexing.
               </p>
             </div>
 
@@ -477,7 +477,7 @@ export default function SEOPage() {
               </div>
               <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Implementation</h3>
               <p className="text-gray-600 leading-relaxed text-base">
-                We implement technical SEO improvements, create content, and optimize your online presence.
+                We implement technical SEO improvements, create content, and optimise your online presence.
               </p>
             </div>
 
