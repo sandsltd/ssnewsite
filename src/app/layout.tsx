@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -241,22 +242,25 @@ export default function RootLayout({
           `
         }} />
         
-        {/* Meta Pixel Code - Ultra-optimized with facade pattern */}
+        {/* Meta Pixel Code - Cookie consent aware */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Lightweight facade - only load when user interacts
+              // Check for existing cookie consent
+              function hasCookieConsent() {
+                if (typeof window === 'undefined') return false;
+                const consent = localStorage.getItem('cookieConsent');
+                return consent === 'accepted';
+              }
+              
+              // Lightweight facade - only load when user consents
               window.fbq = window.fbq || function() {
                 (window.fbq.queue = window.fbq.queue || []).push(arguments);
               };
               window.fbq.loaded = false;
               window.fbq.queue = [];
               
-              // Track pageview immediately with facade
-              fbq('init', '232014927976021');
-              fbq('track', 'PageView');
-              
-              // Load real Facebook Pixel only when user shows intent
+              // Load real Facebook Pixel
               function loadRealFacebookPixel() {
                 if (window.fbq.loaded) return;
                 window.fbq.loaded = true;
@@ -272,17 +276,21 @@ export default function RootLayout({
                 document.head.appendChild(script);
               }
               
-              // Load on user interaction (scroll, click, touch, or after 3 seconds)
-              const events = ['scroll', 'click', 'touchstart', 'mousemove', 'keypress'];
-              const loadOnInteraction = () => {
-                events.forEach(event => document.removeEventListener(event, loadOnInteraction));
-                loadRealFacebookPixel();
-              };
-              
+              // Initialize and load if consent already given
               if (typeof window !== 'undefined') {
-                events.forEach(event => document.addEventListener(event, loadOnInteraction, { passive: true, once: true }));
-                // Fallback - load after 3 seconds if no interaction
-                setTimeout(loadRealFacebookPixel, 3000);
+                if (hasCookieConsent()) {
+                  // User has already consented, load immediately
+                  fbq('init', '232014927976021');
+                  fbq('track', 'PageView');
+                  loadRealFacebookPixel();
+                } else {
+                  // Wait for consent
+                  window.addEventListener('cookieConsentAccepted', function() {
+                    fbq('init', '232014927976021');
+                    fbq('track', 'PageView');
+                    loadRealFacebookPixel();
+                  }, { once: true });
+                }
               }
             `
           }}
@@ -307,6 +315,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <CookieBanner />
         </div>
       </body>
     </html>
