@@ -116,11 +116,11 @@ export default function Header() {
                     quality={90}
                   />
                 </div>
-                <div className="min-w-0 hidden sm:block">
-                  <h1 className="text-base sm:text-xl font-bold text-gray-900 truncate tracking-tight leading-tight">
+                <div className="min-w-0">
+                  <h1 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 truncate tracking-tight leading-tight">
                     Saunders Simmons Ltd
                   </h1>
-                  <p className="text-xs sm:text-sm text-gray-600 font-medium mt-0.5">Web Design, SEO & Software</p>
+                  <p className="text-[10px] sm:text-xs lg:text-sm text-gray-600 font-medium mt-0.5">Web Design, SEO & Software</p>
                 </div>
               </Link>
             </div>
@@ -291,26 +291,6 @@ export default function Header() {
               </Link>
             </nav>
 
-            {/* Tablet Navigation - Show hamburger menu on md screens */}
-            <nav className="hidden md:flex lg:hidden items-center">
-              <button
-                type="button"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 header-link-hover focus:outline-none p-2 transition-colors duration-200"
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
-              </button>
-            </nav>
-
             {/* Right Side - CTA */}
             <div className="flex items-center space-x-4 flex-shrink-0">
               {/* Desktop CTA */}
@@ -326,32 +306,28 @@ export default function Header() {
                 </BookCallButton>
               </div>
 
-              {/* Tablet CTA */}
-              <div className="hidden md:block lg:hidden">
-                <BookCallButton className="text-white px-6 py-3 rounded-xl font-bold text-sm tracking-tight btn-premium-cta flex items-center gap-2 group">
-                  <svg className="w-4 h-4 btn-premium-cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>Book a Call</span>
-                </BookCallButton>
-              </div>
-
-              {/* Mobile menu button */}
-              <div className="md:hidden">
+              {/* Mobile/Tablet menu button - shows on all screens below lg */}
+              <div className="lg:hidden">
                 <button
                   type="button"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-gray-700 header-link-hover focus:outline-none p-2 transition-colors duration-200"
+                  className="text-gray-700 header-link-hover focus:outline-none p-2 transition-colors duration-200 flex items-center gap-2"
                   aria-label="Toggle menu"
                 >
                   {isMenuOpen ? (
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <>
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                      <span className="text-sm font-semibold">Close</span>
+                    </>
                   ) : (
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+                    <>
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                      <span className="text-sm font-semibold">Menu</span>
+                    </>
                   )}
                 </button>
               </div>
@@ -360,7 +336,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile/Tablet Menu */}
+      {/* Mobile/Tablet Menu - shows on all screens below lg */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-b border-gray-200 shadow-premium-lg">
           <div className="px-4 py-4 space-y-4">
