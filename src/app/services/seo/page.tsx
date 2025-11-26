@@ -78,116 +78,157 @@ export default function SEOPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Professional <span style={{color: '#51AACD'}}>SEO Marketing</span> Services
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 portfolio-hero-gradient relative">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">SEO Marketing</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Professional <span className="text-[#51AACD]">SEO Marketing</span> Services
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
             Get found on Google and attract more customers with our comprehensive SEO marketing services. 
-            We help businesses in Yeovil, Somerset, and Dorset rank higher in search results.
+            We help businesses across the UK rank higher in search results.
           </p>
-          <div className="flex items-center justify-center gap-2 mb-8">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span className="text-gray-600 font-medium">5.0 Google Rating • Based in Yeovil, Somerset</span>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <BookCallButton className="hero-cta-primary text-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Book a Free Consultation</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </BookCallButton>
+            <Link 
+              href="/services" 
+              className="hero-cta-secondary px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group"
+              style={{color: '#1f2937'}}
+            >
+              <span>View All Services</span>
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* SVG Wave Transition */}
+      <div className="relative -mt-1">
+        <svg 
+          className="w-full h-20 sm:h-32" 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="seoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor:'#C4E3EA', stopOpacity:1}} />
+              <stop offset="50%" style={{stopColor:'#ffffff', stopOpacity:1}} />
+              <stop offset="100%" style={{stopColor:'#C4E3EA', stopOpacity:1}} />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="white" />
+          <path 
+            d="M0,0 C300,60 900,-40 1200,0 L1200,0 L0,0 Z" 
+            fill="url(#seoGradient)"
+          />
+        </svg>
+      </div>
+
       {/* What We Offer */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              What We <span style={{color: '#51AACD'}}>Offer</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Our Services</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              What We <span className="text-[#51AACD]">Offer</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
               Comprehensive SEO marketing services to help your business get found online
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {/* Local SEO */}
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 lg:mb-8 service-icon bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] shadow-lg">
+                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Local SEO</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Local SEO</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Optimize your Google Business Profile and local search rankings to attract customers in your area.
               </p>
             </div>
 
             {/* Content Marketing */}
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 lg:mb-8 service-icon bg-gradient-to-br from-green-500 to-green-600 shadow-lg">
+                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Content Marketing</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Content Marketing</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Create valuable, SEO-optimized content that attracts and engages your target audience.
               </p>
             </div>
 
             {/* Technical SEO */}
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 lg:mb-8 service-icon bg-gradient-to-br from-orange-500 to-orange-600 shadow-lg">
+                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Technical SEO</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Technical SEO</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Optimize your website's technical aspects for better search engine crawling and indexing.
               </p>
             </div>
 
             {/* Keyword Research */}
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 lg:mb-8 service-icon bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg">
+                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Keyword Research</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Keyword Research</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Identify the right keywords your customers are searching for to improve your rankings.
               </p>
             </div>
 
             {/* Link Building */}
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 lg:mb-8 service-icon bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
+                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Link Building</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Link Building</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Build high-quality backlinks to improve your domain authority and search rankings.
               </p>
             </div>
 
             {/* Analytics & Reporting */}
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{backgroundColor: '#C4E3EA'}}>
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 lg:mb-8 service-icon bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg">
+                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Analytics & Reporting</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Analytics & Reporting</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Track your SEO progress with detailed monthly reports and analytics insights.
               </p>
             </div>
@@ -195,31 +236,43 @@ export default function SEOPage() {
         </div>
       </section>
 
+      {/* Premium Divider */}
+      <div className="relative py-12 sm:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#51AACD]/10 to-transparent"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+            <div className="w-3 h-3 rounded-full bg-[#51AACD] shadow-lg shadow-[#51AACD]/30"></div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+          </div>
+        </div>
+      </div>
+
       {/* Pricing */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              SEO Marketing <span style={{color: '#51AACD'}}>Packages</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Our Packages</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              SEO Marketing <span className="text-[#51AACD]">Packages</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
               Choose the SEO package that's right for your business
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
             {/* Growth SEO */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300 relative" style={{borderColor: '#C4E3EA'}}>
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="text-white px-4 py-2 rounded-full text-xs font-semibold" style={{backgroundColor: '#51AACD'}}>Most Popular</span>
-              </div>
-              
-              <div className="text-center mb-6 mt-4">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Growth SEO</h3>
-                <p className="text-gray-600 mb-4">Perfect for small businesses getting started</p>
+            <div className="service-card rounded-3xl p-8 lg:p-10">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Growth SEO</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed text-base">Perfect for small businesses getting started</p>
                 <div className="flex items-baseline justify-center mb-6">
-                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£250</span>
-                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>/month + VAT</span>
+                  <span className="text-4xl lg:text-5xl font-bold text-[#51AACD]">£250</span>
+                  <span className="text-lg ml-1 text-[#51AACD]">/month + VAT</span>
                 </div>
               </div>
               
@@ -234,13 +287,19 @@ export default function SEOPage() {
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
+                  <span>Monthly Google Business Profile Updates</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span>Local SEO optimisation</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>2 blog posts per month</span>
+                  <span>Monthly blog post</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -252,25 +311,25 @@ export default function SEOPage() {
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>Basic keyword research</span>
+                  <span>Keyword research</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>Email support</span>
+                  <span>Priority support</span>
                 </li>
               </ul>
             </div>
 
             {/* Advanced SEO */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300" style={{borderColor: '#C4E3EA'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Advanced SEO</h3>
-                <p className="text-gray-600 mb-4">Perfect for growing businesses</p>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Advanced SEO</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed text-base">Perfect for growing businesses</p>
                 <div className="flex items-baseline justify-center mb-6">
-                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£425</span>
-                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>/month + VAT</span>
+                  <span className="text-4xl lg:text-5xl font-bold text-[#51AACD]">£475</span>
+                  <span className="text-lg ml-1 text-[#51AACD]">/month + VAT</span>
                 </div>
               </div>
               
@@ -285,7 +344,13 @@ export default function SEOPage() {
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>4 blog posts per month</span>
+                  <span>Additional blog posts to support strategy</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Weekly Google Business Profile Posts</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -321,77 +386,108 @@ export default function SEOPage() {
             </div>
           </div>
           
-          <div className="text-center mt-12">
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 max-w-2xl mx-auto" style={{borderColor: '#C4E3EA'}}>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="text-center mt-16">
+            <div className="p-10 lg:p-14 rounded-3xl text-white cta-section-gradient max-w-3xl mx-auto">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
                 Ready to Get Started?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto text-[#C4E3EA] font-medium">
                 Get your business found on Google with our expert SEO services. Free consultation and no setup fees.
               </p>
-              <div className="flex justify-center">
-                <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                  Book a Call
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <BookCallButton className="cta-button-primary px-8 py-4 rounded-xl font-bold text-base tracking-tight text-gray-900 flex items-center justify-center gap-2.5 group">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>Book a Free Call</span>
+                  <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </BookCallButton>
+                <Link 
+                  href="/faq" 
+                  className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group hover:bg-white hover:text-[#51AACD] transition-all duration-300"
+                >
+                  <span>View FAQ</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Premium Divider */}
+      <div className="relative py-12 sm:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#51AACD]/10 to-transparent"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+            <div className="w-3 h-3 rounded-full bg-[#51AACD] shadow-lg shadow-[#51AACD]/30"></div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+          </div>
+        </div>
+      </div>
+
       {/* Process */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Our SEO <span style={{color: '#51AACD'}}>Process</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">How We Work</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              Our SEO <span className="text-[#51AACD]">Process</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
               How we help your business get found on Google
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {/* Step 1 */}
-            <div className="bg-gray-50 p-8 rounded-xl text-center">
-              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-16 h-16 text-white rounded-2xl flex items-center justify-center font-bold mb-6 mx-auto bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] shadow-lg text-xl">
                 1
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">SEO Audit</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">SEO Audit</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 We analyse your current website and identify opportunities for improvement.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-gray-50 p-8 rounded-xl text-center">
-              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-16 h-16 text-white rounded-2xl flex items-center justify-center font-bold mb-6 mx-auto bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] shadow-lg text-xl">
                 2
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Strategy</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Strategy</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 We develop a customised SEO strategy based on your business goals and target keywords.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-gray-50 p-8 rounded-xl text-center">
-              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-16 h-16 text-white rounded-2xl flex items-center justify-center font-bold mb-6 mx-auto bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] shadow-lg text-xl">
                 3
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Implementation</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Implementation</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 We implement technical SEO improvements, create content, and optimize your online presence.
               </p>
             </div>
 
             {/* Step 4 */}
-            <div className="bg-gray-50 p-8 rounded-xl text-center">
-              <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mb-6 mx-auto" style={{backgroundColor: '#51AACD'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10 text-center">
+              <div className="w-16 h-16 text-white rounded-2xl flex items-center justify-center font-bold mb-6 mx-auto bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] shadow-lg text-xl">
                 4
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Monitor & Report</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Monitor & Report</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 We track your progress and provide monthly reports showing your SEO improvements.
               </p>
             </div>
@@ -400,28 +496,69 @@ export default function SEOPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: '#C4E3EA'}}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Ready to Get Found on <span style={{color: '#51AACD'}}>Google?</span>
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 cta-section relative">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">Get Started</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Ready to Get Found on <span className="text-[#51AACD]">Google?</span>
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
             Join the growing community of businesses that are getting more customers through better search rankings.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookCallButton className="text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg shadow-lg" style={{backgroundColor: '#51AACD'}}>
-              Book Your Free SEO Consultation
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center mb-10">
+            <BookCallButton className="cta-button-primary text-gray-900 px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group mx-auto sm:mx-0">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Book Your Free SEO Consultation</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </BookCallButton>
             <Link
               href="/services"
-              className="bg-white border-2 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg" style={{color: '#51AACD', borderColor: '#51AACD'}}
+              className="cta-button-secondary text-[#51AACD] px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group mx-auto sm:mx-0"
             >
-              View All Services
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span>View All Services</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
-          <p className="text-sm text-gray-500 mt-4">
-            No commitment • Free consultation • Quick results
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-gray-700 font-semibold">No commitment</span>
+            </div>
+            <div className="w-px h-6 bg-gray-300"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <span className="text-gray-700 font-semibold">Free consultation</span>
+            </div>
+            <div className="w-px h-6 bg-gray-300"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span className="text-gray-700 font-semibold">Quick results</span>
+            </div>
+          </div>
         </div>
       </section>
     </div>
