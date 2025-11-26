@@ -7,82 +7,171 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
+      <section className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden hero-gradient">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%2351AACD%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute inset-0 hero-pattern"></div>
         
-        <div className="max-w-7xl mx-auto relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-[#51AACD] opacity-5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#C4E3EA] opacity-5 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             {/* Content Side */}
             <div className="text-center lg:text-left">
               
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-[#51AACD]/20 mb-6">
+                <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+                <span className="text-sm font-semibold text-[#51AACD]">Trusted Digital Partner</span>
+              </div>
+              
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Professional <span style={{color: '#51AACD'}}>Digital Solutions</span> for UK Businesses
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight">
+                Professional <span className="text-[#51AACD]">Digital Solutions</span> for UK Businesses
               </h1>
               
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-2xl">
+              <p className="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
                 We're a trusted digital agency specialising in web design, SEO marketing, and custom software development.
               </p>
               
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-                {/* Google Rating */}
-                <div className="flex flex-col items-center text-center p-4 rounded-lg" style={{backgroundColor: '#C4E3EA'}}>
-                  <div className="flex items-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <div className="text-lg font-bold text-gray-900">5.0</div>
-                  <div className="text-sm text-gray-600">Google Rating</div>
-                </div>
-                
-                {/* Happy Clients */}
-                <div className="flex flex-col items-center text-center p-4 rounded-lg" style={{backgroundColor: '#C4E3EA'}}>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">100's</div>
-                  <div className="text-sm text-gray-600">Happy Clients</div>
-                </div>
-                
-                {/* Years Experience */}
-                <div className="flex flex-col items-center text-center p-4 rounded-lg" style={{backgroundColor: '#C4E3EA'}}>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">4+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
-                </div>
-              </div>
-              
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <BookCallButton className="text-gray-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:opacity-90 text-center bg-white border-2 border-gray-900 hover:bg-gray-50">
-                  Book Free Consultation
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                <BookCallButton className="text-white px-8 py-4 rounded-xl font-bold text-base tracking-tight hero-cta-primary flex items-center justify-center gap-2.5 group">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>Book Free Consultation</span>
+                  <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </BookCallButton>
                 <Link 
                   href="/services" 
-                  className="bg-white border-2 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center text-gray-900 border-gray-900 hover:bg-gray-50"
+                  className="hero-cta-secondary px-8 py-4 rounded-xl font-bold text-base tracking-tight text-gray-900 flex items-center justify-center gap-2.5 group"
                 >
-                  View Our Services
+                  <span>View Our Services</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </div>
             </div>
             
-            {/* Logo Side */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="bg-white rounded-full p-8 shadow-2xl border border-gray-100">
-                  <Image
-                    src="/logos/logo.png"
-                    alt="Saunders Simmons Ltd Logo"
-                    width={400}
-                    height={400}
-                    className="w-80 h-80 object-contain"
-                    priority
-                    fetchPriority="high"
-                    sizes="(max-width: 1024px) 320px, 400px"
-                    quality={90}
-                  />
+            {/* Browser Mockup Side with Trust Indicators */}
+            <div className="flex flex-col items-center lg:items-end gap-6">
+              {/* Browser Mockup */}
+              <div className="relative w-full max-w-lg">
+                <div className="browser-mockup">
+                  {/* Browser Header */}
+                  <div className="browser-header">
+                    <div className="flex gap-2">
+                      <div className="browser-dot browser-dot-red"></div>
+                      <div className="browser-dot browser-dot-yellow"></div>
+                      <div className="browser-dot browser-dot-green"></div>
+                    </div>
+                    <div className="browser-url-bar">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                      <span>saunders-simmons.co.uk</span>
+                    </div>
+                  </div>
+                  
+                  {/* Browser Content */}
+                  <div className="browser-content relative overflow-hidden">
+                    {/* Logo Phase */}
+                    <div className="absolute inset-0 flex items-center justify-center browser-logo-show">
+                      <Image
+                        src="/logos/logo.png"
+                        alt="Saunders Simmons Ltd Logo"
+                        width={200}
+                        height={200}
+                        className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-contain"
+                        priority
+                        fetchPriority="high"
+                        sizes="(max-width: 1024px) 160px, 192px"
+                        quality={90}
+                      />
+                    </div>
+                    
+                    {/* Website Elements Phase */}
+                    <div className="browser-website-elements w-full h-full flex flex-col">
+                      {/* Header Bar */}
+                      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 mb-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#51AACD] to-[#3E8BA8]"></div>
+                          <div className="h-4 w-24 bg-gray-200 rounded"></div>
+                        </div>
+                        <div className="flex gap-2">
+                          <div className="h-2 w-2 bg-gray-300 rounded-full"></div>
+                          <div className="h-2 w-2 bg-gray-300 rounded-full"></div>
+                          <div className="h-2 w-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Hero Section */}
+                      <div className="px-4 mb-4">
+                        <div className="h-6 w-3/4 bg-gray-300 rounded mb-2"></div>
+                        <div className="h-4 w-1/2 bg-gray-200 rounded mb-3"></div>
+                        <div className="flex gap-2">
+                          <div className="h-8 w-24 bg-[#51AACD] rounded"></div>
+                          <div className="h-8 w-24 bg-gray-200 rounded"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Content Blocks */}
+                      <div className="px-4 space-y-3 flex-1">
+                        <div className="grid grid-cols-3 gap-2">
+                          <div className="h-16 bg-gray-100 rounded"></div>
+                          <div className="h-16 bg-gray-100 rounded"></div>
+                          <div className="h-16 bg-gray-100 rounded"></div>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-gray-100 to-gray-50 rounded"></div>
+                        <div className="flex gap-2">
+                          <div className="h-12 flex-1 bg-gray-100 rounded"></div>
+                          <div className="h-12 w-12 bg-gray-100 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Trust Indicators - Moved to right side */}
+              <div className="grid grid-cols-3 gap-4 w-full max-w-lg">
+                {/* Google Rating */}
+                <div className="hero-trust-card rounded-2xl p-6 text-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center mx-auto mb-3 shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 mb-1">5.0</div>
+                  <div className="text-xs text-gray-600 font-medium">Google Rating</div>
+                </div>
+                
+                {/* Happy Clients */}
+                <div className="hero-trust-card rounded-2xl p-6 text-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] flex items-center justify-center mx-auto mb-3 shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-2xl font-bold text-[#51AACD] mb-1">100's</div>
+                  <div className="text-xs text-gray-600 font-medium">Happy Clients</div>
+                </div>
+                
+                {/* Years Experience */}
+                <div className="hero-trust-card rounded-2xl p-6 text-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] flex items-center justify-center mx-auto mb-3 shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-2xl font-bold text-[#51AACD] mb-1">4+</div>
+                  <div className="text-xs text-gray-600 font-medium">Years Experience</div>
                 </div>
               </div>
             </div>
