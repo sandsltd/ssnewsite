@@ -78,64 +78,99 @@ export default function ServicesPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #C4E3EA 0%, #ffffff 50%, #C4E3EA 100%)'}}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Your Long-Term Digital <span style={{color: '#51AACD'}}>Partnership</span>
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 portfolio-hero-gradient relative">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">Professional Web Design</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Your Long-Term Digital <span className="text-[#51AACD]">Partnership</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
             Complete support for your business online from your local web design team based in Yeovil. 
             We build your website, then partner with you for ongoing growth and success.
           </p>
-          <div className="flex items-center justify-center gap-2 mb-8">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span className="text-gray-600 font-medium">5.0 Google Rating • Based in Yeovil, Somerset</span>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <BookCallButton className="hero-cta-primary text-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Book a Free Consultation</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </BookCallButton>
+            <Link 
+              href="/services" 
+              className="hero-cta-secondary px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group"
+              style={{color: '#1f2937'}}
+            >
+              <span>View All Services</span>
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* SVG Wave Transition */}
+      <div className="relative -mt-1">
+        <svg 
+          className="w-full h-20 sm:h-32" 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="webDesignGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor:'#C4E3EA', stopOpacity:1}} />
+              <stop offset="50%" style={{stopColor:'#ffffff', stopOpacity:1}} />
+              <stop offset="100%" style={{stopColor:'#C4E3EA', stopOpacity:1}} />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="white" />
+          <path 
+            d="M0,0 C300,60 900,-40 1200,0 L1200,0 L0,0 Z" 
+            fill="url(#webDesignGradient)"
+          />
+        </svg>
+      </div>
+
       {/* Main Service Offering */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{backgroundColor: '#C4E3EA'}}>
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Our Packages</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Affordable Web Design
-              <span className="block" style={{color: '#51AACD'}}>Packages</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              Affordable Web Design <span className="text-[#51AACD]">Packages</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We start by building your professional website, then you choose the support level that's right for your business. Includes local SEO services in Somerset & Dorset.
+            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
+              We start by building your professional website, then you choose the support level that's right for your business. Includes local SEO services.
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto mb-16">
             <div className="text-center">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Choose Your Support Level</h3>
-              <p className="text-gray-600">After we build your website, select the ongoing support that fits your needs</p>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Choose Your Support Level</h3>
+              <p className="text-lg text-gray-600">After we build your website, select the ongoing support that fits your needs</p>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
             {/* Step 1: Website Build */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300" style={{borderColor: '#C4E3EA'}}>
+            <div className="service-card rounded-3xl p-8 lg:p-10">
               <div className="text-center mb-6">
-                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4" style={{backgroundColor: '#51AACD'}}>1</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Website Build</h3>
-                <p className="text-gray-600 mb-4">Everything you need for a stunning online presence at an affordable price</p>
+                <div className="w-12 h-12 text-white rounded-xl flex items-center justify-center font-bold mx-auto mb-4 bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] shadow-lg text-lg">1</div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Professional Website Build</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed text-base">Everything you need for a stunning online presence at an affordable price</p>
                 <div className="flex items-baseline justify-center mb-6">
                   <span className="text-sm text-gray-500 mr-2">One-time cost</span>
-                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£795</span>
-                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>ex VAT</span>
+                  <span className="text-4xl font-bold text-[#51AACD]">£795</span>
+                  <span className="text-lg ml-1 text-[#51AACD]">ex VAT</span>
                 </div>
               </div>
               
@@ -192,19 +227,15 @@ export default function ServicesPage() {
             </div>
 
             {/* Step 2A: Basic Hosting */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300 relative" style={{borderColor: '#C4E3EA'}}>
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="text-white px-4 py-2 rounded-full text-xs font-semibold" style={{backgroundColor: '#51AACD'}}>Best Value</span>
-              </div>
-              
-              <div className="text-center mb-6 mt-4">
-                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4" style={{backgroundColor: '#51AACD'}}>2A</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Basic Hosting</h3>
-                <p className="text-gray-600 mb-4">Essential hosting and maintenance</p>
+            <div className="service-card rounded-3xl p-8 lg:p-10">
+              <div className="text-center mb-6">
+                <div className="w-12 h-12 text-white rounded-xl flex items-center justify-center font-bold mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-600 shadow-lg text-sm">2A</div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Basic Hosting</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed text-base">Essential hosting and maintenance</p>
                 <div className="flex items-baseline justify-center mb-6">
                   <span className="text-sm text-gray-500 mr-2">Monthly</span>
-                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£25</span>
-                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>/month + VAT</span>
+                  <span className="text-4xl font-bold text-green-600">£25</span>
+                  <span className="text-lg ml-1 text-green-600">/month + VAT</span>
                 </div>
               </div>
               
@@ -255,19 +286,15 @@ export default function ServicesPage() {
             </div>
 
             {/* Step 2B: Continuous Growth & Support */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 transition-all duration-300 relative" style={{borderColor: '#C4E3EA'}}>
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="text-white px-4 py-2 rounded-full text-xs font-semibold" style={{backgroundColor: '#51AACD'}}>Best for Growth</span>
-              </div>
-              
-              <div className="text-center mb-6 mt-4">
-                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4" style={{backgroundColor: '#51AACD'}}>2B</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Continuous Growth</h3>
-                <p className="text-gray-600 mb-4">Complete support and marketing</p>
+            <div className="service-card rounded-3xl p-8 lg:p-10">
+              <div className="text-center mb-6">
+                <div className="w-12 h-12 text-white rounded-xl flex items-center justify-center font-bold mx-auto mb-4 bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] shadow-lg text-sm">2B</div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Continuous Growth</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed text-base">Complete support and marketing</p>
                 <div className="flex items-baseline justify-center mb-6">
                   <span className="text-sm text-gray-500 mr-2">Monthly</span>
-                  <span className="text-4xl font-bold" style={{color: '#51AACD'}}>£250</span>
-                  <span className="text-lg ml-1" style={{color: '#51AACD'}}>/month + VAT</span>
+                  <span className="text-4xl font-bold text-[#51AACD]">£250</span>
+                  <span className="text-lg ml-1 text-[#51AACD]">/month + VAT</span>
                 </div>
               </div>
               
@@ -282,7 +309,13 @@ export default function ServicesPage() {
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span>Local SEO services in Somerset & Dorset</span>
+                  <span>Local SEO services</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Google Business Profile Management</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -319,49 +352,63 @@ export default function ServicesPage() {
           </div>
           
           {/* Single CTA for the complete service */}
-          <div className="text-center mt-12">
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 max-w-2xl mx-auto" style={{borderColor: '#C4E3EA'}}>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="text-center mt-16">
+            <div className="p-10 lg:p-14 rounded-3xl text-white cta-section-gradient max-w-3xl mx-auto">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
                 Ready to Get Started?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto text-[#C4E3EA] font-medium">
                 Get your professional website built for just £795 ex VAT, then choose between our Basic Hosting or Continuous Growth support options.
               </p>
-              <div className="flex justify-center">
-                <BookCallButton className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200" style={{backgroundColor: '#51AACD'}}>
-                  Book a Call
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <BookCallButton className="cta-button-primary px-8 py-4 rounded-xl font-bold text-base tracking-tight text-gray-900 flex items-center justify-center gap-2.5 group">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>Book a Free Call</span>
+                  <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </BookCallButton>
+                <Link 
+                  href="/faq" 
+                  className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group hover:bg-white hover:text-[#51AACD] transition-all duration-300"
+                >
+                  <span>View FAQ</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cog Section Divider */}
-      <div className="py-8 bg-white flex justify-center items-center">
-        <div className="flex items-center gap-6">
-          <svg className="w-8 h-8 text-blue-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
-          <div className="h-px bg-gray-300 w-24"></div>
-          <svg className="w-6 h-6 text-green-500 animate-spin-reverse" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
-          <div className="h-px bg-gray-300 w-24"></div>
-          <svg className="w-8 h-8 text-orange-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
+      {/* Premium Divider */}
+      <div className="relative py-12 sm:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#51AACD]/10 to-transparent"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+            <div className="w-3 h-3 rounded-full bg-[#51AACD] shadow-lg shadow-[#51AACD]/30"></div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+          </div>
         </div>
       </div>
 
       {/* Our Process Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our Proven <span style={{color: '#51AACD'}}>Process</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">How We Work</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              Our Proven <span className="text-[#51AACD]">Process</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               From initial consultation to ongoing success, here's exactly how we work with our Somerset, Dorset, and Yeovil clients
             </p>
           </div>
@@ -493,31 +540,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Cog Section Divider */}
-      <div className="py-8 bg-gray-50 flex justify-center items-center">
-        <div className="flex items-center gap-6">
-          <svg className="w-8 h-8 text-purple-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
-          <div className="h-px bg-gray-300 w-24"></div>
-          <svg className="w-6 h-6 text-teal-500 animate-spin-reverse" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
-          <div className="h-px bg-gray-300 w-24"></div>
-          <svg className="w-8 h-8 text-red-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
+      {/* Premium Divider */}
+      <div className="relative py-12 sm:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#51AACD]/10 to-transparent"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+            <div className="w-3 h-3 rounded-full bg-[#51AACD] shadow-lg shadow-[#51AACD]/30"></div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+          </div>
         </div>
       </div>
 
       {/* Additional Services */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              We Can Also Help With
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Additional Services</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              We Can Also Help <span className="text-[#51AACD]">With</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               Beyond web design, we offer comprehensive digital solutions to support your business growth and online presence.
             </p>
           </div>
@@ -682,16 +728,31 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Areas */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Serving Businesses Across <span style={{color: '#51AACD'}}>Somerset & Dorset</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">Service Areas</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            We Help <span className="text-[#51AACD]">Any UK Business</span>
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Based in Yeovil, we're proud to support businesses throughout Somerset, Dorset, and surrounding counties
+          <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed font-medium">
+            Based in Yeovil, we work with businesses across the entire UK. While we have deep local knowledge of Somerset and Dorset, 
+            we're equipped to help any UK business with their website needs through video calls and remote collaboration.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#C4E3EA'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">UK-Wide Service</h3>
+              <p className="text-gray-600">We help businesses across the entire United Kingdom with professional website design</p>
+            </div>
+            
             <div className="text-center">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#C4E3EA'}}>
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
@@ -699,18 +760,8 @@ export default function ServicesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Local Presence</h3>
-              <p className="text-gray-600">Based in Yeovil with deep understanding of the local market</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#C4E3EA'}}>
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Wide Coverage</h3>
-              <p className="text-gray-600">Serving Somerset, Dorset, and surrounding counties</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Local Expertise</h3>
+              <p className="text-gray-600">Based in Yeovil with deep understanding of the South West market</p>
             </div>
             
             <div className="text-center">
@@ -719,50 +770,46 @@ export default function ServicesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Remote Capable</h3>
-              <p className="text-gray-600">Video calls enable us to serve clients across the UK</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Remote Collaboration</h3>
+              <p className="text-gray-600">Video calls and remote tools enable us to serve clients anywhere in the UK</p>
             </div>
           </div>
           
           <div className="bg-gray-50 p-6 rounded-lg">
             <p className="text-gray-700 text-sm">
-              <strong>Primary Service Area:</strong> Yeovil, Taunton, Bridgwater, Glastonbury, Street, Chard, Crewkerne, 
-              Dorchester, Weymouth, Sherborne, Blandford Forum, and surrounding areas within 65 miles
+              <strong>We serve businesses across the UK:</strong> While we're based in Yeovil, Somerset, we work with businesses 
+              throughout England, Scotland, Wales, and Northern Ireland. Our local focus gives us insight into the South West market, 
+              but our expertise extends nationwide. Whether you're in London, Manchester, Edinburgh, Cardiff, or anywhere in between, 
+              we can help with your website needs.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Cog Section Divider */}
-      <div className="py-8 bg-white flex justify-center items-center">
-        <div className="flex items-center gap-6">
-          <svg className="w-8 h-8 text-indigo-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
-          <div className="h-px bg-gray-300 w-24"></div>
-          <svg className="w-6 h-6 text-yellow-500 animate-spin-reverse" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
-          <div className="h-px bg-gray-300 w-24"></div>
-          <svg className="w-8 h-8 text-pink-500 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l1.86-1.41c.2-.15.25-.42.13-.64l-1.86-3.23c-.12-.22-.39-.3-.61-.22l-2.14.91c-.47-.4-1-.72-1.58-.94l-.3-2.4c-.05-.24-.25-.42-.5-.42h-3.73c-.24 0-.45.18-.5.42l-.3 2.4c-.58.22-1.11.54-1.58.94l-2.14-.91c-.22-.08-.49 0-.61.22L2.74 8.87c-.12.22-.07.49.13.64L4.73 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-1.86 1.41c-.2.15-.25.42-.13.64l1.86 3.23c.12.22.39.3.61.22l2.14-.91c.47.4 1 .72 1.58.94l.3 2.4c.05.24.25.42.5.42h3.73c.24 0 .45-.18.5-.42l.3-2.4c.58-.22 1.11-.54 1.58-.94l2.14.91c.22.08.49 0 .61-.22l1.86-3.23c.12-.22.07-.49-.13-.64l-1.86-1.41z"/>
-          </svg>
+      {/* Premium Divider */}
+      <div className="relative py-12 sm:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#51AACD]/10 to-transparent"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+            <div className="w-3 h-3 rounded-full bg-[#51AACD] shadow-lg shadow-[#51AACD]/30"></div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#51AACD]/30 to-[#51AACD]/30"></div>
+          </div>
         </div>
       </div>
 
       {/* Professional Credentials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-24 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{backgroundColor: '#C4E3EA'}}>
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#51AACD'}}>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+              <span className="text-sm font-semibold">Trust & Credentials</span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Professional & Trusted Business
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+              Professional & <span className="text-[#51AACD]">Trusted Business</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               Your peace of mind is our priority. We're fully registered, insured, and committed to delivering excellence.
             </p>
           </div>
@@ -832,28 +879,69 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: '#C4E3EA'}}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Ready to Start Your Digital Partnership?
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 cta-section relative">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full section-badge mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#51AACD] animate-pulse"></div>
+            <span className="text-sm font-semibold">Get Started</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Ready to Start Your <span className="text-[#51AACD]">Digital Partnership?</span>
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
             Join the growing community of Somerset and Dorset businesses we partner with for long-term success.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookCallButton className="text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg shadow-lg" style={{backgroundColor: '#51AACD'}}>
-              Book Your Welcome Call
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center mb-10">
+            <BookCallButton className="cta-button-primary text-gray-900 px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group mx-auto sm:mx-0">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Book Your Welcome Call</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </BookCallButton>
             <Link
               href="/blog"
-              className="bg-white border-2 px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 text-lg" style={{color: '#51AACD', borderColor: '#51AACD'}}
+              className="cta-button-secondary text-[#51AACD] px-8 py-4 rounded-xl font-bold text-base tracking-tight flex items-center justify-center gap-2.5 group mx-auto sm:mx-0"
             >
-              Read Success Stories
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span>Read Success Stories</span>
+              <svg className="w-4 h-4 opacity-80 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
-          <p className="text-sm text-gray-500 mt-4">
-            No commitment • Free consultation • Quick 2-week turnaround
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-gray-700 font-semibold">No commitment</span>
+            </div>
+            <div className="w-px h-6 bg-gray-300"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#51AACD] to-[#3E8BA8] flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <span className="text-gray-700 font-semibold">Free consultation</span>
+            </div>
+            <div className="w-px h-6 bg-gray-300"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span className="text-gray-700 font-semibold">Quick 2-week turnaround</span>
+            </div>
+          </div>
         </div>
       </section>
     </div>
