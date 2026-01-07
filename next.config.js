@@ -1,55 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    // Disable ESLint during builds
-    ignoreDuringBuilds: true,
-  },
-  
   // Performance optimizations
   compress: true,
   poweredByHeader: false,
-  
-  // Modern JavaScript output for better performance  
+
+  // Modern JavaScript output for better performance
   serverExternalPackages: [],
-  
-  // Optimize JavaScript bundle and reduce execution time
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      // Tree shaking optimization
-      config.optimization = {
-        ...config.optimization,
-        usedExports: true,
-        sideEffects: false,
-      };
-      
-      // Split chunks more efficiently
-      config.optimization.splitChunks = {
-        ...config.optimization.splitChunks,
-        chunks: 'all',
-        cacheGroups: {
-          default: false,
-          vendors: false,
-          // Framework chunk (React, Next.js)
-          framework: {
-            chunks: 'all',
-            name: 'framework',
-            test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
-            priority: 40,
-            enforce: true,
-          },
-          // Commons chunk for shared code
-          commons: {
-            name: 'commons',
-            chunks: 'all',
-            minChunks: 2,
-            priority: 20,
-          },
-        },
-      };
-    }
-    
-    return config;
-  },
+
+  // Next.js 16+ uses Turbopack by default
+  turbopack: {},
   
   // Image optimization
   images: {
