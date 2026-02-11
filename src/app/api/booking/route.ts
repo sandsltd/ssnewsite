@@ -16,6 +16,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Check if email environment variables are configured
+    if (!process.env.POSTMARK_API_TOKEN || !process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
+      console.error('Email configuration missing. Please check .env.local file.');
+      return NextResponse.json(
+        { error: 'Email configuration not found. Please contact support.' },
+        { status: 500 }
+      );
+    }
+
     // Create Postmark client
     const client = new postmark.ServerClient(process.env.POSTMARK_API_TOKEN!);
 

@@ -14,6 +14,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Check if email environment variables are configured
+    if (!process.env.POSTMARK_API_TOKEN || !process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
+      console.error('Email configuration missing. Please check .env.local file.');
+      return NextResponse.json(
+        { error: 'Email configuration not found. Please contact support.' },
+        { status: 500 }
+      );
+    }
+
     // Create Postmark client
     const client = new postmark.ServerClient(process.env.POSTMARK_API_TOKEN!);
 
@@ -122,7 +131,7 @@ Customer completed Step 1 (business details) but didn't finish booking a time sl
     await client.sendEmail({
       From: process.env.EMAIL_FROM!,
       To: process.env.EMAIL_TO!,
-      Subject: `🚨 New Lead Started Booking - ${businessName} (${name})`,
+      Subject: `New Lead Started Booking - ${businessName} (${name})`,
       TextBody: leadEmailText,
       HtmlBody: leadEmailHtml,
     });
