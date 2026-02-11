@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import * as postmark from 'postmark';
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,25 +14,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if email environment variables are configured
-    if (!process.env.EMAIL_HOST || !process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
-      console.error('Email configuration missing. Please check .env.local file.');
-      return NextResponse.json(
-        { error: 'Email configuration not found. Please contact support.' },
-        { status: 500 }
-      );
-    }
-
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '465'),
-      secure: true, // true for 465, false for other ports
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    // Create Postmark client
+    const client = new postmark.ServerClient(process.env.POSTMARK_API_TOKEN!);
 
     // Lead capture email content
     const leadEmailHtml = `
@@ -40,15 +23,15 @@ export async function POST(request: NextRequest) {
         <h2 style="color: #ea580c; border-bottom: 2px solid #ea580c; padding-bottom: 10px;">
           🚨 New Lead - Customer Started Booking Process
         </h2>
-        
+
         <div style="background: #fef3e2; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ea580c;">
           <h3 style="color: #333; margin-top: 0;">⚠️ Action Required</h3>
           <p style="color: #92400e; font-weight: bold;">
-            A potential customer has filled out their business details and proceeded to the booking calendar, but hasn't completed their booking yet. 
+            A potential customer has filled out their business details and proceeded to the booking calendar, but hasn't completed their booking yet.
             This is a warm lead - consider following up!
           </p>
         </div>
-        
+
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="color: #333; margin-top: 0;">Contact Information</h3>
           <p><strong>Name:</strong> ${name}</p>
@@ -89,7 +72,7 @@ export async function POST(request: NextRequest) {
         </div>
 
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
-        
+
         <p style="color: #6b7280; font-size: 14px; text-align: center;">
           This lead was captured from the Saunders Simmons website booking system.<br>
           Customer completed Step 1 (business details) but didn't finish booking a time slot.
@@ -136,17 +119,17 @@ Customer completed Step 1 (business details) but didn't finish booking a time sl
     `;
 
     // Send lead capture email to business
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO,
-      subject: `🚨 New Lead Started Booking - ${businessName} (${name})`,
-      text: leadEmailText,
-      html: leadEmailHtml,
+    await client.sendEmail({
+      From: process.env.EMAIL_FROM!,
+      To: process.env.EMAIL_TO!,
+      Subject: `🚨 New Lead Started Booking - ${businessName} (${name})`,
+      TextBody: leadEmailText,
+      HtmlBody: leadEmailHtml,
     });
 
-    return NextResponse.json({ 
-      success: true, 
-      message: 'Lead captured successfully' 
+    return NextResponse.json({
+      success: true,
+      message: 'Lead captured successfully'
     });
 
   } catch (error) {

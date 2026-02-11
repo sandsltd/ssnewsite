@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import * as postmark from 'postmark';
 import fs from 'fs';
 import path from 'path';
 
@@ -16,25 +16,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if email environment variables are configured
-    if (!process.env.EMAIL_HOST || !process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
-      console.error('Email configuration missing. Please check .env.local file.');
-      return NextResponse.json(
-        { error: 'Email configuration not found. Please contact support.' },
-        { status: 500 }
-      );
-    }
-
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '465'),
-      secure: true, // true for 465, false for other ports
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    // Create Postmark client
+    const client = new postmark.ServerClient(process.env.POSTMARK_API_TOKEN!);
 
     // Business email content (to you)
     const businessEmailHtml = `
@@ -42,7 +25,7 @@ export async function POST(request: NextRequest) {
         <h2 style="color: #ea580c; border-bottom: 2px solid #ea580c; padding-bottom: 10px;">
           New Booking Request
         </h2>
-        
+
                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
                  <h3 style="color: #333; margin-top: 0;">Contact Information</h3>
                  <p><strong>Name:</strong> ${name}</p>
@@ -78,7 +61,7 @@ export async function POST(request: NextRequest) {
         </div>
 
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
-        
+
         <p style="color: #6b7280; font-size: 14px; text-align: center;">
           This booking was submitted via the Saunders Simmons website booking system.
         </p>
@@ -91,7 +74,7 @@ export async function POST(request: NextRequest) {
         <h2 style="color: #ea580c; border-bottom: 2px solid #ea580c; padding-bottom: 10px;">
           Booking Confirmation - Saunders Simmons Ltd
         </h2>
-        
+
         <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="color: #333; margin-top: 0;">Hi ${name},</h3>
           <p style="color: #059669; font-weight: bold; font-size: 16px;">
@@ -129,7 +112,7 @@ export async function POST(request: NextRequest) {
         </div>
 
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
-        
+
         <div style="text-align: center;">
           <p style="color: #6b7280; font-size: 14px;">
             Thanks again for choosing Saunders Simmons Ltd<br>
@@ -158,7 +141,7 @@ ${selectedSlot}
 
 Next Steps:
 - Contact ${name} to confirm the appointment
-- Prepare discussion points about their business needs  
+- Prepare discussion points about their business needs
 - Send calendar invitation for the confirmed time slot
     `;
 
@@ -176,7 +159,7 @@ Thank you for choosing Saunders Simmons Ltd. We're excited to discuss how we can
        - Business: ${businessName}
        - Contact Email: ${email}
        - Phone Number: ${phone}
-       
+
        📞 IMPORTANT: This is the number we will call you on. If this is incorrect, please contact us immediately.
 
 What Happens Next?
@@ -195,46 +178,46 @@ Building long-term digital partnerships
     `;
 
     // Send email to business
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO,
-      subject: `New Booking Request - ${businessName} (${name})`,
-      text: businessEmailText,
-      html: businessEmailHtml,
+    await client.sendEmail({
+      From: process.env.EMAIL_FROM!,
+      To: process.env.EMAIL_TO!,
+      Subject: `New Booking Request - ${businessName} (${name})`,
+      TextBody: businessEmailText,
+      HtmlBody: businessEmailHtml,
     });
 
     // Send confirmation email to customer
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: email,
-      subject: `Booking Confirmed - Your Call with Saunders Simmons Ltd`,
-      text: customerEmailText,
-      html: customerEmailHtml,
+    await client.sendEmail({
+      From: process.env.EMAIL_FROM!,
+      To: email,
+      Subject: `Booking Confirmed - Your Call with Saunders Simmons Ltd`,
+      TextBody: customerEmailText,
+      HtmlBody: customerEmailHtml,
     });
 
     // Save booked slot to JSON file
     try {
       const filePath = path.join(process.cwd(), 'data', 'bookings.json');
-      
+
       // Create file if it doesn't exist
       if (!fs.existsSync(filePath)) {
         fs.mkdirSync(path.dirname(filePath), { recursive: true });
         fs.writeFileSync(filePath, JSON.stringify({ bookedSlots: [] }, null, 2));
       }
-      
+
       // Read current bookings
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const data = JSON.parse(fileContents);
-      
+
       // Add new booking (only slot info, no customer details)
       const bookingEntry = {
         slot: selectedSlot,
         bookedAt: new Date().toISOString()
       };
-      
+
       data.bookedSlots = data.bookedSlots || [];
       data.bookedSlots.push(bookingEntry);
-      
+
       // Save updated bookings
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
     } catch (fileError) {
@@ -242,9 +225,9 @@ Building long-term digital partnerships
       // Continue anyway - email was sent successfully
     }
 
-    return NextResponse.json({ 
-      success: true, 
-      message: 'Booking request sent successfully' 
+    return NextResponse.json({
+      success: true,
+      message: 'Booking request sent successfully'
     });
 
   } catch (error) {
