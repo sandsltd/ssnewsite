@@ -100,6 +100,10 @@
 > **Instructions for future sessions:** Always append new session entries below. Record what was done, rankings checked, and content published.
 
 ### 17 Feb 2026 — Automated Weekly SEO Agent Run
+- **What was done:** Checked rankings for 24 keywords (6 indexed). Generated blog post: "How to Set Up an Ecommerce Website in the UK: A Complete Guide for 2026" targeting "how to set up an ecommerce website UK". Added 9 internal links across blog posts. 2 competitors have published new content recently. Generated 5 SEO recommendations.
+- **Run type:** Automated (GitHub Actions)
+
+### 17 Feb 2026 — Automated Weekly SEO Agent Run
 - **What was done:** Checked rankings for 24 keywords (6 indexed). Generated blog post: "WordPress vs Custom Website: Which Is Better for Your Business in 2026?" targeting "wordpress vs custom website which is better". Added 5 internal links across blog posts. 2 competitors have published new content recently. Generated 5 SEO recommendations.
 - **Run type:** Automated (GitHub Actions)
 
