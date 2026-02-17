@@ -123,7 +123,7 @@ export default async function BlogPostPage({
               </div>
             )}
 
-            <div className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-base prose-p:leading-relaxed prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-blue-600 prose-a:underline hover:prose-a:text-blue-800 prose-ul:my-4 prose-ol:my-4">
+            <div className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-[#51AACD] prose-a:underline prose-a:decoration-[#51AACD]/30 hover:prose-a:text-[#3E8BA8] hover:prose-a:decoration-[#3E8BA8] prose-ul:my-4 prose-ol:my-4 prose-img:rounded-lg prose-blockquote:border-l-[#51AACD] prose-blockquote:text-gray-600">
               <MDXRemote source={post.content} />
             </div>
           </article>
