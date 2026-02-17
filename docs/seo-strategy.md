@@ -13,38 +13,38 @@
 ### Tier 1 — Primary (high priority)
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | web design yeovil | Not indexed yet | — | / | Core local keyword |
-| 2 | website design somerset | Not indexed yet | — | / | Regional targeting |
-| 3 | seo services yeovil | Not indexed yet | — | /seo-digital-marketing/ | Local SEO service |
-| 4 | digital marketing dorset | Not indexed yet | — | /seo-digital-marketing/ | Adjacent county targeting |
-| 5 | web developer somerset | Not indexed yet | — | / | Developer-focused search |
-| 6 | website design dorset | Not indexed yet | — | / | Adjacent county targeting |
-| 7 | web design somerset | Not indexed yet | — | / | Regional core keyword |
-| 8 | seo agency yeovil | Not indexed yet | — | /seo-digital-marketing/ | Agency-focused search |
+| 1 | web design yeovil | Not indexed yet | 17 Feb 2026 | / | Core local keyword |
+| 2 | website design somerset | Not indexed yet | 17 Feb 2026 | / | Regional targeting |
+| 3 | seo services yeovil | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Local SEO service |
+| 4 | digital marketing dorset | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Adjacent county targeting |
+| 5 | web developer somerset | Not indexed yet | 17 Feb 2026 | / | Developer-focused search |
+| 6 | website design dorset | Not indexed yet | 17 Feb 2026 | / | Adjacent county targeting |
+| 7 | web design somerset | Not indexed yet | 17 Feb 2026 | / | Regional core keyword |
+| 8 | seo agency yeovil | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Agency-focused search |
 
 ### Tier 2 — Secondary
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | wordpress web design somerset | Not indexed yet | — | /wordpress-web-design/ | WordPress specialism |
-| 2 | ecommerce website design UK | Not indexed yet | — | /web-design/ | Ecommerce niche |
-| 3 | local seo services UK | Not indexed yet | — | /seo-digital-marketing/ | National local-SEO term |
-| 4 | custom software development UK | Not indexed yet | — | /custom-software-development/ | Software service page |
-| 5 | responsive web design somerset | Not indexed yet | — | /web-design/ | Mobile-friendly focus |
-| 6 | app development somerset | Not indexed yet | — | /app-development/ | App service targeting |
-| 7 | digital marketing agency somerset | Not indexed yet | — | /seo-digital-marketing/ | Agency-level search |
-| 8 | website redesign yeovil | Not indexed yet | — | /web-design/ | Redesign-specific intent |
+| 1 | wordpress web design somerset | Not indexed yet | 17 Feb 2026 | /wordpress-web-design/ | WordPress specialism |
+| 2 | ecommerce website design UK | Not indexed yet | 17 Feb 2026 | /web-design/ | Ecommerce niche |
+| 3 | local seo services UK | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | National local-SEO term |
+| 4 | custom software development UK | Not indexed yet | 17 Feb 2026 | /custom-software-development/ | Software service page |
+| 5 | responsive web design somerset | Not indexed yet | 17 Feb 2026 | /web-design/ | Mobile-friendly focus |
+| 6 | app development somerset | Not indexed yet | 17 Feb 2026 | /app-development/ | App service targeting |
+| 7 | digital marketing agency somerset | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Agency-level search |
+| 8 | website redesign yeovil | Not indexed yet | 17 Feb 2026 | /web-design/ | Redesign-specific intent |
 
 ### Tier 3 — Long-tail / Blog
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | how much does a website cost uk | Not indexed yet | — | /blog/website-cost-uk/ | High-volume informational |
-| 2 | best seo strategies for small businesses | Not indexed yet | — | /blog/seo-strategies-small-business/ | Evergreen guide |
-| 3 | why do i need a website for my business | Not indexed yet | — | /blog/why-need-website/ | Awareness-stage content |
-| 4 | benefits of responsive web design | Not indexed yet | — | /blog/benefits-responsive-design/ | Educational content |
-| 5 | how to improve google rankings | Not indexed yet | — | /blog/improve-google-rankings/ | SEO tips content |
-| 6 | wordpress vs custom website | Not indexed yet | — | /blog/wordpress-vs-custom/ | Comparison content |
-| 7 | how to set up an ecommerce website uk | Not indexed yet | — | /blog/ecommerce-setup-guide/ | Transactional guide |
-| 8 | website speed optimisation tips | Not indexed yet | — | /blog/website-speed-optimisation/ | Technical SEO content |
+| 1 | how much does a website cost uk | Not indexed yet | 17 Feb 2026 | /blog/website-cost-uk/ | High-volume informational |
+| 2 | best seo strategies for small businesses | Not indexed yet | 17 Feb 2026 | /blog/seo-strategies-small-business/ | Evergreen guide |
+| 3 | why do i need a website for my business | Not indexed yet | 17 Feb 2026 | /blog/why-need-website/ | Awareness-stage content |
+| 4 | benefits of responsive web design | Not indexed yet | 17 Feb 2026 | /blog/benefits-responsive-design/ | Educational content |
+| 5 | how to improve google rankings | Not indexed yet | 17 Feb 2026 | /blog/improve-google-rankings/ | SEO tips content |
+| 6 | wordpress vs custom website | Not indexed yet | 17 Feb 2026 | /blog/wordpress-vs-custom/ | Comparison content |
+| 7 | how to set up an ecommerce website uk | Not indexed yet | 17 Feb 2026 | /blog/ecommerce-setup-guide/ | Transactional guide |
+| 8 | website speed optimisation tips | Not indexed yet | 17 Feb 2026 | /blog/website-speed-optimisation/ | Technical SEO content |
 
 ## Content Strategy
 
@@ -98,6 +98,10 @@
 
 ## Session Log
 > **Instructions for future sessions:** Always append new session entries below. Record what was done, rankings checked, and content published.
+
+### 17 Feb 2026 — Automated Weekly SEO Agent Run
+- **What was done:** Checked rankings for 24 keywords (0 indexed). Generated blog post: "How Much Does a Website Cost in the UK? 2026 Pricing Guide" targeting "how much does a website cost UK 2026". 1 competitors have published new content recently. Generated 5 SEO recommendations.
+- **Run type:** Automated (GitHub Actions)
 
 ### Session 1 — 2026-02-17
 - **Action:** Initial SEO strategy document created
