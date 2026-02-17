@@ -13,14 +13,14 @@
 ### Tier 1 — Primary (high priority)
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | web design yeovil | Position 9.2 | 17 Feb 2026 | / | Core local keyword |
-| 2 | website design somerset | Position 37.5 | 17 Feb 2026 | / | Regional targeting |
-| 3 | seo services yeovil | Position 35.2 | 17 Feb 2026 | /seo-digital-marketing/ | Local SEO service |
+| 1 | web design yeovil | Not indexed yet | 17 Feb 2026 | / | Core local keyword |
+| 2 | website design somerset | Not indexed yet | 17 Feb 2026 | / | Regional targeting |
+| 3 | seo services yeovil | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Local SEO service |
 | 4 | digital marketing dorset | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Adjacent county targeting |
 | 5 | web developer somerset | Not indexed yet | 17 Feb 2026 | / | Developer-focused search |
 | 6 | website design dorset | Not indexed yet | 17 Feb 2026 | / | Adjacent county targeting |
-| 7 | web design somerset | Position 65 | 17 Feb 2026 | / | Regional core keyword |
-| 8 | seo agency yeovil | Position 32.3 | 17 Feb 2026 | /seo-digital-marketing/ | Agency-focused search |
+| 7 | web design somerset | Not indexed yet | 17 Feb 2026 | / | Regional core keyword |
+| 8 | seo agency yeovil | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Agency-focused search |
 
 ### Tier 2 — Secondary
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
@@ -30,7 +30,7 @@
 | 3 | local seo services UK | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | National local-SEO term |
 | 4 | custom software development UK | Not indexed yet | 17 Feb 2026 | /custom-software-development/ | Software service page |
 | 5 | responsive web design somerset | Not indexed yet | 17 Feb 2026 | /web-design/ | Mobile-friendly focus |
-| 6 | app development somerset | Position 22 | 17 Feb 2026 | /app-development/ | App service targeting |
+| 6 | app development somerset | Not indexed yet | 17 Feb 2026 | /app-development/ | App service targeting |
 | 7 | digital marketing agency somerset | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Agency-level search |
 | 8 | website redesign yeovil | Not indexed yet | 17 Feb 2026 | /web-design/ | Redesign-specific intent |
 
@@ -98,6 +98,10 @@
 
 ## Session Log
 > **Instructions for future sessions:** Always append new session entries below. Record what was done, rankings checked, and content published.
+
+### 17 Feb 2026 — Automated Weekly SEO Agent Run
+- **What was done:** Checked rankings for 24 keywords (0 indexed). Generated blog post: "Web Design Trends 2026: What UK Businesses Need to Know" targeting "web design trends 2026". Added 5 internal links across blog posts. 2 competitors have published new content recently. Generated 5 SEO recommendations.
+- **Run type:** Automated (GitHub Actions)
 
 ### 17 Feb 2026 — Automated Weekly SEO Agent Run
 - **What was done:** Checked rankings for 24 keywords (6 indexed). Generated blog post: "Best SEO Strategies for Small Businesses in 2026" targeting "best SEO strategies for small businesses". Added 1 internal links across blog posts. 2 competitors have published new content recently. Generated 5 SEO recommendations.
