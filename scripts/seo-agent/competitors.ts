@@ -13,11 +13,12 @@ export interface CompetitorReport {
 }
 
 const COMPETITORS = [
-  { name: "Jerrard Wayne", domain: "jerrardwayne.co.uk", sitemapUrl: "https://jerrardwayne.co.uk/sitemap.xml" },
-  { name: "Nettl Yeovil", domain: "nettl.com", sitemapUrl: "https://www.nettl.com/sitemap.xml" },
-  { name: "Twilo Creative", domain: "twilocreative.com", sitemapUrl: "https://twilocreative.com/sitemap.xml" },
-  { name: "South West Web Design", domain: "southwestwebdesign.co.uk", sitemapUrl: "https://www.southwestwebdesign.co.uk/sitemap.xml" },
-  { name: "Jerrard Wayne Digital", domain: "jerrardwayne.co.uk", sitemapUrl: "https://jerrardwayne.co.uk/sitemap_index.xml" },
+  { name: "Aztec Media", domain: "aztec.media", sitemapUrl: "https://aztec.media/sitemap.xml" },
+  { name: "Blunt Notion", domain: "bluntnotion.co.uk", sitemapUrl: "https://bluntnotion.co.uk/sitemap.xml" },
+  { name: "TP Creates", domain: "tpcreates.com", sitemapUrl: "https://tpcreates.com/sitemap.xml" },
+  { name: "CK Creative Design", domain: "ckcreativedesign.co.uk", sitemapUrl: "https://www.ckcreativedesign.co.uk/sitemap.xml" },
+  { name: "morphsites", domain: "morphsites.com", sitemapUrl: "https://www.morphsites.com/sitemap.xml" },
+  { name: "Stable Design", domain: "stabledesign.co.uk", sitemapUrl: "https://www.stabledesign.co.uk/sitemap.xml" },
 ];
 
 async function fetchSitemap(
