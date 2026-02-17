@@ -15,24 +15,24 @@
 |---|---------|-----------------|--------------|-------------|-------|
 | 1 | web design yeovil | Not indexed yet | 17 Feb 2026 | / | Core local keyword |
 | 2 | website design somerset | Not indexed yet | 17 Feb 2026 | / | Regional targeting |
-| 3 | seo services yeovil | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Local SEO service |
-| 4 | digital marketing dorset | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Adjacent county targeting |
+| 3 | seo services yeovil | Not indexed yet | 17 Feb 2026 | /services/seo/ | Local SEO service |
+| 4 | digital marketing dorset | Not indexed yet | 17 Feb 2026 | /services/seo/ | Adjacent county targeting |
 | 5 | web developer somerset | Not indexed yet | 17 Feb 2026 | / | Developer-focused search |
 | 6 | website design dorset | Not indexed yet | 17 Feb 2026 | / | Adjacent county targeting |
 | 7 | web design somerset | Not indexed yet | 17 Feb 2026 | / | Regional core keyword |
-| 8 | seo agency yeovil | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Agency-focused search |
+| 8 | seo agency yeovil | Not indexed yet | 17 Feb 2026 | /services/seo/ | Agency-focused search |
 
 ### Tier 2 — Secondary
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | wordpress web design somerset | Not indexed yet | 17 Feb 2026 | /wordpress-web-design/ | WordPress specialism |
-| 2 | ecommerce website design UK | Not indexed yet | 17 Feb 2026 | /web-design/ | Ecommerce niche |
-| 3 | local seo services UK | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | National local-SEO term |
-| 4 | custom software development UK | Not indexed yet | 17 Feb 2026 | /custom-software-development/ | Software service page |
-| 5 | responsive web design somerset | Not indexed yet | 17 Feb 2026 | /web-design/ | Mobile-friendly focus |
-| 6 | app development somerset | Not indexed yet | 17 Feb 2026 | /app-development/ | App service targeting |
-| 7 | digital marketing agency somerset | Not indexed yet | 17 Feb 2026 | /seo-digital-marketing/ | Agency-level search |
-| 8 | website redesign yeovil | Not indexed yet | 17 Feb 2026 | /web-design/ | Redesign-specific intent |
+| 1 | wordpress web design somerset | Not indexed yet | 17 Feb 2026 | /wordpress-web-design-yeovil/ | WordPress specialism |
+| 2 | ecommerce website design UK | Not indexed yet | 17 Feb 2026 | /services/web-design/ | Ecommerce niche |
+| 3 | local seo services UK | Not indexed yet | 17 Feb 2026 | /services/seo/ | National local-SEO term |
+| 4 | custom software development UK | Not indexed yet | 17 Feb 2026 | /services/software/ | Software service page |
+| 5 | responsive web design somerset | Not indexed yet | 17 Feb 2026 | /web-design-somerset/ | Mobile-friendly focus |
+| 6 | app development somerset | Not indexed yet | 17 Feb 2026 | /services/software/ | App service targeting |
+| 7 | digital marketing agency somerset | Not indexed yet | 17 Feb 2026 | /services/seo/ | Agency-level search |
+| 8 | website redesign yeovil | Not indexed yet | 17 Feb 2026 | /web-design-yeovil/ | Redesign-specific intent |
 
 ### Tier 3 — Long-tail / Blog
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |

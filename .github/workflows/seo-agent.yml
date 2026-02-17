@@ -12,12 +12,13 @@ permissions:
 jobs:
   seo-agent:
     runs-on: ubuntu-latest
+    timeout-minutes: 200
 
     steps:
-      - name: Random delay (09:00-15:00 window)
+      - name: Random delay (09:00-12:00 window)
         if: github.event_name == 'schedule'
         run: |
-          DELAY=$((RANDOM % 21600))
+          DELAY=$((RANDOM % 10800))
           echo "Sleeping for $((DELAY / 60)) minutes before starting..."
           sleep $DELAY
 
