@@ -16,6 +16,19 @@ interface PostInfo {
   description: string;
 }
 
+// Service and location pages to include as link targets
+const SITE_PAGES = [
+  { title: "Web Design Services", url: "/services/web-design" },
+  { title: "SEO & Digital Marketing", url: "/services/seo" },
+  { title: "Software Development", url: "/services/software" },
+  { title: "Web Design Yeovil", url: "/web-design-yeovil" },
+  { title: "Web Design Somerset", url: "/web-design-somerset" },
+  { title: "Web Design Dorset", url: "/web-design-dorset" },
+  { title: "WordPress Web Design Yeovil", url: "/wordpress-web-design-yeovil" },
+  { title: "Portfolio", url: "/portfolio" },
+  { title: "FAQ", url: "/faq" },
+];
+
 function getAllPosts(): PostInfo[] {
   const blogDir = path.join(process.cwd(), CONFIG.blogContentDir);
   if (!fs.existsSync(blogDir)) return [];
@@ -66,9 +79,12 @@ export async function addInternalLinks(): Promise<LinkingResult> {
     const frontmatter = fileContent.slice(0, fmEnd + 3);
     const body = fileContent.slice(fmEnd + 3);
 
-    // Check how many internal blog links already exist
-    const existingLinks = (body.match(/\[([^\]]+)\]\(\/blog\//g) || []).length;
-    if (existingLinks >= 3) {
+    // Check how many internal links already exist (blog + service + location)
+    const existingBlogLinks = (body.match(/\[([^\]]+)\]\(\/blog\//g) || []).length;
+    const existingServiceLinks = (body.match(/\[([^\]]+)\]\(\/(services|web-design-yeovil|web-design-somerset|web-design-dorset|wordpress-web-design-yeovil|portfolio|faq)/g) || []).length;
+    const totalExisting = existingBlogLinks + existingServiceLinks;
+
+    if (totalExisting >= 5) {
       continue;
     }
 
@@ -83,13 +99,19 @@ export async function addInternalLinks(): Promise<LinkingResult> {
       )
       .join("\n");
 
+    const sitePagesList = SITE_PAGES
+      .map((p) => `- ${p.title}: ${p.url}`)
+      .join("\n");
+
+    const maxNewLinks = Math.max(1, 5 - totalExisting);
+
     const response = await anthropic.messages.create({
       model: CONFIG.contentModel,
       max_tokens: 4096,
       messages: [
         {
           role: "user",
-          content: `You are adding internal links to a blog post. The goal is to naturally link to related posts where it makes sense contextually.
+          content: `You are adding internal links to a blog post for Saunders Simmons, a web design and digital marketing agency. The goal is to naturally link to related content where it makes sense contextually.
 
 ## Current Post
 Title: "${post.title}"
@@ -98,16 +120,20 @@ Target keyword: "${post.targetKeyword}"
 ## Post Body (MDX)
 ${body}
 
-## Other Posts Available to Link To
+## Other Blog Posts Available to Link To
 ${otherPostsList}
 
+## Service Pages Available to Link To
+${sitePagesList}
+
 ## Existing Internal Links
-This post already has ${existingLinks} internal blog links.
+This post already has ${totalExisting} internal links (${existingBlogLinks} blog, ${existingServiceLinks} service/page).
 
 ## Rules
-- Add ${Math.max(1, 3 - existingLinks)} internal links to other blog posts where contextually relevant
+- Add up to ${maxNewLinks} internal links where contextually relevant
+- Prioritise service page links (e.g. /services/web-design, /services/seo) over blog-to-blog links
 - Use natural anchor text that fits the sentence (not "click here" or the full title)
-- Use markdown link format: [anchor text](/blog/slug)
+- Use markdown link format: [anchor text](/path)
 - Only link where it genuinely makes sense — don't force links
 - Do NOT change any other content — keep everything exactly the same
 - Do NOT modify existing links
@@ -122,9 +148,10 @@ This post already has ${existingLinks} internal blog links.
       response.content[0].type === "text" ? response.content[0].text : "";
 
     // Count new links added
-    const newLinkCount = (newBody.match(/\[([^\]]+)\]\(\/blog\//g) || [])
-      .length;
-    const linksAdded = newLinkCount - existingLinks;
+    const newBlogLinks = (newBody.match(/\[([^\]]+)\]\(\/blog\//g) || []).length;
+    const newServiceLinks = (newBody.match(/\[([^\]]+)\]\(\/(services|web-design-yeovil|web-design-somerset|web-design-dorset|wordpress-web-design-yeovil|portfolio|faq)/g) || []).length;
+    const newTotal = newBlogLinks + newServiceLinks;
+    const linksAdded = newTotal - totalExisting;
 
     if (linksAdded > 0) {
       fs.writeFileSync(filePath, frontmatter + "\n" + newBody.trim() + "\n");
