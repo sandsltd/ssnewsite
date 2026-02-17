@@ -27,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/faq`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -103,5 +109,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...staticPages, ...blogPosts, ...oldBlogPosts]
+  // MDX blog posts from SEO agent
+  let mdxBlogPosts: MetadataRoute.Sitemap = []
+
+  try {
+    const mdxDirectory = path.join(process.cwd(), 'content', 'blog')
+
+    if (fs.existsSync(mdxDirectory)) {
+      const files = fs.readdirSync(mdxDirectory).filter(file => file.endsWith('.mdx'))
+
+      mdxBlogPosts = files.map(file => {
+        const filePath = path.join(mdxDirectory, file)
+        const fileContent = fs.readFileSync(filePath, 'utf8')
+        const { data } = matter(fileContent)
+
+        const slug = data.slug || file.replace('.mdx', '')
+
+        return {
+          url: `${baseUrl}/blog/${slug}`,
+          lastModified: data.publishedAt ? new Date(data.publishedAt) : new Date(),
+          changeFrequency: 'monthly' as const,
+          priority: 0.7,
+        }
+      })
+    }
+  } catch (error) {
+    console.error('Error reading MDX blog posts for sitemap:', error)
+  }
+
+  return [...staticPages, ...blogPosts, ...mdxBlogPosts, ...oldBlogPosts]
 }
