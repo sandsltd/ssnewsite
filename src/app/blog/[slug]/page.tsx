@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostBySlug, getAllSlugs, getRelatedPosts } from "@/lib/blog";
+import BookCallButton from "@/components/BookCallButton";
 
 const pillarLabels: Record<string, string> = {
   "web-design": "Web Design",
@@ -139,12 +140,11 @@ export default async function BlogPostPage({
               business goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                href="/#contact"
-                className="inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+              <BookCallButton
+                className="inline-block rounded-lg bg-[#51AACD] px-6 py-3 text-sm font-semibold text-white hover:bg-[#3E8BA8] transition-colors cursor-pointer"
               >
                 Get a Free Quote
-              </Link>
+              </BookCallButton>
               <Link
                 href="/services"
                 className="inline-block rounded-lg bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
