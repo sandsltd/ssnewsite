@@ -13,38 +13,38 @@
 ### Tier 1 — Primary (high priority)
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | web design yeovil | Position 9.7 | 1 Jun 2026 | / | Core local keyword |
-| 2 | website design somerset | Not indexed yet | 1 Jun 2026 | / | Regional targeting |
-| 3 | seo services yeovil | Position 18.3 | 1 Jun 2026 | /services/seo/ | Local SEO service |
-| 4 | digital marketing dorset | Not indexed yet | 1 Jun 2026 | /services/seo/ | Adjacent county targeting |
-| 5 | web developer somerset | Not indexed yet | 1 Jun 2026 | / | Developer-focused search |
-| 6 | website design dorset | Not indexed yet | 1 Jun 2026 | / | Adjacent county targeting |
-| 7 | web design somerset | Not indexed yet | 1 Jun 2026 | / | Regional core keyword |
-| 8 | seo agency yeovil | Position 30.7 | 1 Jun 2026 | /services/seo/ | Agency-focused search |
+| 1 | web design yeovil | Position 9.8 | 5 Jun 2026 | / | Core local keyword |
+| 2 | website design somerset | Not indexed yet | 5 Jun 2026 | / | Regional targeting |
+| 3 | seo services yeovil | Position 19.2 | 5 Jun 2026 | /services/seo/ | Local SEO service |
+| 4 | digital marketing dorset | Not indexed yet | 5 Jun 2026 | /services/seo/ | Adjacent county targeting |
+| 5 | web developer somerset | Not indexed yet | 5 Jun 2026 | / | Developer-focused search |
+| 6 | website design dorset | Not indexed yet | 5 Jun 2026 | / | Adjacent county targeting |
+| 7 | web design somerset | Not indexed yet | 5 Jun 2026 | / | Regional core keyword |
+| 8 | seo agency yeovil | Position 31.2 | 5 Jun 2026 | /services/seo/ | Agency-focused search |
 
 ### Tier 2 — Secondary
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | wordpress web design somerset | Not indexed yet | 1 Jun 2026 | /wordpress-web-design-yeovil/ | WordPress specialism |
-| 2 | ecommerce website design UK | Not indexed yet | 1 Jun 2026 | /services/web-design/ | Ecommerce niche |
-| 3 | local seo services UK | Not indexed yet | 1 Jun 2026 | /services/seo/ | National local-SEO term |
-| 4 | custom software development UK | Not indexed yet | 1 Jun 2026 | /services/software/ | Software service page |
-| 5 | responsive web design somerset | Not indexed yet | 1 Jun 2026 | /web-design-somerset/ | Mobile-friendly focus |
-| 6 | app development somerset | Not indexed yet | 1 Jun 2026 | /services/software/ | App service targeting |
-| 7 | digital marketing agency somerset | Not indexed yet | 1 Jun 2026 | /services/seo/ | Agency-level search |
-| 8 | website redesign yeovil | Not indexed yet | 1 Jun 2026 | /web-design-yeovil/ | Redesign-specific intent |
+| 1 | wordpress web design somerset | Not indexed yet | 5 Jun 2026 | /wordpress-web-design-yeovil/ | WordPress specialism |
+| 2 | ecommerce website design UK | Not indexed yet | 5 Jun 2026 | /services/web-design/ | Ecommerce niche |
+| 3 | local seo services UK | Not indexed yet | 5 Jun 2026 | /services/seo/ | National local-SEO term |
+| 4 | custom software development UK | Not indexed yet | 5 Jun 2026 | /services/software/ | Software service page |
+| 5 | responsive web design somerset | Not indexed yet | 5 Jun 2026 | /web-design-somerset/ | Mobile-friendly focus |
+| 6 | app development somerset | Not indexed yet | 5 Jun 2026 | /services/software/ | App service targeting |
+| 7 | digital marketing agency somerset | Not indexed yet | 5 Jun 2026 | /services/seo/ | Agency-level search |
+| 8 | website redesign yeovil | Not indexed yet | 5 Jun 2026 | /web-design-yeovil/ | Redesign-specific intent |
 
 ### Tier 3 — Long-tail / Blog
 | # | Keyword | Current Position | Last Checked | Target Page | Notes |
 |---|---------|-----------------|--------------|-------------|-------|
-| 1 | how much does a website cost uk | Not indexed yet | 1 Jun 2026 | /blog/website-cost-uk/ | High-volume informational |
-| 2 | best seo strategies for small businesses | Not indexed yet | 1 Jun 2026 | /blog/seo-strategies-small-business/ | Evergreen guide |
-| 3 | why do i need a website for my business | Not indexed yet | 1 Jun 2026 | /blog/why-need-website/ | Awareness-stage content |
-| 4 | benefits of responsive web design | Not indexed yet | 1 Jun 2026 | /blog/benefits-responsive-design/ | Educational content |
-| 5 | how to improve google rankings | Not indexed yet | 1 Jun 2026 | /blog/improve-google-rankings/ | SEO tips content |
-| 6 | wordpress vs custom website | Position 11.4 | 1 Jun 2026 | /blog/wordpress-vs-custom/ | Comparison content |
-| 7 | how to set up an ecommerce website uk | Not indexed yet | 1 Jun 2026 | /blog/ecommerce-setup-guide/ | Transactional guide |
-| 8 | website speed optimisation tips | Not indexed yet | 1 Jun 2026 | /blog/website-speed-optimisation/ | Technical SEO content |
+| 1 | how much does a website cost uk | Not indexed yet | 5 Jun 2026 | /blog/website-cost-uk/ | High-volume informational |
+| 2 | best seo strategies for small businesses | Not indexed yet | 5 Jun 2026 | /blog/seo-strategies-small-business/ | Evergreen guide |
+| 3 | why do i need a website for my business | Not indexed yet | 5 Jun 2026 | /blog/why-need-website/ | Awareness-stage content |
+| 4 | benefits of responsive web design | Not indexed yet | 5 Jun 2026 | /blog/benefits-responsive-design/ | Educational content |
+| 5 | how to improve google rankings | Not indexed yet | 5 Jun 2026 | /blog/improve-google-rankings/ | SEO tips content |
+| 6 | wordpress vs custom website | Position 8 | 5 Jun 2026 | /blog/wordpress-vs-custom/ | Comparison content |
+| 7 | how to set up an ecommerce website uk | Not indexed yet | 5 Jun 2026 | /blog/ecommerce-setup-guide/ | Transactional guide |
+| 8 | website speed optimisation tips | Not indexed yet | 5 Jun 2026 | /blog/website-speed-optimisation/ | Technical SEO content |
 
 ## Content Strategy
 
@@ -98,6 +98,10 @@
 
 ## Session Log
 > **Instructions for future sessions:** Always append new session entries below. Record what was done, rankings checked, and content published.
+
+### 5 Jun 2026 — Automated Weekly SEO Agent Run
+- **What was done:** Checked rankings for 24 keywords (4 indexed). Generated blog post: "How to Reduce Bounce Rate on Your Website in the UK: A Practical Guide" targeting "how to reduce bounce rate on website uk". Added 3 internal links across blog posts. 3 competitors have published new content recently. Generated 5 SEO recommendations.
+- **Run type:** Automated (GitHub Actions)
 
 ### 1 Jun 2026 — Automated Weekly SEO Agent Run
 - **What was done:** Checked rankings for 24 keywords (4 indexed). Generated blog post: "How to Create a Social Media Strategy for Small Business UK: A Step-by-Step Guide" targeting "how to create a social media strategy for small business uk". Added 1 internal links across blog posts. 3 competitors have published new content recently. Generated 5 SEO recommendations.
