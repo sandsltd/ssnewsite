@@ -29,6 +29,21 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/blogs',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/mobile-first-design-2025',
+        destination: '/blog/why-mobile-first-design-matters',
+        permanent: true,
+      },
+    ];
+  },
   
   // Configure cache headers for better performance
   async headers() {

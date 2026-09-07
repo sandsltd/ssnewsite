@@ -1,13 +1,83 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+interface LegacyBlogPost {
+  title: string;
+  excerpt?: string;
+  metaDescription?: string;
+  focusKeyword?: string;
+  date: string;
+  readingTime?: string;
+  author?: string;
+  tags?: string[];
+  image?: string;
+  imageAlt?: string;
+  content: string;
+}
+
+function getLegacyRedirect(slug: string): string | null {
+  const normalisedSlug = slug.toLowerCase();
+  const directLegacyRedirects: Record<string, string> = {
+    'local-seo-yeovil-guide': '/blog/local-seo-yeovil-guide',
+    'mobile-first-design-2025': '/blog/why-mobile-first-design-matters',
+    'seo-tips-dorset-businesses': '/blog/seo-tips-dorset-businesses',
+    'web-design-somerset-2025': '/blog/web-design-somerset-2025',
+    'web-design-yeovil-case-study': '/blog/web-design-yeovil-case-study',
+    'website-redesign-roi': '/blog/website-redesign-roi',
+  };
+
+  const directRedirect = directLegacyRedirects[normalisedSlug];
+  if (directRedirect) {
+    return directRedirect;
+  }
+
+  if (normalisedSlug.includes('local-seo')) {
+    return '/blog/local-seo-yeovil-guide';
+  }
+
+  if (normalisedSlug.includes('website-security')) {
+    return '/blog/website-security-basics-small-businesses';
+  }
+
+  if (normalisedSlug.includes('e-commerce') || normalisedSlug.includes('ecommerce')) {
+    return '/blog/how-to-set-up-an-ecommerce-website-uk';
+  }
+
+  if (normalisedSlug.includes('mobile-first')) {
+    return '/blog/why-mobile-first-design-matters';
+  }
+
+  if (normalisedSlug.includes('ai') && normalisedSlug.includes('web-design')) {
+    return '/blog/web-design-trends-2026';
+  }
+
+  if (
+    normalisedSlug.includes('winter') ||
+    normalisedSlug.includes('autumn') ||
+    normalisedSlug.includes('seasonal-marketing') ||
+    normalisedSlug.includes('digital-marketing')
+  ) {
+    return '/services/seo';
+  }
+
+  if (normalisedSlug.includes('web-design') && normalisedSlug.includes('roi')) {
+    return '/blog/website-redesign-roi';
+  }
+
+  if (normalisedSlug.includes('web-design')) {
+    return '/blog/web-design-yeovil-case-study';
+  }
+
+  return null;
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
@@ -27,7 +97,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-async function getBlogPost(slug: string): Promise<any> {
+async function getBlogPost(slug: string): Promise<LegacyBlogPost | null> {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
   
   // First try to find the exact file with .md extension
@@ -56,7 +126,7 @@ async function getBlogPost(slug: string): Promise<any> {
   return {
     ...data,
     content,
-  };
+  } as LegacyBlogPost;
 }
 
 function formatContent(content: string): string {
@@ -96,6 +166,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = await getBlogPost(slug);
   
   if (!post) {
+    const legacyRedirect = getLegacyRedirect(slug);
+    if (legacyRedirect) {
+      permanentRedirect(legacyRedirect);
+    }
     notFound();
   }
   
