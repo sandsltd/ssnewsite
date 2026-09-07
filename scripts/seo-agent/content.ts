@@ -3,6 +3,37 @@ import fs from "fs";
 import path from "path";
 import { CONFIG } from "./config";
 
+const REFRESH_COOLDOWN_DAYS = 90;
+const CORE_SERVICE_TOPIC_TERMS = [
+  "web design",
+  "website",
+  "wordpress",
+  "ecommerce",
+  "e-commerce",
+  "seo",
+  "search engine",
+  "google business",
+  "google ranking",
+  "core web vitals",
+  "conversion rate",
+  "landing page",
+  "domain name",
+  "web hosting",
+  "accessibility",
+  "software development",
+  "custom software",
+  "app development",
+  "business automation",
+  "customer portal",
+  "crm",
+  "integration",
+];
+
+function isCoreServiceTopic(value: string): boolean {
+  const normalised = value.toLowerCase();
+  return CORE_SERVICE_TOPIC_TERMS.some((term) => normalised.includes(term));
+}
+
 // Image pool categorised by topic
 const IMAGE_POOL: Record<string, string[]> = {
   coding: [
@@ -159,6 +190,7 @@ interface ExistingPost {
   slug: string;
   targetKeyword: string;
   publishedAt: string;
+  updatedAt?: string;
 }
 
 function getExistingPosts(): {
@@ -185,6 +217,7 @@ function getExistingPosts(): {
       if (titleMatch) titles.push(titleMatch[1]);
       const slugMatch = fm.match(/slug:\s*"([^"]+)"/);
       const dateMatch = fm.match(/publishedAt:\s*"([^"]+)"/);
+      const updatedMatch = fm.match(/updatedAt:\s*"([^"]+)"/);
 
       posts.push({
         filename: file,
@@ -192,6 +225,7 @@ function getExistingPosts(): {
         slug: slugMatch?.[1] || "",
         targetKeyword: kwMatch?.[1] || "",
         publishedAt: dateMatch?.[1] || "",
+        updatedAt: updatedMatch?.[1],
       });
     }
   }
@@ -252,7 +286,10 @@ function pickNextTopic(strategyContent: string): {
   }
 
   for (const topic of contentPriorities) {
-    if (!existingKeywords.has(topic.keyword.toLowerCase())) {
+    if (
+      isCoreServiceTopic(topic.keyword) &&
+      !existingKeywords.has(topic.keyword.toLowerCase())
+    ) {
       return topic;
     }
   }
@@ -282,11 +319,11 @@ ${titles.length > 0 ? titles.map((t) => `- ${t}`).join("\n") : "None yet."}
 
 ## Your Task
 Suggest ONE new blog post topic that would be valuable for SEO. Consider:
-- Long-tail keywords small business owners and marketing managers might search for
-- Practical problems businesses face (web presence, online visibility, branding, lead generation, digital marketing)
-- Industry trends and best practices (responsive design, SEO, social media marketing, e-commerce)
-- Topics that complement existing posts without duplicating them
-- Seasonal or timely angles relevant to UK businesses
+- The topic must map directly to a service Saunders Simmons sells: web design, WordPress, ecommerce websites, SEO, custom software, app development, integrations, or business automation.
+- Prefer commercial research, local service intent, comparisons, costs, migration questions, and specific problems those services solve.
+- Do not propose generic social media, email marketing, paid advertising, branding, or broad business-marketing advice unless web design, SEO, or software is the central search intent.
+- Do not repeat an existing intent by changing only the wording, list length, location, season, or year.
+- Give extra weight to Yeovil, Somerset, Dorset, and South West service-intent searches where natural.
 
 Respond in EXACTLY this JSON format, nothing else:
 {"keyword": "the target keyword phrase", "context": "A 1-2 sentence description of the article angle and why it's valuable for SEO"}`,
@@ -310,11 +347,23 @@ function findPostToRefresh(
   const now = new Date();
 
   for (const post of posts) {
+    if (!isCoreServiceTopic(post.targetKeyword)) continue;
+
     // Only consider posts older than 60 days
     const publishedDate = new Date(post.publishedAt);
     const ageInDays =
       (now.getTime() - publishedDate.getTime()) / (1000 * 60 * 60 * 24);
     if (ageInDays < 60) continue;
+
+    const lastContentWorkDate = new Date(post.updatedAt || post.publishedAt);
+    const daysSinceContentWork =
+      (now.getTime() - lastContentWorkDate.getTime()) / (1000 * 60 * 60 * 24);
+    if (
+      Number.isFinite(daysSinceContentWork) &&
+      daysSinceContentWork < REFRESH_COOLDOWN_DAYS
+    ) {
+      continue;
+    }
 
     const ranking = rankings.find(
       (r) => r.keyword.toLowerCase() === post.targetKeyword.toLowerCase()
@@ -401,6 +450,9 @@ Context: ${topic.context}
 - Length: ${CONFIG.minBlogWordCount}-${CONFIG.maxBlogWordCount} words
 - Language: UK English (use "s" not "z" in words like "optimisation", "organisation")
 - Tone: Professional but conversational. Write for small business owners and marketing managers, not developers.
+- Keep the article centred on a service Saunders Simmons actually sells: web design, SEO, WordPress, ecommerce, custom software, app development, integrations, or automation
+- Do not drift into generic social media, email marketing, paid-advertising, branding, or broad business advice
+- Do not duplicate an existing article by changing only the title wording, list length, location, season, or year
 - Include the target keyword naturally 3-5 times. Don't keyword-stuff.
 - Include internal links to ${CONFIG.siteUrl} features where natural
 - Structure with clear H2 and H3 headings
