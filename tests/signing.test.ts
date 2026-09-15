@@ -6,6 +6,7 @@ import { PGlite } from '@electric-sql/pglite';
 import { Agreement, codeHash, CONSENT, newToken, sha256, signatureFields } from '../src/lib/signing/core';
 import { signedPdf } from '../src/lib/signing/pdf';
 import { signingPage } from '../src/lib/signing/page';
+import { signedEmailHtml, verificationEmailHtml } from '../src/lib/signing/email-template';
 import { NextRequest } from 'next/server';
 import { bodyJson, checkOrigin } from '../src/lib/signing/server';
 
@@ -23,6 +24,20 @@ test('signing UI has no marketing trackers or external scripts', () => {
   assert(page.includes(CONSENT));
   assert(page.includes('noindex,nofollow,noarchive'));
   assert(page.includes('nonce="test-nonce"'));
+});
+test('signing emails are branded and safely escape agreement data', () => {
+  const verification = verificationEmailHtml('123456');
+  assert(verification.includes('/logos/logo.png'));
+  assert(verification.includes('123456'));
+  assert(verification.includes('10 minutes'));
+  assert(verification.includes('SAUNDERS SIMMONS LTD'));
+  assert.throws(() => verificationEmailHtml('<script>'));
+  const signed = signedEmailHtml({ title: '<script>alert(1)</script>', signerName: 'Nick & Co',
+    company: 'Test "Company"', signedAt: '2026-09-15', startDate: '2026-10-01', id: 'test', hash: 'a'.repeat(64) });
+  assert(!signed.includes('<script>'));
+  assert(signed.includes('&lt;script&gt;'));
+  assert(signed.includes('Nick &amp; Co'));
+  assert(signed.includes('Your signed PDF is attached.'));
 });
 test('mutating requests reject foreign origins and oversized bodies', async () => {
   const old = process.env.SIGNING_PUBLIC_ORIGIN;

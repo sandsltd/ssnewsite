@@ -1,11 +1,13 @@
 import { Resend } from 'resend';
 import { Agreement, sha256 } from './core';
 import { required, signingDb } from './server';
+import { signedEmailHtml, verificationEmailHtml } from './email-template';
 
 const sender = () => process.env.SIGNING_EMAIL_FROM || 'Saunders Simmons <hello@saunders-simmons.co.uk>';
 export async function sendCode(a: Agreement, code: string) {
   const { error } = await new Resend(required('RESEND_API_KEY')).emails.send({
     from: sender(), to: [a.client_email], subject: 'Your Saunders Simmons agreement verification code',
+    html: verificationEmailHtml(code),
     text: `Your verification code is ${code}.\n\nIt expires in 10 minutes. Enter it on the signing page you opened.\n\nDo not share this code. If you did not request it, ignore this email.\n\nSaunders Simmons Ltd\n0330 043 6608`,
   });
   if (error) throw new Error('Verification email not accepted');
@@ -26,6 +28,8 @@ export async function deliverCopies() {
       const { data, error: sendError } = await resend.emails.send({
         from: sender(), to: [job.recipient], replyTo: a.provider_email,
         subject: `Signed agreement — ${a.client_company}`,
+        html: signedEmailHtml({ title: a.title, signerName: a.signer_name, company: a.client_company,
+          signedAt: a.signed_at, startDate: a.start_date, id: a.id, hash: a.signed_hash }),
         text: `The ${a.title} agreement has been signed by ${a.signer_name} on behalf of ${a.client_company}.\n\nThe signed PDF is attached, including the signing record. Please keep this copy.\n\nSigned: ${a.signed_at}\nService start: ${a.start_date}\nReference: ${a.id}\nSigned PDF SHA-256: ${a.signed_hash}\n\nThis confirms signing only; it is not confirmation of payment.\n\nSaunders Simmons Ltd\n0330 043 6608`,
         attachments: [{ filename: 'Saunders-Simmons-Signed-Agreement.pdf', content: pdf }],
       }, { idempotencyKey: `signed-copy/${job.id}` });

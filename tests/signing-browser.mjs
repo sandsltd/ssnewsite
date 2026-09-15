@@ -14,7 +14,7 @@ const browser = await chromium.launch({ headless: true });
 const output = await mkdtemp(path.join(os.tmpdir(), 'ss-signing-browser-'));
 try {
   const page = await browser.newPage();
-  let verified = false, signed = false, signedPayload;
+  let verified = false, signed = false, signedPayload, sendAttempts = 0;
   const external = [], errors = [];
   page.on('pageerror', e => errors.push(e.message));
   page.on('request', r => { if (!r.url().startsWith(origin)) external.push(r.url()); });
@@ -22,12 +22,18 @@ try {
   const pdfBytes = Buffer.from(await pdf.save());
   await page.route('**/api/signing/**', async route => {
     const url = new URL(route.request().url());
-    if (url.pathname.endsWith('/request-code')) return route.fulfill({ json: { ok: true } });
+    if (url.pathname.endsWith('/request-code')) {
+      await new Promise(resolve => setTimeout(resolve, 700));
+      if (++sendAttempts === 1) return route.fulfill({ status: 503, json: { error: 'Test send failure. Please try again.' } });
+      return route.fulfill({ json: { ok: true } });
+    }
     if (url.pathname.endsWith('/verify-code')) {
+      await new Promise(resolve => setTimeout(resolve, 700));
       assert.equal(route.request().postDataJSON().code, '123456'); verified = true;
       return route.fulfill({ json: { ok: true } });
     }
     if (url.pathname.endsWith('/complete')) {
+      await new Promise(resolve => setTimeout(resolve, 700));
       signedPayload = route.request().postDataJSON(); signed = true;
       return route.fulfill({ json: { ok: true } });
     }
@@ -46,8 +52,22 @@ try {
   assert.match(headers['content-security-policy'], /script-src 'nonce-/);
   assert(!headers['content-security-policy'].includes('facebook'));
   await page.getByRole('button', { name: 'Email me a code' }).click();
+  const sending = page.getByRole('button', { name: 'Sending code…', exact: true });
+  await sending.waitFor();
+  assert(await sending.isDisabled());
+  assert.equal(await sending.getAttribute('aria-busy'), 'true');
+  assert.equal(await sending.evaluate(button => getComputedStyle(button, '::before').animationName), 'button-spin');
+  await page.getByText('Test send failure. Please try again.', { exact: true }).waitFor();
+  assert.equal(await page.locator('#sendCode').getAttribute('aria-busy'), null);
+  assert.equal(await page.locator('#sendCode').isDisabled(), false);
+  await page.getByRole('button', { name: 'Email me a code' }).click();
   await page.getByLabel('Six-digit email code').fill('123456');
+  assert.equal(await page.locator('#sendCode').textContent(), 'Send a new code');
   await page.getByRole('button', { name: 'Verify and view agreement' }).click();
+  const verifying = page.getByRole('button', { name: 'Verifying…', exact: true });
+  await verifying.waitFor();
+  assert(await verifying.isDisabled());
+  assert.equal(await verifying.getAttribute('aria-busy'), 'true');
   await page.getByRole('heading', { name: 'Test service agreement' }).waitFor();
   await page.getByLabel('Your role or position').fill('Director');
   await page.screenshot({ path: path.join(output, 'review-desktop.png'), fullPage: true });
@@ -56,6 +76,9 @@ try {
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
   await page.getByRole('checkbox').check();
   await page.getByRole('button', { name: 'Sign agreement', exact: true }).click();
+  const signing = page.getByRole('button', { name: 'Signing…', exact: true });
+  await signing.waitFor();
+  assert(await signing.isDisabled());
   await page.getByRole('heading', { name: 'Your agreement is signed' }).waitFor();
   assert.equal(signedPayload.consent, true);
   assert.equal(signedPayload.sourceHash, 'b'.repeat(64));

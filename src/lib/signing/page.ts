@@ -9,6 +9,7 @@ export function signingPage(nonce: string) {
 <link rel="icon" href="/favicon-32x32.png?v=ss-logo-1" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <style nonce="${nonce}">
+button[aria-busy=true]::before{content:'';display:inline-block;width:14px;height:14px;margin-right:10px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;vertical-align:-2px;animation:button-spin .75s linear infinite}button[aria-busy=true]{opacity:1}@keyframes button-spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){button[aria-busy=true]::before{animation:none}}
 *{box-sizing:border-box}body{margin:0;background:#f1f5f7;color:#20313f;font:16px/1.6 Arial,sans-serif}
 header{background:white;border-top:6px solid #176d9b;border-bottom:1px solid #d4dde1;padding:18px 24px}
 .brand{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand img{width:72px;height:72px;object-fit:contain}.brand strong{font-size:18px;color:#112e48}.brand small{display:block;color:#586976}
@@ -43,11 +44,11 @@ async function refresh(){current=await api();el('verify').hidden=current.verifie
 if(!current.verified){step(1);el('emailHint').textContent=current.emailHint;message('');return;}
 if(current.status==='signed'){step(3);el('done').hidden=false;el('signedAt').textContent='Signed on '+new Date(current.signedAt).toLocaleString('en-GB');el('signedHash').textContent=current.signedHash;el('signedDownload').href=base+'/pdf?download=1';el('emailStatus').textContent=current.emailsAccepted?'Both signed-copy emails have been accepted for delivery. Please check your inbox and spam folder.':'Your signature is safely saved. Signed-copy emails are queued for delivery; you can download the PDF now.';message('');return;}
 step(2);el('review').hidden=false;el('title').textContent=current.title;el('company').textContent=current.company;el('revision').textContent=current.revision;el('startDate').textContent=new Date(current.startDate+'T12:00:00Z').toLocaleDateString('en-GB');el('name').value=current.name;el('signature').textContent=current.name;el('download').href=base+'/pdf?download=1';el('preview').src=base+'/pdf';message('');}
-async function run(task){if(busy)return;busy=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);try{await task();}catch(error){message(error.message,true);}finally{busy=false;document.querySelectorAll('button').forEach(b=>b.disabled=false);}}
-el('sendCode').addEventListener('click',()=>run(async()=>{await api('/request-code',{});el('codeForm').hidden=false;el('code').focus();el('sendCode').textContent='Send a new code';message('Code sent. Check your email, including spam.');}));
-el('codeForm').addEventListener('submit',event=>{event.preventDefault();run(async()=>{await api('/verify-code',{code:el('code').value});await refresh();});});
+async function run(task,button,label,successLabel){if(busy)return;busy=true;let completed=false;const previous=button?.textContent;document.querySelectorAll('button').forEach(b=>b.disabled=true);if(button){button.textContent=label;button.setAttribute('aria-busy','true');}try{await task();completed=true;}catch(error){message(error.message,true);}finally{busy=false;document.querySelectorAll('button').forEach(b=>b.disabled=false);if(button){button.textContent=completed&&successLabel?successLabel:previous;button.removeAttribute('aria-busy');}}}
+el('sendCode').addEventListener('click',()=>run(async()=>{await api('/request-code',{});el('codeForm').hidden=false;el('code').focus();message('Code sent. Check your email, including spam.');},el('sendCode'),'Sending code…','Send a new code'));
+el('codeForm').addEventListener('submit',event=>{event.preventDefault();run(async()=>{await api('/verify-code',{code:el('code').value});await refresh();},el('codeForm').querySelector('button'),'Verifying…');});
 el('name').addEventListener('input',()=>el('signature').textContent=el('name').value);
-el('signForm').addEventListener('submit',event=>{event.preventDefault();run(async()=>{message('Saving your signature. Please keep this page open…');await api('/complete',{name:el('name').value,role:el('role').value,consent:el('consent').checked,sourceHash:current.sourceHash});await refresh();el('done').scrollIntoView({behavior:'smooth'});});});
+el('signForm').addEventListener('submit',event=>{event.preventDefault();run(async()=>{message('Saving your signature. Please keep this page open…');await api('/complete',{name:el('name').value,role:el('role').value,consent:el('consent').checked,sourceHash:current.sourceHash});await refresh();el('done').scrollIntoView({behavior:'smooth'});},el('signButton'),'Signing…');});
 run(refresh);
 </script></body></html>`;
 }
