@@ -12,6 +12,8 @@
 
 ## Not yet verified / not live
 
+Update during deployment: the correct Saunders Simmons Vercel account has now been connected separately from the pre-existing Greysurface login. The signing migration has been applied to the existing Saunders Simmons database and live RLS/public-access denial checked. Production runtime variables have been configured. A controlled integration run against the local production server, live database and Resend's documented test sinks passed: actual verification email retrieval, invalid-code/CSRF/hash checks, authenticated download, atomic signing, replay protection, matching stored/downloaded PDF hashes, two accepted email jobs and two simulated delivered events. No real customer email was sent. This supersedes the corresponding earlier blockers below; a production-domain test and Greg's actual email are still outstanding.
+
 - No remote signing migration has been applied. No credentials were copied out of GitHub secrets or committed.
 - No real Resend verification/completion email has been sent; inbox acceptance/delivery and live retry behaviour need a controlled staging test.
 - No agreement has been issued for Greg and no live private link has been created. His email/start date and approval of a completed non-draft PDF are still needed.
