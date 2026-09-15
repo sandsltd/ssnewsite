@@ -5,6 +5,9 @@ export function signingPage(nonce: string) {
   return `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
 <title>Private agreement | Saunders Simmons</title>
+<link rel="icon" href="/favicon.ico?v=ss-logo-1" sizes="16x16 32x32 48x48" type="image/x-icon">
+<link rel="icon" href="/favicon-32x32.png?v=ss-logo-1" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <style nonce="${nonce}">
 *{box-sizing:border-box}body{margin:0;background:#f1f5f7;color:#20313f;font:16px/1.6 Arial,sans-serif}
 header{background:white;border-top:6px solid #176d9b;border-bottom:1px solid #d4dde1;padding:18px 24px}
