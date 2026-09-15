@@ -1,0 +1,3 @@
+{
+  "crons": [{ "path": "/api/signing/retry-emails", "schedule": "*/10 * * * *" }]
+}

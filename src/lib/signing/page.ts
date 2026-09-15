@@ -1,0 +1,50 @@
+import { CONSENT } from './core';
+
+// Standalone Route Handler HTML: deliberately outside the marketing layout/pixels.
+export function signingPage(nonce: string) {
+  return `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
+<title>Private agreement | Saunders Simmons</title>
+<style nonce="${nonce}">
+*{box-sizing:border-box}body{margin:0;background:#f1f5f7;color:#20313f;font:16px/1.6 Arial,sans-serif}
+header{background:white;border-top:6px solid #176d9b;border-bottom:1px solid #d4dde1;padding:18px 24px}
+.brand{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand img{width:72px;height:72px;object-fit:contain}.brand strong{font-size:18px;color:#112e48}.brand small{display:block;color:#586976}
+main{max-width:1050px;margin:36px auto;padding:0 20px}h1{font:38px/1.15 Georgia,serif;color:#112e48;margin:10px 0 20px}h2{font-size:22px;line-height:1.3;margin:0 0 12px}.eyebrow{text-transform:uppercase;font-size:12px;letter-spacing:1.6px;color:#176d9b;font-weight:bold}
+.card{background:white;border:1px solid #d4dde1;border-radius:12px;padding:28px;margin:22px 0}.intro{max-width:700px}.muted{color:#586976;font-size:14px}.steps{display:flex;gap:20px;list-style:none;padding:0;color:#586976;font-size:14px}.steps li{padding-bottom:8px;border-bottom:3px solid #d4dde1}.steps .active{color:#176d9b;border-color:#176d9b}
+button,.button{display:inline-block;border:0;border-radius:7px;background:#176d9b;color:#fff;padding:12px 20px;font:700 16px/1.4 Arial;cursor:pointer;text-decoration:none}button:hover,.button:hover{background:#112e48}button:disabled{opacity:.55;cursor:wait}a{color:#176d9b}.secondary{background:#edf4f7;color:#176d9b}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:18px 0}
+label{display:block;font-weight:bold;margin:18px 0 6px}input[type=text]{display:block;width:100%;max-width:520px;padding:12px;border:1px solid #7d8d98;border-radius:6px;font:18px Arial}input:focus,button:focus-visible,a:focus-visible{outline:3px solid #70aa50;outline-offset:3px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-weight:normal;font-size:15px}.consent input{width:22px;height:22px;flex-shrink:0;margin-top:3px}.signature{font:italic 30px Georgia;min-height:45px;margin:15px 0;color:#112e48;overflow-wrap:anywhere}.notice{padding:14px 18px;background:#eaf2e4;border-left:4px solid #70aa50;border-radius:4px;margin:18px 0}.error{background:#fff1ee;border-color:#bf4029;color:#852a1e}iframe{width:100%;height:690px;border:1px solid #d4dde1;border-radius:7px;background:#eee}.details{display:flex;flex-wrap:wrap;gap:15px 35px;font-size:14px;margin:16px 0}.details strong{display:block}.hash{overflow-wrap:anywhere;font:12px/1.5 monospace}.footer{font-size:13px;color:#586976;margin:28px 0 50px} [hidden]{display:none!important}
+@media(max-width:600px){main{margin-top:24px;padding:0 14px}.card{padding:20px}h1{font-size:30px}.brand strong{font-size:15px}.brand img{width:56px;height:56px}.steps{gap:12px;font-size:12px}iframe{height:430px}.actions>*{width:100%;text-align:center}}
+</style></head><body><header><div class="brand"><div><strong>SAUNDERS SIMMONS LTD</strong><small>Private agreement signing</small></div><img src="/logos/logo.png" alt="Saunders Simmons"></div></header>
+<main><div class="eyebrow">Your service agreement</div><h1>Review it. Sign it. Keep a copy.</h1>
+<ol class="steps" aria-label="Signing steps"><li id="step1" class="active">1. Verify your email</li><li id="step2">2. Review &amp; sign</li><li id="step3">3. Download your copy</li></ol>
+<div id="message" class="notice" role="status" aria-live="polite">Loading your private link…</div>
+<section id="verify" class="card intro" hidden><h2>First, verify it’s you</h2><p>We’ll send a code to <strong id="emailHint"></strong>. This protects the agreement if the link is forwarded.</p><button id="sendCode" type="button">Email me a code</button>
+<form id="codeForm" hidden><label for="code">Six-digit email code</label><input id="code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required><div class="actions"><button type="submit">Verify and view agreement</button></div></form><p class="muted">Codes expire after 10 minutes. Check your spam folder if needed. Requesting a new code replaces the old one.</p></section>
+<section id="review" hidden><div class="card"><h2 id="title"></h2><div class="details"><div><strong>Company</strong><span id="company"></span></div><div><strong>Service start</strong><span id="startDate"></span></div><div><strong>Version</strong><span id="revision"></span></div></div>
+<p>Please read all pages before signing. The download is the same agreement shown below.</p><div class="actions"><a id="download" class="button secondary" target="_blank" rel="noreferrer">Download agreement PDF</a></div><iframe id="preview" title="Service agreement PDF"></iframe><p class="muted">If the preview does not open on your phone, use the PDF download above.</p></div>
+<form id="signForm" class="card"><h2>Sign on behalf of your company</h2><p>Signing records your acceptance of this document. It does not take payment.</p><label for="name">Your full name</label><input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="100" required><label for="role">Your role or position</label><input id="role" name="role" type="text" autocomplete="organization-title" minlength="2" maxlength="100" required><p class="muted">Your typed signature</p><div id="signature" class="signature" aria-live="polite"></div>
+<label class="consent"><input id="consent" name="consent" type="checkbox" required><span>${CONSENT}</span></label><p class="muted">We record your name, role, verified email, timestamp, browser information and document checksums as evidence of signing. The signed agreement is retained for contract administration and legal records. Copies are emailed to you and Saunders Simmons.</p>
+<div class="actions"><button id="signButton" type="submit">Sign agreement</button></div></form></section>
+<section id="done" class="card" hidden><div class="eyebrow">Signature saved</div><h2>Your agreement is signed</h2><p id="signedAt"></p><p id="emailStatus"></p><div class="actions"><a id="signedDownload" class="button" target="_blank" rel="noreferrer">Download signed PDF</a></div><p class="muted">The PDF includes the original agreement and its electronic signing record. Keep a copy for your records.</p><details><summary>Document checksum</summary><p id="signedHash" class="hash"></p></details></section>
+<p class="footer">Questions or something needs changing? Contact <a href="mailto:hello@saunders-simmons.co.uk">hello@saunders-simmons.co.uk</a> or <a href="tel:03300436608">0330 043 6608</a> before signing. Please keep this link private.</p></main>
+<script nonce="${nonce}">
+const el=id=>document.getElementById(id);
+const token=location.pathname.split('/').filter(Boolean).pop();
+const base='/api/signing/'+encodeURIComponent(token);
+let current=null,busy=false;
+function message(text,error=false){el('message').textContent=text;el('message').className='notice'+(error?' error':'');el('message').hidden=!text;}
+async function api(path='',body){const response=await fetch(base+path,{method:body?'POST':'GET',credentials:'same-origin',cache:'no-store',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined});const data=await response.json();if(!response.ok)throw new Error(data.error||'Please try again.');return data;}
+function step(n){[1,2,3].forEach(i=>el('step'+i).className=i===n?'active':'');}
+async function refresh(){current=await api();el('verify').hidden=current.verified;el('review').hidden=true;el('done').hidden=true;
+if(!current.verified){step(1);el('emailHint').textContent=current.emailHint;message('');return;}
+if(current.status==='signed'){step(3);el('done').hidden=false;el('signedAt').textContent='Signed on '+new Date(current.signedAt).toLocaleString('en-GB');el('signedHash').textContent=current.signedHash;el('signedDownload').href=base+'/pdf?download=1';el('emailStatus').textContent=current.emailsAccepted?'Both signed-copy emails have been accepted for delivery. Please check your inbox and spam folder.':'Your signature is safely saved. Signed-copy emails are queued for delivery; you can download the PDF now.';message('');return;}
+step(2);el('review').hidden=false;el('title').textContent=current.title;el('company').textContent=current.company;el('revision').textContent=current.revision;el('startDate').textContent=new Date(current.startDate+'T12:00:00Z').toLocaleDateString('en-GB');el('name').value=current.name;el('signature').textContent=current.name;el('download').href=base+'/pdf?download=1';el('preview').src=base+'/pdf';message('');}
+async function run(task){if(busy)return;busy=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);try{await task();}catch(error){message(error.message,true);}finally{busy=false;document.querySelectorAll('button').forEach(b=>b.disabled=false);}}
+el('sendCode').addEventListener('click',()=>run(async()=>{await api('/request-code',{});el('codeForm').hidden=false;el('code').focus();el('sendCode').textContent='Send a new code';message('Code sent. Check your email, including spam.');}));
+el('codeForm').addEventListener('submit',event=>{event.preventDefault();run(async()=>{await api('/verify-code',{code:el('code').value});await refresh();});});
+el('name').addEventListener('input',()=>el('signature').textContent=el('name').value);
+el('signForm').addEventListener('submit',event=>{event.preventDefault();run(async()=>{message('Saving your signature. Please keep this page open…');await api('/complete',{name:el('name').value,role:el('role').value,consent:el('consent').checked,sourceHash:current.sourceHash});await refresh();el('done').scrollIntoView({behavior:'smooth'});});});
+run(refresh);
+</script></body></html>`;
+}

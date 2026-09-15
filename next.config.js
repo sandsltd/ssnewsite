@@ -6,6 +6,9 @@ const nextConfig = {
 
   // Modern JavaScript output for better performance
   serverExternalPackages: [],
+  outputFileTracingIncludes: {
+    '/api/signing/*/complete': ['./assets/signing/NotoSans-Regular.ttf'],
+  },
 
   // Next.js 16+ uses Turbopack by default
   turbopack: {},
@@ -89,8 +92,9 @@ const nextConfig = {
         ],
       },
       {
-        // Add security and performance headers
-        source: '/(.*)',
+        // Signing endpoints set stricter per-response privacy/CSP headers themselves.
+        // Do not overwrite their nonce CSP or no-referrer policy with marketing headers.
+        source: '/((?!sign/|api/signing/).*)',
         headers: [
           {
             key: 'X-DNS-Prefetch-Control',
