@@ -10,14 +10,18 @@
 - Existing homepage returns HTTP 200; unconfigured signing API fails closed with HTTP 503.
 - Completion function tracing includes the licensed Noto font.
 
-## Not yet verified / not live
+## Deployed and verified on production
 
-Update during deployment: the correct Saunders Simmons Vercel account has now been connected separately from the pre-existing Greysurface login. The signing migration has been applied to the existing Saunders Simmons database and live RLS/public-access denial checked. Production runtime variables have been configured. A controlled integration run against the local production server, live database and Resend's documented test sinks passed: actual verification email retrieval, invalid-code/CSRF/hash checks, authenticated download, atomic signing, replay protection, matching stored/downloaded PDF hashes, two accepted email jobs and two simulated delivered events. No real customer email was sent. This supersedes the corresponding earlier blockers below; a production-domain test and Greg's actual email are still outstanding.
+- Deployed through the Saunders Simmons Vercel project. Production runtime variables are configured and the team's Pro plan supports the ten-minute retry cron.
+- The additive signing migration is applied to the existing Saunders Simmons database. All four tables have RLS enabled, with anonymous/authenticated public access denied. No credentials were committed.
+- Controlled integration runs against both the local production server and `https://www.saunders-simmons.co.uk`, using the live database and Resend's test sinks, passed. Checks covered actual verification-email retrieval, invalid-code/CSRF/hash rejection, authenticated download, atomic signing, repeat completion, matching stored/downloaded PDF hashes, one signing event, and two accepted signed-copy email jobs with simulated delivered events.
+- No real customer emails were sent and no customer agreement was signed in testing. Test-sink delivery does not establish delivery to Greg's mailbox.
+- Production homepage returns HTTP 200. Signing pages return private/no-store, noindex/nofollow/noarchive, no-referrer and nonce-based CSP headers.
+- The approved start date is 1 October 2026. The private five-page PDF has been rendered for electronic signing; a certificate is appended when signed.
 
-- No remote signing migration has been applied. No credentials were copied out of GitHub secrets or committed.
-- No real Resend verification/completion email has been sent; inbox acceptance/delivery and live retry behaviour need a controlled staging test.
-- No agreement has been issued for Greg and no live private link has been created. His email/start date and approval of a completed non-draft PDF are still needed.
-- Saved local Vercel credentials returned HTTP 403, so production configuration/deployment could not be performed. Check the plan supports the ten-minute cron or configure an authenticated external scheduler.
+## Outstanding and limitations
+
+- Greg's email address is still required before issuing his actual private link. No agreement has been issued for Greg.
 - Next.js and Resend were updated within the existing declared major-version ranges after npm reported direct-package advisories. Production audit has no critical/direct-package advisories after that update, but existing transitive production warnings remain (4 moderate, 6 high); this was not a full-site security audit.
 
 Browser smoke tests are not represented as live end-to-end delivery tests. Database-owner access can bypass application immutability; production access control, backups, retention and monitoring still matter.
