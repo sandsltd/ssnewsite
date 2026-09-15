@@ -21,7 +21,7 @@
 
 ## Outstanding and limitations
 
-- Greg's email address is still required before issuing his actual private link. No agreement has been issued for Greg.
+- The user subsequently supplied Greg's email and his approved agreement was issued. Its unique link and manifest are stored outside this public repository. Read-only live checks confirmed that verification is required and the PDF is inaccessible before verification. No invitation or verification email was sent to Greg during setup; the agreement remains unsigned pending his action.
 - Next.js and Resend were updated within the existing declared major-version ranges after npm reported direct-package advisories. Production audit has no critical/direct-package advisories after that update, but existing transitive production warnings remain (4 moderate, 6 high); this was not a full-site security audit.
 
 Browser smoke tests are not represented as live end-to-end delivery tests. Database-owner access can bypass application immutability; production access control, backups, retention and monitoring still matter.
