@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/site-metadata";
 
 export const metadata: Metadata = {
   title: "SEO for Dorset Businesses: 10 Local SEO Tips to Dominate Google in 2025",
@@ -9,14 +10,7 @@ export const metadata: Metadata = {
     description: "Local Dorset businesses are missing out on customers every day due to poor SEO. Learn our proven strategies to rank #1 on Google.",
     url: 'https://www.saunders-simmons.co.uk/blog/seo-tips-dorset-businesses',
     siteName: 'Saunders Simmons Ltd',
-    images: [
-      {
-        url: '/logos/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'SEO Dorset - Saunders Simmons Ltd',
-      },
-    ],
+    images: [socialImage],
     locale: 'en_GB',
     type: 'article',
   },
@@ -33,7 +27,7 @@ export default function SEODorsetPost() {
             "@type": "Article",
             "headline": "SEO for Dorset Businesses: 10 Local SEO Tips to Dominate Google in 2025",
             "description": "Local Dorset businesses are missing out on customers every day due to poor SEO. Learn our proven strategies to rank #1 on Google and attract more local customers.",
-            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "image": "https://www.saunders-simmons.co.uk/social/saunders-simmons-v1.png",
             "author": {
               "@type": "Person",
               "name": "Dan Simmons",
@@ -48,7 +42,7 @@ export default function SEODorsetPost() {
               "name": "Saunders Simmons Ltd",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+                "url": "https://www.saunders-simmons.co.uk/android-chrome-512x512.png?v=ss-navy-1"
               }
             },
             "datePublished": "2025-01-06",

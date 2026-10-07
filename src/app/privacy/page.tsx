@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { socialImage } from '@/lib/site-metadata';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Saunders Simmons Ltd',
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     title: 'Privacy Policy - Saunders Simmons Ltd',
     description: 'Privacy Policy for Saunders Simmons Ltd',
     type: 'website',
+    images: [socialImage],
   },
 };
 
@@ -161,4 +163,3 @@ export default function PrivacyPolicyPage() {
     </div>
   );
 }
-

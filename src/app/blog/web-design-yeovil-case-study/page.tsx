@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/site-metadata";
 
 export const metadata: Metadata = {
   title: "Web Design Yeovil Case Study: How We Increased a Local Business's Revenue by 200%",
@@ -9,14 +10,7 @@ export const metadata: Metadata = {
     description: "See how our professional web design services helped a Yeovil business double their online revenue. Real results, real numbers.",
     url: 'https://www.saunders-simmons.co.uk/blog/web-design-yeovil-case-study',
     siteName: 'Saunders Simmons Ltd',
-    images: [
-      {
-        url: '/logos/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Web Design Yeovil Case Study - Saunders Simmons Ltd',
-      },
-    ],
+    images: [socialImage],
     locale: 'en_GB',
     type: 'article',
   },
@@ -33,7 +27,7 @@ export default function YeovilCaseStudyPost() {
             "@type": "Article",
             "headline": "Web Design Yeovil Case Study: How We Increased a Local Business's Revenue by 200%",
             "description": "See how our professional web design services helped a Yeovil business double their online revenue. Real results, real numbers, and the strategies that made it happen.",
-            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "image": "https://www.saunders-simmons.co.uk/social/saunders-simmons-v1.png",
             "author": {
               "@type": "Person",
               "name": "Nick Saunders",
@@ -48,7 +42,7 @@ export default function YeovilCaseStudyPost() {
               "name": "Saunders Simmons Ltd",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+                "url": "https://www.saunders-simmons.co.uk/android-chrome-512x512.png?v=ss-navy-1"
               }
             },
             "datePublished": "2025-01-04",

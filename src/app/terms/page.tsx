@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { socialImage } from '@/lib/site-metadata';
 
 export const metadata: Metadata = {
   title: 'Terms of Service - Saunders Simmons Ltd',
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
     title: 'Terms of Service - Saunders Simmons Ltd',
     description: 'Terms of Service for Saunders Simmons Ltd',
     type: 'website',
+    images: [socialImage],
   },
 };
 

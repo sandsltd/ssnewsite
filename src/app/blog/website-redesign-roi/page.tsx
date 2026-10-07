@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/site-metadata";
 
 export const metadata: Metadata = {
   title: "The ROI of Website Redesign: Why Somerset & Dorset Businesses See 300% Returns",
@@ -9,14 +10,7 @@ export const metadata: Metadata = {
     description: "Think a website redesign is expensive? Think again. Discover why businesses across Somerset and Dorset are seeing massive returns.",
     url: 'https://www.saunders-simmons.co.uk/blog/website-redesign-roi',
     siteName: 'Saunders Simmons Ltd',
-    images: [
-      {
-        url: '/logos/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Website Redesign ROI - Saunders Simmons Ltd',
-      },
-    ],
+    images: [socialImage],
     locale: 'en_GB',
     type: 'article',
   },
@@ -33,7 +27,7 @@ export default function WebsiteRedesignROIPost() {
             "@type": "Article",
             "headline": "The ROI of Website Redesign: Why Somerset & Dorset Businesses See 300% Returns",
             "description": "Think a website redesign is expensive? Think again. Discover why businesses across Somerset and Dorset are seeing massive returns on their web design investments.",
-            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "image": "https://www.saunders-simmons.co.uk/social/saunders-simmons-v1.png",
             "author": {
               "@type": "Organization",
               "name": "Saunders Simmons Team",
@@ -44,7 +38,7 @@ export default function WebsiteRedesignROIPost() {
               "name": "Saunders Simmons Ltd",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+                "url": "https://www.saunders-simmons.co.uk/android-chrome-512x512.png?v=ss-navy-1"
               }
             },
             "datePublished": "2025-01-02",

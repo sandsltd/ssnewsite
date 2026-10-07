@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/site-metadata";
 
 export const metadata: Metadata = {
   title: "Complete Local SEO Guide for Yeovil Businesses: Rank Above Your Competitors",
@@ -9,14 +10,7 @@ export const metadata: Metadata = {
     description: "Dominate local search results in Yeovil with our comprehensive SEO guide. From Google My Business to local citations.",
     url: 'https://www.saunders-simmons.co.uk/blog/local-seo-yeovil-guide',
     siteName: 'Saunders Simmons Ltd',
-    images: [
-      {
-        url: '/logos/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Local SEO Yeovil Guide - Saunders Simmons Ltd',
-      },
-    ],
+    images: [socialImage],
     locale: 'en_GB',
     type: 'article',
   },
@@ -33,7 +27,7 @@ export default function LocalSEOYeovilPost() {
             "@type": "Article",
             "headline": "Complete Local SEO Guide for Yeovil Businesses: Rank Above Your Competitors",
             "description": "Dominate local search results in Yeovil with our comprehensive SEO guide. From Google My Business to local citations, everything you need to know.",
-            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "image": "https://www.saunders-simmons.co.uk/social/saunders-simmons-v1.png",
             "author": {
               "@type": "Person",
               "name": "Nick Saunders",
@@ -48,7 +42,7 @@ export default function LocalSEOYeovilPost() {
               "name": "Saunders Simmons Ltd",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+                "url": "https://www.saunders-simmons.co.uk/android-chrome-512x512.png?v=ss-navy-1"
               }
             },
             "datePublished": "2024-12-28",

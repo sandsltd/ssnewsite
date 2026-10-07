@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostBySlug, getAllSlugs, getRelatedPosts } from "@/lib/blog";
+import { socialImage } from "@/lib/site-metadata";
 
 const pillarLabels: Record<string, string> = {
   "web-design": "Web Design",
@@ -34,7 +35,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.publishedAt,
       url: `https://www.saunders-simmons.co.uk/blog/${slug}`,
-      ...(post.heroImage ? { images: [post.heroImage] } : {}),
+      images: post.heroImage ? [post.heroImage] : [socialImage],
     },
     alternates: {
       canonical: `https://www.saunders-simmons.co.uk/blog/${slug}`,

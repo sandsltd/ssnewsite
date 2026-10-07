@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/site-metadata";
 
 export const metadata: Metadata = {
   title: "Professional Web Design Somerset: Why Your Business Needs a Modern Website in 2025",
@@ -9,14 +10,7 @@ export const metadata: Metadata = {
     description: "Discover why Somerset businesses are investing in professional web design to stay competitive. From increased conversions to better Google rankings.",
     url: 'https://www.saunders-simmons.co.uk/blog/web-design-somerset-2025',
     siteName: 'Saunders Simmons Ltd',
-    images: [
-      {
-        url: '/logos/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Web Design Somerset - Saunders Simmons Ltd',
-      },
-    ],
+    images: [socialImage],
     locale: 'en_GB',
     type: 'article',
   },
@@ -33,7 +27,7 @@ export default function WebDesignSomersetPost() {
             "@type": "Article",
             "headline": "Professional Web Design Somerset: Why Your Business Needs a Modern Website in 2025",
             "description": "Discover why Somerset businesses are investing in professional web design to stay competitive. From increased conversions to better Google rankings, learn how a modern website can transform your business.",
-            "image": "https://www.saunders-simmons.co.uk/logos/logo.png",
+            "image": "https://www.saunders-simmons.co.uk/social/saunders-simmons-v1.png",
             "author": {
               "@type": "Organization",
               "name": "Saunders Simmons Team",
@@ -44,7 +38,7 @@ export default function WebDesignSomersetPost() {
               "name": "Saunders Simmons Ltd",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.saunders-simmons.co.uk/logos/logo.png"
+                "url": "https://www.saunders-simmons.co.uk/android-chrome-512x512.png?v=ss-navy-1"
               }
             },
             "datePublished": "2025-01-08",
