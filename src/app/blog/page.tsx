@@ -1,137 +1,54 @@
-import Link from "next/link";
-import Image from "next/image";
-import { getAllPosts } from "@/lib/blog";
+import Link from 'next/link';
+import { getAllPosts } from '@/lib/blog';
 
 const pillarLabels: Record<string, string> = {
-  "web-design": "Web Design",
-  "seo-marketing": "SEO & Marketing",
-  "software-development": "Software Development",
+  'web-design': 'Websites',
+  'seo-marketing': 'Digital business',
+  'software-development': 'Software',
 };
 
-// Legacy static blog posts (pre-SEO-agent)
-const legacyPosts = [
-  {
-    slug: "web-design-somerset-2025",
-    title: "Professional Web Design Somerset: Why Your Business Needs a Modern Website in 2025",
-    description: "Discover why Somerset businesses are investing in professional web design to stay competitive.",
-    category: "Web Design",
-    date: "2025-01-08",
-  },
-  {
-    slug: "seo-tips-dorset-businesses",
-    title: "SEO for Dorset Businesses: 10 Local SEO Tips to Dominate Google in 2025",
-    description: "Local Dorset businesses are missing out on customers every day due to poor SEO.",
-    category: "SEO",
-    date: "2025-01-06",
-  },
-  {
-    slug: "web-design-yeovil-case-study",
-    title: "Web Design Yeovil Case Study: How We Increased a Local Business's Revenue by 200%",
-    description: "See how our professional web design services helped a Yeovil business double their online revenue.",
-    category: "Case Studies",
-    date: "2025-01-04",
-  },
-  {
-    slug: "website-redesign-roi",
-    title: "The ROI of Website Redesign: Why Somerset & Dorset Businesses See 300% Returns",
-    description: "Think a website redesign is expensive? Discover why businesses are seeing massive returns.",
-    category: "Business Strategy",
-    date: "2025-01-02",
-  },
-  {
-    slug: "mobile-first-design-2025",
-    title: "Mobile-First Web Design: Essential for Somerset & Dorset Businesses in 2025",
-    description: "With 70% of local searches happening on mobile, your website must be mobile-first.",
-    category: "Web Design",
-    date: "2024-12-30",
-  },
-  {
-    slug: "local-seo-yeovil-guide",
-    title: "Complete Local SEO Guide for Yeovil Businesses: Rank Above Your Competitors",
-    description: "Dominate local search results in Yeovil with our comprehensive SEO guide.",
-    category: "SEO",
-    date: "2024-12-28",
-  },
+const historicalPosts = [
+  { slug: 'web-design-somerset-2025', title: 'Professional Web Design Somerset: Why Your Business Needs a Modern Website in 2025', date: '2025-01-08' },
+  { slug: 'seo-tips-dorset-businesses', title: 'SEO for Dorset Businesses: 10 Local SEO Tips to Dominate Google in 2025', date: '2025-01-06' },
+  { slug: 'web-design-yeovil-case-study', title: "Web Design Yeovil Case Study: How We Increased a Local Business's Revenue by 200%", date: '2025-01-04' },
+  { slug: 'website-redesign-roi', title: 'The ROI of Website Redesign: Why Somerset & Dorset Businesses See 300% Returns', date: '2025-01-02' },
+  { slug: 'local-seo-yeovil-guide', title: 'Complete Local SEO Guide for Yeovil Businesses: Rank Above Your Competitors', date: '2024-12-28' },
 ];
 
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
 export default function BlogPage() {
-  const mdxPosts = getAllPosts();
+  const posts = getAllPosts();
 
   return (
-    <section className="py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Blog</h1>
-        <p className="text-gray-500 mb-12">
-          Expert insights on web design, SEO, and software development — helping
-          UK businesses succeed online.
-        </p>
-
-        <div className="space-y-8">
-          {/* MDX blog posts (from SEO agent) */}
-          {mdxPosts.map((post) => (
-            <article key={post.slug} className="border-b border-gray-200 pb-8">
-              <Link href={`/blog/${post.slug}`} className="group block">
-                <div className="flex flex-col sm:flex-row gap-6">
-                  {post.heroImage && (
-                    <div className="relative w-full sm:w-48 h-36 sm:h-32 flex-shrink-0 rounded-lg overflow-hidden">
-                      <Image
-                        src={post.heroImage}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="inline-flex items-center px-2.5 py-0.5 text-xs font-semibold rounded-full text-blue-700 bg-blue-100">
-                        {pillarLabels[post.pillar] || post.pillar}
-                      </span>
-                      <time className="text-sm text-gray-500">
-                        {new Date(post.publishedAt).toLocaleDateString("en-GB", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        })}
-                      </time>
-                    </div>
-                    <h2 className="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                      {post.title}
-                    </h2>
-                    <p className="text-gray-500 mt-2">{post.description}</p>
-                  </div>
-                </div>
-              </Link>
-            </article>
-          ))}
-
-          {/* Legacy static blog posts */}
-          {legacyPosts.map((post) => (
-            <article key={post.slug} className="border-b border-gray-200 pb-8">
-              <Link href={`/blog/${post.slug}`} className="group block">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="inline-flex items-center px-2.5 py-0.5 text-xs font-semibold rounded-full text-gray-700 bg-gray-100">
-                      {post.category}
-                    </span>
-                    <time className="text-sm text-gray-500">
-                      {new Date(post.date).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
-                      })}
-                    </time>
-                  </div>
-                  <h2 className="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-500 mt-2">{post.description}</p>
-                </div>
-              </Link>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="ss-shell">
+      <section className="ss-page-intro">
+        <p className="ss-eyebrow">From the archive</p>
+        <h1 className="ss-display">Ideas &amp;<br />perspectives.</h1>
+        <p className="ss-intro-copy">Our writing on websites, software and running a business online. Earlier articles remain here as reference material.</p>
+      </section>
+      <section className="ss-section" aria-label="Articles">
+        {posts.map((post) => (
+          <article key={post.slug} className="ss-editorial-card" style={{ borderBottom: '1px solid #dededb', padding: '28px 0' }}>
+            <p className="ss-eyebrow">{pillarLabels[post.pillar] || post.pillar} <span aria-hidden="true"> / </span> <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time></p>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 2.4vw, 2rem)', lineHeight: 1.25, maxWidth: '900px', margin: '12px 0' }}><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
+            <p style={{ maxWidth: '850px', color: '#666', lineHeight: 1.7 }}>{post.description}</p>
+            <Link href={`/blog/${post.slug}`} className="ss-text-link">Read article <span aria-hidden="true">↗</span></Link>
+          </article>
+        ))}
+      </section>
+      <section className="ss-section">
+        <p className="ss-eyebrow">Earlier writing</p>
+        <h2 className="ss-section-heading">The original archive.</h2>
+        {historicalPosts.map((post) => (
+          <article key={post.slug} style={{ borderBottom: '1px solid #dededb', padding: '24px 0' }}>
+            <p className="ss-eyebrow"><time dateTime={post.date}>{formatDate(post.date)}</time></p>
+            <h3 style={{ fontSize: '1.3rem', marginTop: '12px' }}><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3>
+          </article>
+        ))}
+      </section>
+    </div>
   );
 }

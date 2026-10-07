@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import BookCallButton from '@/components/BookCallButton';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function WebDesignSomersetPost() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="ss-legacy min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -96,9 +94,9 @@ export default function WebDesignSomersetPost() {
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" className="text-[#172554] hover:text-[#24376f]">Home</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800">Blog</Link>
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f]">Blog</Link>
             <span className="text-gray-400">/</span>
             <span className="text-gray-600">Web Design Somerset 2025</span>
           </div>
@@ -110,7 +108,7 @@ export default function WebDesignSomersetPost() {
         <div className="max-w-4xl mx-auto">
           <header className="mb-12">
             <div className="flex items-center gap-4 mb-6">
-              <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+              <span className="bg-slate-100 text-[#172554] px-4 py-2 rounded-full text-sm font-medium">
                 Web Design
               </span>
               <span className="text-gray-500">January 8, 2025</span>
@@ -131,15 +129,19 @@ export default function WebDesignSomersetPost() {
               </div>
               <div>
                 <p className="font-semibold text-gray-900">Saunders Simmons Team</p>
-                <p className="text-gray-500 text-sm">Web Design & SEO Specialists</p>
+                <p className="text-gray-500 text-sm">Web Design & Co-founders</p>
               </div>
             </div>
           </header>
 
+          <aside className="mb-8 border-y border-gray-200 py-5 text-sm leading-relaxed text-gray-600">
+            From our article archive. This piece reflects the information available when it was published. For our current work, explore <Link href="/services/software" className="underline">our brands</Link> and <Link href="/services/web-design" className="underline">bespoke websites</Link>.
+          </aside>
+
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 mb-6">
-              In 2025, having a professional website isn't just an advantage for Somerset businesses—it's essential for survival. As more customers turn to online research before making purchasing decisions, your website has become your most important sales tool.
+              In 2025, having a professional website isn&apos;t just an advantage for Somerset businesses—it&apos;s essential for survival. As more customers turn to online research before making purchasing decisions, your website has become your most important sales tool.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mt-8 mb-4">
@@ -147,14 +149,14 @@ export default function WebDesignSomersetPost() {
             </h2>
 
             <p className="text-gray-700 mb-6">
-              Somerset's business environment is more competitive than ever. From Taunton to Bridgwater, Burnham-on-Sea to Chard, local businesses are discovering that professional web design is the key to standing out in crowded markets.
+              Somerset&apos;s business environment is more competitive than ever. From Taunton to Bridgwater, Burnham-on-Sea to Chard, local businesses are discovering that professional web design is the key to standing out in crowded markets.
             </p>
 
-            <blockquote className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
-              <p className="text-lg text-blue-900 italic">
-                "Our new website designed by Saunders Simmons has transformed our business. We've seen a 200% increase in online enquiries since launching our professional website."
+            <blockquote className="bg-slate-50 border-l-4 border-[#172554] p-6 my-8">
+              <p className="text-lg text-[#172554] italic">
+                &quot;Our new website designed by Saunders Simmons has transformed our business. We&apos;ve seen a 200% increase in online enquiries since launching our professional website.&quot;
               </p>
-              <footer className="text-blue-700 mt-2">— Local Somerset Business Owner</footer>
+              <footer className="text-[#172554] mt-2">— Local Somerset Business Owner</footer>
             </blockquote>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -184,14 +186,14 @@ export default function WebDesignSomersetPost() {
             </h3>
 
             <p className="text-gray-700 mb-6">
-              Somerset businesses investing in professional web design typically see returns within 6-12 months. Here's what our clients achieve:
+              Somerset businesses investing in professional web design typically see returns within 6-12 months. Here&apos;s what our clients achieve:
             </p>
 
             <div className="bg-gray-50 p-6 rounded-lg my-8">
               <h4 className="text-xl font-bold text-gray-900 mb-4">Average Results for Somerset Businesses:</h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">300%</div>
+                  <div className="text-3xl font-bold text-[#172554]">300%</div>
                   <div className="text-gray-600">Increase in Online Enquiries</div>
                 </div>
                 <div className="text-center">
@@ -210,19 +212,19 @@ export default function WebDesignSomersetPost() {
             </h3>
 
             <p className="text-gray-700 mb-6">
-              At Saunders Simmons, we understand the unique challenges facing Somerset businesses. Whether you're targeting tourists visiting Glastonbury, serving the agricultural community, or running a high-street shop in Yeovil, we create websites that speak to your local audience.
+              At Saunders Simmons, we understand the unique challenges facing Somerset businesses. Whether you&apos;re targeting tourists visiting Glastonbury, serving the agricultural community, or running a high-street shop in Yeovil, we create websites that speak to your local audience.
             </p>
 
             <h4 className="text-xl font-bold text-gray-900 mt-6 mb-3">
-              Our Somerset Web Design Process:
+              A Website Planning Process:
             </h4>
 
             <ol className="list-decimal pl-6 mb-6 space-y-2">
               <li className="text-gray-700"><strong>Local Market Research:</strong> Understanding your Somerset customer base</li>
-              <li className="text-gray-700"><strong>Competitor Analysis:</strong> Identifying opportunities to outrank local competitors</li>
+              <li className="text-gray-700"><strong>Competitor Analysis:</strong> Understanding how your business can stand out</li>
               <li className="text-gray-700"><strong>Custom Design:</strong> Creating a unique website that reflects your brand</li>
-              <li className="text-gray-700"><strong>Local SEO Integration:</strong> Ensuring you rank for "Somerset" searches</li>
-              <li className="text-gray-700"><strong>Ongoing Support:</strong> Monthly updates and optimisation</li>
+              <li className="text-gray-700"><strong>Clear Content:</strong> Explaining your services to your audience</li>
+              <li className="text-gray-700"><strong>Ongoing Support:</strong> Agreeing how the website will be maintained</li>
             </ol>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -230,20 +232,10 @@ export default function WebDesignSomersetPost() {
             </h3>
 
             <p className="text-gray-700 mb-6">
-              Don't let outdated web design hold your Somerset business back. Professional web design is an investment that pays dividends through increased visibility, credibility, and revenue.
+              Don&apos;t let outdated web design hold your Somerset business back. Professional web design is an investment that pays dividends through increased visibility, credibility, and revenue.
             </p>
 
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 my-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">
-                Special Offer for Somerset Businesses
-              </h4>
-              <p className="text-gray-700 mb-4">
-                Book a free consultation this month and receive a complimentary SEO audit worth £300. We'll show you exactly how professional web design can transform your business.
-              </p>
-              <BookCallButton className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
-                Claim Your Free Consultation
-              </BookCallButton>
-            </div>
+
           </div>
 
           {/* Related Articles */}
@@ -256,7 +248,7 @@ export default function WebDesignSomersetPost() {
               </Link>
               <Link href="/blog/web-design-yeovil-case-study" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Web Design Yeovil Case Study</h4>
-                <p className="text-gray-600">How we increased a local business's revenue by 200%</p>
+                <p className="text-gray-600">How we increased a local business&apos;s revenue by 200%</p>
               </Link>
             </div>
           </section>
@@ -279,8 +271,8 @@ export default function WebDesignSomersetPost() {
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Website Redesign ROI</h4>
                 <p className="text-gray-600">Why Somerset & Dorset businesses see 300% returns on redesign</p>
               </Link>
-              <Link href="/blog/mobile-first-design-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+              <Link href="/blog/why-mobile-first-design-matters" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-slate-100 text-[#172554] px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
                   Web Design
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Mobile-First Design</h4>
@@ -291,7 +283,7 @@ export default function WebDesignSomersetPost() {
 
           {/* Back to Blog */}
           <div className="mt-8 text-center">
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800 font-semibold">
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f] font-semibold">
               ← Back to Blog
             </Link>
           </div>

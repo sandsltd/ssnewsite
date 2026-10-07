@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import BookCallButton from '@/components/BookCallButton';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function YeovilCaseStudyPost() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="ss-legacy min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -96,9 +95,9 @@ export default function YeovilCaseStudyPost() {
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" className="text-[#172554] hover:text-[#24376f]">Home</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800">Blog</Link>
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f]">Blog</Link>
             <span className="text-gray-400">/</span>
             <span className="text-gray-600">Yeovil Case Study</span>
           </div>
@@ -118,7 +117,7 @@ export default function YeovilCaseStudyPost() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Web Design Yeovil Case Study: How We Increased a Local Business's Revenue by 200%
+              Web Design Yeovil Case Study: How We Increased a Local Business&apos;s Revenue by 200%
             </h1>
             
             <p className="text-xl text-gray-600 mb-8">
@@ -136,11 +135,15 @@ export default function YeovilCaseStudyPost() {
             </div>
           </header>
 
+          <aside className="mb-8 border-y border-gray-200 py-5 text-sm leading-relaxed text-gray-600">
+            From our article archive. This piece reflects the information available when it was published. For our current work, explore <Link href="/services/software" className="underline">our brands</Link> and <Link href="/services/web-design" className="underline">bespoke websites</Link>.
+          </aside>
+
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-8">
-              <h3 className="text-lg font-bold text-blue-900 mb-2">Client Overview</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-blue-800">
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 my-8">
+              <h3 className="text-lg font-bold text-[#172554] mb-2">Client Overview</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[#172554]">
                 <div><strong>Business:</strong> Local Home Services Company</div>
                 <div><strong>Location:</strong> Yeovil, Somerset</div>
                 <div><strong>Industry:</strong> Home Maintenance & Repairs</div>
@@ -153,7 +156,7 @@ export default function YeovilCaseStudyPost() {
             </h2>
 
             <p className="text-lg text-gray-700 mb-6">
-              When this established Yeovil home services company approached us in early 2024, they were frustrated. Despite having excellent customer reviews and 15 years of experience, their online presence wasn't generating the leads they needed to grow.
+              When this established Yeovil home services company approached us in early 2024, they were frustrated. Despite having excellent customer reviews and 15 years of experience, their online presence wasn&apos;t generating the leads they needed to grow.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -164,15 +167,15 @@ export default function YeovilCaseStudyPost() {
               <li className="text-gray-700"><strong>Outdated Design:</strong> Built in 2018, looked unprofessional compared to competitors</li>
               <li className="text-gray-700"><strong>Poor Mobile Experience:</strong> Difficult to navigate on smartphones and tablets</li>
               <li className="text-gray-700"><strong>Slow Loading Speed:</strong> Taking 8+ seconds to load, losing potential customers</li>
-              <li className="text-gray-700"><strong>No Local SEO:</strong> Not ranking for "Yeovil" + service searches</li>
-              <li className="text-gray-700"><strong>Unclear Messaging:</strong> Visitors couldn't understand what services they offered</li>
+              <li className="text-gray-700"><strong>No Local SEO:</strong> Not ranking for &quot;Yeovil&quot; + service searches</li>
+              <li className="text-gray-700"><strong>Unclear Messaging:</strong> Visitors couldn&apos;t understand what services they offered</li>
               <li className="text-gray-700"><strong>No Clear Call-to-Actions:</strong> No obvious way for customers to get in touch</li>
             </ul>
 
             <div className="bg-red-50 border-l-4 border-red-500 p-6 my-8">
               <h4 className="text-lg font-bold text-red-900 mb-2">The Impact on Business</h4>
               <p className="text-red-800">
-                "We were getting maybe 2-3 enquiries per month from our website. Most of our new customers came from word-of-mouth recommendations. We knew we were missing out on online opportunities."
+                &quot;We were getting maybe 2-3 enquiries per month from our website. Most of our new customers came from word-of-mouth recommendations. We knew we were missing out on online opportunities.&quot;
               </p>
               <footer className="text-red-700 mt-2">— Business Owner</footer>
             </div>
@@ -214,7 +217,7 @@ export default function YeovilCaseStudyPost() {
             </h3>
 
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li className="text-gray-700">Optimised all pages for "Yeovil + service" keywords</li>
+              <li className="text-gray-700">Optimised all pages for &quot;Yeovil + service&quot; keywords</li>
               <li className="text-gray-700">Set up and optimised Google My Business profile</li>
               <li className="text-gray-700">Created location-specific landing pages</li>
               <li className="text-gray-700">Added local schema markup</li>
@@ -262,7 +265,7 @@ export default function YeovilCaseStudyPost() {
                   <div className="text-sm text-gray-500">From £15k to £45k monthly</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">850%</div>
+                  <div className="text-4xl font-bold text-[#172554] mb-2">850%</div>
                   <div className="text-gray-700 font-medium">Website Enquiries</div>
                   <div className="text-sm text-gray-500">From 3 to 28 per month</div>
                 </div>
@@ -279,13 +282,13 @@ export default function YeovilCaseStudyPost() {
             </h3>
 
             <div className="space-y-4 mb-8">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-[#172554] pl-4">
                 <h5 className="font-bold text-gray-900">Month 1-2:</h5>
                 <p className="text-gray-700">Website launched, immediate improvement in user experience. Enquiries increased to 8 per month.</p>
               </div>
               <div className="border-l-4 border-green-500 pl-4">
                 <h5 className="font-bold text-gray-900">Month 3-4:</h5>
-                <p className="text-gray-700">Local SEO started showing results. Ranking on page 1 for "home repairs Yeovil". Enquiries reached 15 per month.</p>
+                <p className="text-gray-700">Local SEO started showing results. Ranking on page 1 for &quot;home repairs Yeovil&quot;. Enquiries reached 15 per month.</p>
               </div>
               <div className="border-l-4 border-orange-500 pl-4">
                 <h5 className="font-bold text-gray-900">Month 5-6:</h5>
@@ -295,7 +298,7 @@ export default function YeovilCaseStudyPost() {
 
             <blockquote className="bg-green-50 border-l-4 border-green-500 p-6 my-8">
               <p className="text-lg text-green-900 italic">
-                "The new website has completely transformed our business. We've had to hire 3 additional staff members to handle all the new work coming in. Saunders Simmons didn't just build us a website—they built us a business growth machine."
+                &quot;The new website has completely transformed our business. We&apos;ve had to hire 3 additional staff members to handle all the new work coming in. Saunders Simmons didn&apos;t just build us a website—they built us a business growth machine.&quot;
               </p>
               <footer className="text-green-700 mt-2">— Business Owner, 6 months after launch</footer>
             </blockquote>
@@ -344,20 +347,10 @@ export default function YeovilCaseStudyPost() {
             </h2>
 
             <p className="text-gray-700 mb-6">
-              This case study demonstrates what's possible when you invest in professional web design that's specifically tailored to your local market. Every Yeovil business has the potential to achieve similar growth with the right approach.
+              This case study demonstrates what&apos;s possible when you invest in professional web design that&apos;s specifically tailored to your local market. Every Yeovil business has the potential to achieve similar growth with the right approach.
             </p>
 
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 my-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">
-                Ready to Transform Your Yeovil Business?
-              </h4>
-              <p className="text-gray-700 mb-4">
-                Book a free consultation to discover how professional web design could grow your Yeovil business. We'll analyse your current website and show you exactly what improvements could drive more customers to your door.
-              </p>
-              <BookCallButton className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
-                Get Your Free Website Analysis
-              </BookCallButton>
-            </div>
+
           </div>
 
           {/* Related Articles */}
@@ -377,7 +370,7 @@ export default function YeovilCaseStudyPost() {
 
           {/* Back to Blog */}
           <div className="mt-8 text-center">
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800 font-semibold">
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f] font-semibold">
               ← Back to Blog
             </Link>
           </div>

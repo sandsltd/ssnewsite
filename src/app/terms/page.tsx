@@ -1,9 +1,8 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms of Service - Saunders Simmons Ltd',
-  description: 'Terms of Service for Saunders Simmons Ltd. Read our terms and conditions for using our web design, SEO, and software development services.',
+  description: 'Terms of Service for Saunders Simmons Ltd. Read our terms and conditions for using our websites, software and agreed services.',
   openGraph: {
     title: 'Terms of Service - Saunders Simmons Ltd',
     description: 'Terms of Service for Saunders Simmons Ltd',
@@ -33,7 +32,7 @@ export default function TermsOfServicePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Agreement to Terms</h2>
               <p>
-                By accessing or using the services of Saunders Simmons Ltd ("we", "our", or "us"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
+                By accessing or using the services of Saunders Simmons Ltd (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
               </p>
             </div>
 
@@ -42,7 +41,6 @@ export default function TermsOfServicePage() {
               <p className="mb-3">We provide the following services:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Web design and development</li>
-                <li>SEO marketing services</li>
                 <li>Custom software development</li>
                 <li>Website hosting and maintenance</li>
                 <li>Related digital services</li>
@@ -195,4 +193,3 @@ export default function TermsOfServicePage() {
     </div>
   );
 }
-

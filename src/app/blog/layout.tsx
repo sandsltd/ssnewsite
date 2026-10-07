@@ -1,38 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Web Design & SEO Blog - Somerset, Dorset & Yeovil | Saunders Simmons Ltd",
-  description: "Expert insights on web design, SEO, and digital marketing for Somerset, Dorset, and Yeovil businesses. Learn how to grow your business online with professional tips and strategies.",
+  title: 'Articles | Saunders Simmons Ltd',
+  description: 'The Saunders Simmons article archive: writing on websites, software and running a business online.',
+  alternates: { canonical: 'https://www.saunders-simmons.co.uk/blog' },
   openGraph: {
-    title: "Web Design & SEO Blog - Somerset, Dorset & Yeovil | Saunders Simmons Ltd",
-    description: "Expert insights on web design, SEO, and digital marketing for Somerset, Dorset, and Yeovil businesses.",
+    title: 'Articles | Saunders Simmons Ltd',
+    description: 'Writing on websites, software and running a business online.',
     url: 'https://www.saunders-simmons.co.uk/blog',
     siteName: 'Saunders Simmons Ltd',
-    images: [
-      {
-        url: '/logos/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Saunders Simmons Ltd Blog',
-      },
-    ],
     locale: 'en_GB',
     type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: "Web Design & SEO Blog - Somerset, Dorset & Yeovil | Saunders Simmons Ltd",
-    description: "Expert insights on web design, SEO, and digital marketing for Somerset, Dorset, and Yeovil businesses.",
-    images: ['/logos/logo.png'],
-  },
 };
 
-export default function BlogLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function BlogLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
-
-

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import BookCallButton from '@/components/BookCallButton';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function SEODorsetPost() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="ss-legacy min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -86,14 +85,6 @@ export default function SEODorsetPost() {
               {
                 "@type": "SoftwareApplication",
                 "name": "Google My Business"
-              },
-              {
-                "@type": "Service",
-                "name": "SEO Services",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Saunders Simmons Ltd"
-                }
               }
             ]
           })
@@ -103,9 +94,9 @@ export default function SEODorsetPost() {
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" className="text-[#172554] hover:text-[#24376f]">Home</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800">Blog</Link>
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f]">Blog</Link>
             <span className="text-gray-400">/</span>
             <span className="text-gray-600">SEO Dorset Businesses</span>
           </div>
@@ -138,21 +129,25 @@ export default function SEODorsetPost() {
               </div>
               <div>
                 <p className="font-semibold text-gray-900">Dan Simmons</p>
-                <p className="text-gray-500 text-sm">SEO Specialist & Co-Founder</p>
+                <p className="text-gray-500 text-sm">Co-founder</p>
               </div>
             </div>
           </header>
 
+          <aside className="mb-8 border-y border-gray-200 py-5 text-sm leading-relaxed text-gray-600">
+            From our article archive. This piece reflects the information available when it was published. For our current work, explore <Link href="/services/software" className="underline">our brands</Link> and <Link href="/services/web-design" className="underline">bespoke websites</Link>.
+          </aside>
+
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 mb-6">
-              If your Dorset business isn't showing up on the first page of Google, you're losing customers to competitors every single day. In 2025, local SEO isn't optional—it's essential for survival in markets from Dorchester to Poole, Weymouth to Bournemouth.
+              If your Dorset business isn&apos;t showing up on the first page of Google, you&apos;re losing customers to competitors every single day. In 2025, local SEO isn&apos;t optional—it&apos;s essential for survival in markets from Dorchester to Poole, Weymouth to Bournemouth.
             </p>
 
             <div className="bg-red-50 border-l-4 border-red-500 p-6 my-8">
               <h3 className="text-lg font-bold text-red-900 mb-2">The Dorset SEO Problem</h3>
               <p className="text-red-800">
-                78% of Dorset businesses we've audited aren't appearing in local search results for their main services. That's thousands of potential customers going to competitors instead.
+                78% of Dorset businesses we&apos;ve audited aren&apos;t appearing in local search results for their main services. That&apos;s thousands of potential customers going to competitors instead.
               </p>
             </div>
 
@@ -172,7 +167,7 @@ export default function SEODorsetPost() {
               <li className="text-gray-700">Add high-quality photos of your Dorset location</li>
               <li className="text-gray-700">Include accurate opening hours and contact details</li>
               <li className="text-gray-700">Select the most specific business category</li>
-              <li className="text-gray-700">Add services with local keywords (e.g., "Plumbing Dorchester")</li>
+              <li className="text-gray-700">Add services with local keywords (e.g., &quot;Plumbing Dorchester&quot;)</li>
               <li className="text-gray-700">Post regular updates about your business</li>
             </ul>
 
@@ -239,9 +234,9 @@ export default function SEODorsetPost() {
 
             <blockquote className="bg-green-50 border-l-4 border-green-500 p-6 my-8">
               <p className="text-lg text-green-900 italic">
-                "Since implementing our review strategy, our Dorset client went from 8 reviews to 127 reviews in 6 months. Their Google rankings improved dramatically."
+                &quot;Since implementing our review strategy, our Dorset client went from 8 reviews to 127 reviews in 6 months. Their Google rankings improved dramatically.&quot;
               </p>
-              <footer className="text-green-700 mt-2">— Dan Simmons, SEO Specialist</footer>
+              <footer className="text-green-700 mt-2">— Dan Simmons, Co-founder</footer>
             </blockquote>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -329,17 +324,7 @@ export default function SEODorsetPost() {
               Implementing these 10 local SEO tips will help your Dorset business rank higher, attract more customers, and grow revenue. But SEO takes time and expertise to get right.
             </p>
 
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 my-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">
-                Free SEO Audit for Dorset Businesses
-              </h4>
-              <p className="text-gray-700 mb-4">
-                Want to see how your Dorset business ranks for local searches? Book a free consultation and receive a comprehensive SEO audit showing exactly what's holding you back.
-              </p>
-              <BookCallButton className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
-                Get Your Free SEO Audit
-              </BookCallButton>
-            </div>
+
           </div>
 
           {/* Related Articles */}
@@ -354,7 +339,7 @@ export default function SEODorsetPost() {
                 <p className="text-gray-600">Complete guide to ranking above competitors in neighboring Yeovil</p>
               </Link>
               <Link href="/blog/web-design-somerset-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                <div className="bg-slate-100 text-[#172554] px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
                   Web Design
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Somerset Web Design 2025</h4>
@@ -372,7 +357,7 @@ export default function SEODorsetPost() {
 
           {/* Back to Blog */}
           <div className="mt-8 text-center">
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800 font-semibold">
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f] font-semibold">
               ← Back to Blog
             </Link>
           </div>

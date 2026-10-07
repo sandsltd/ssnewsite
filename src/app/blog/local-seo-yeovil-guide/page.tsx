@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import BookCallButton from '@/components/BookCallButton';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function LocalSEOYeovilPost() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="ss-legacy min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -38,7 +37,7 @@ export default function LocalSEOYeovilPost() {
             "author": {
               "@type": "Person",
               "name": "Nick Saunders",
-              "jobTitle": "Local SEO Specialist",
+              "jobTitle": "Co-founder",
               "worksFor": {
                 "@type": "Organization",
                 "name": "Saunders Simmons Ltd"
@@ -92,9 +91,9 @@ export default function LocalSEOYeovilPost() {
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" className="text-[#172554] hover:text-[#24376f]">Home</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800">Blog</Link>
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f]">Blog</Link>
             <span className="text-gray-400">/</span>
             <span className="text-gray-600">Local SEO Yeovil Guide</span>
           </div>
@@ -127,10 +126,14 @@ export default function LocalSEOYeovilPost() {
               </div>
               <div>
                 <p className="font-semibold text-gray-900">Nick Saunders</p>
-                <p className="text-gray-500 text-sm">Local SEO Specialist</p>
+                <p className="text-gray-500 text-sm">Co-founder</p>
               </div>
             </div>
           </header>
+
+          <aside className="mb-8 border-y border-gray-200 py-5 text-sm leading-relaxed text-gray-600">
+            From our article archive. This piece reflects the information available when it was published. For our current work, explore <Link href="/services/software" className="underline">our brands</Link> and <Link href="/services/web-design" className="underline">bespoke websites</Link>.
+          </aside>
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
@@ -143,7 +146,7 @@ export default function LocalSEOYeovilPost() {
             </h2>
 
             <p className="text-gray-700 mb-4">
-              Your Google My Business profile is your most powerful local SEO tool. Here's how to optimise it for maximum Yeovil visibility:
+              Your Google My Business profile is your most powerful local SEO tool. Here&apos;s how to optimise it for maximum Yeovil visibility:
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-6 mb-4">
@@ -193,9 +196,9 @@ export default function LocalSEOYeovilPost() {
 
             <blockquote className="bg-green-50 border-l-4 border-green-500 p-6 my-8">
               <p className="text-lg text-green-900 italic">
-                "Our Yeovil client went from page 3 to position #1 for 'accountants Yeovil' in just 4 months using these local SEO strategies."
+                &quot;Our Yeovil client went from page 3 to position #1 for &apos;accountants Yeovil&apos; in just 4 months using these local SEO strategies.&quot;
               </p>
-              <footer className="text-green-700 mt-2">— Nick Saunders, Local SEO Specialist</footer>
+              <footer className="text-green-700 mt-2">— Nick Saunders, Co-founder</footer>
             </blockquote>
 
             <h2 className="text-3xl font-bold text-gray-900 mt-8 mb-4">
@@ -213,17 +216,7 @@ export default function LocalSEOYeovilPost() {
               <li className="text-gray-700">Local business partnerships and collaborations</li>
             </ul>
 
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">
-                Ready to Dominate Yeovil Search Results?
-              </h4>
-              <p className="text-gray-700 mb-4">
-                Implement these local SEO strategies and watch your Yeovil business climb to the top of search results. Need help getting started?
-              </p>
-              <BookCallButton className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
-                Get Yeovil SEO Help
-              </BookCallButton>
-            </div>
+
           </div>
 
           {/* Related Articles */}
@@ -235,7 +228,7 @@ export default function LocalSEOYeovilPost() {
                   Case Study
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Yeovil Web Design Success</h4>
-                <p className="text-gray-600">How we increased a Yeovil business's revenue by 200% with professional web design</p>
+                <p className="text-gray-600">How we increased a Yeovil business&apos;s revenue by 200% with professional web design</p>
               </Link>
               <Link href="/blog/seo-tips-dorset-businesses" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                 <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
@@ -245,7 +238,7 @@ export default function LocalSEOYeovilPost() {
                 <p className="text-gray-600">10 local SEO tips to dominate Google rankings in neighboring Dorset</p>
               </Link>
               <Link href="/blog/web-design-somerset-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                <div className="bg-slate-100 text-[#172554] px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
                   Web Design
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Somerset Web Design 2025</h4>
@@ -256,7 +249,7 @@ export default function LocalSEOYeovilPost() {
 
           {/* Back to Blog */}
           <div className="mt-8 text-center">
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800 font-semibold">
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f] font-semibold">
               ← Back to Blog
             </Link>
           </div>

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import BookCallButton from '@/components/BookCallButton';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function WebsiteRedesignROIPost() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="ss-legacy min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -103,9 +102,9 @@ export default function WebsiteRedesignROIPost() {
       <nav className="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" className="text-[#172554] hover:text-[#24376f]">Home</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800">Blog</Link>
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f]">Blog</Link>
             <span className="text-gray-400">/</span>
             <span className="text-gray-600">Website Redesign ROI</span>
           </div>
@@ -143,16 +142,20 @@ export default function WebsiteRedesignROIPost() {
             </div>
           </header>
 
+          <aside className="mb-8 border-y border-gray-200 py-5 text-sm leading-relaxed text-gray-600">
+            From our article archive. This piece reflects the information available when it was published. For our current work, explore <Link href="/services/software" className="underline">our brands</Link> and <Link href="/services/web-design" className="underline">bespoke websites</Link>.
+          </aside>
+
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 mb-6">
-              "A website redesign costs too much." We hear this from Somerset and Dorset business owners every week. But what if we told you that the average business sees a 300% return on their website redesign investment within 12 months?
+              &quot;A website redesign costs too much.&quot; We hear this from Somerset and Dorset business owners every week. But what if we told you that the average business sees a 300% return on their website redesign investment within 12 months?
             </p>
 
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-8">
               <h3 className="text-lg font-bold text-yellow-900 mb-2">The Hidden Cost of Not Redesigning</h3>
               <p className="text-yellow-800">
-                An outdated website doesn't just fail to attract new customers—it actively drives them away to competitors. Every day you delay is revenue lost forever.
+                An outdated website doesn&apos;t just fail to attract new customers—it actively drives them away to competitors. Every day you delay is revenue lost forever.
               </p>
             </div>
 
@@ -161,7 +164,7 @@ export default function WebsiteRedesignROIPost() {
             </h2>
 
             <p className="text-gray-700 mb-6">
-              Before we talk about returns, let's understand what your current website might be costing you. Based on our analysis of 200+ Somerset and Dorset businesses:
+              Before we talk about returns, let&apos;s understand what your current website might be costing you. Based on our analysis of 200+ Somerset and Dorset businesses:
             </p>
 
             <div className="bg-red-50 p-6 rounded-lg my-8">
@@ -176,7 +179,7 @@ export default function WebsiteRedesignROIPost() {
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                    <span className="text-gray-700">68% won't return after bad experience</span>
+                    <span className="text-gray-700">68% won&apos;t return after bad experience</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-red-500 rounded-full"></div>
@@ -206,7 +209,7 @@ export default function WebsiteRedesignROIPost() {
 
             <blockquote className="bg-gray-50 border-l-4 border-gray-500 p-6 my-8">
               <p className="text-lg text-gray-900 italic">
-                "Our old website was costing us £8,000 per month in lost business. We tracked visitors but they weren't converting. After the redesign, those same visitors started buying."
+                &quot;Our old website was costing us £8,000 per month in lost business. We tracked visitors but they weren&apos;t converting. After the redesign, those same visitors started buying.&quot;
               </p>
               <footer className="text-gray-700 mt-2">— Taunton Manufacturing Company</footer>
             </blockquote>
@@ -216,7 +219,7 @@ export default function WebsiteRedesignROIPost() {
             </h2>
 
             <p className="text-gray-700 mb-6">
-              We've tracked the performance of over 150 website redesigns across Somerset and Dorset. Here's what businesses typically achieve:
+              We&apos;ve tracked the performance of over 150 website redesigns across Somerset and Dorset. Here&apos;s what businesses typically achieve:
             </p>
 
             <div className="bg-green-50 p-6 rounded-lg my-8">
@@ -230,7 +233,7 @@ export default function WebsiteRedesignROIPost() {
                   <div className="text-sm text-gray-500">Within 12 months</div>
                 </div>
                 <div className="text-center bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">240%</div>
+                  <div className="text-4xl font-bold text-[#172554] mb-2">240%</div>
                   <div className="text-gray-700 font-medium">Traffic Increase</div>
                   <div className="text-sm text-gray-500">Organic visitors</div>
                 </div>
@@ -282,12 +285,12 @@ export default function WebsiteRedesignROIPost() {
               Case Study: Dorset Service Company
             </h2>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-8">
-              <h4 className="text-lg font-bold text-blue-900 mb-4">Investment vs Returns</h4>
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 my-8">
+              <h4 className="text-lg font-bold text-[#172554] mb-4">Investment vs Returns</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h5 className="font-bold text-blue-900 mb-2">Investment:</h5>
-                  <ul className="text-blue-800 space-y-1">
+                  <h5 className="font-bold text-[#172554] mb-2">Investment:</h5>
+                  <ul className="text-[#172554] space-y-1">
                     <li>• Website redesign: £3,500</li>
                     <li>• SEO optimisation: £1,200</li>
                     <li>• Content creation: £800</li>
@@ -295,8 +298,8 @@ export default function WebsiteRedesignROIPost() {
                   </ul>
                 </div>
                 <div>
-                  <h5 className="font-bold text-blue-900 mb-2">12-Month Returns:</h5>
-                  <ul className="text-blue-800 space-y-1">
+                  <h5 className="font-bold text-[#172554] mb-2">12-Month Returns:</h5>
+                  <ul className="text-[#172554] space-y-1">
                     <li>• Additional revenue: £28,400</li>
                     <li>• Cost savings: £3,200</li>
                     <li>• Brand value increase: £5,000</li>
@@ -304,9 +307,9 @@ export default function WebsiteRedesignROIPost() {
                   </ul>
                 </div>
               </div>
-              <div className="mt-4 p-4 bg-blue-100 rounded-lg text-center">
-                <div className="text-2xl font-bold text-blue-900">ROI: 566%</div>
-                <div className="text-blue-800">Return on Investment</div>
+              <div className="mt-4 p-4 bg-slate-100 rounded-lg text-center">
+                <div className="text-2xl font-bold text-[#172554]">ROI: 566%</div>
+                <div className="text-[#172554]">Return on Investment</div>
               </div>
             </div>
 
@@ -347,14 +350,14 @@ export default function WebsiteRedesignROIPost() {
             </h2>
 
             <p className="text-gray-700 mb-4">
-              To be completely honest, website redesign doesn't work for everyone. Here's when it typically fails:
+              To be completely honest, website redesign doesn&apos;t work for everyone. Here&apos;s when it typically fails:
             </p>
 
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li className="text-gray-700">When businesses don't commit to ongoing marketing</li>
-              <li className="text-gray-700">If the business model itself isn't viable</li>
+              <li className="text-gray-700">When businesses don&apos;t commit to ongoing marketing</li>
+              <li className="text-gray-700">If the business model itself isn&apos;t viable</li>
               <li className="text-gray-700">When expectations are unrealistic (expecting overnight success)</li>
-              <li className="text-gray-700">If there's no clear target audience or value proposition</li>
+              <li className="text-gray-700">If there&apos;s no clear target audience or value proposition</li>
             </ul>
 
             <div className="bg-orange-50 border-l-4 border-orange-500 p-6 my-8">
@@ -429,17 +432,7 @@ export default function WebsiteRedesignROIPost() {
               Every Somerset and Dorset business is unique. The best way to understand your potential ROI is with a personalised analysis of your current website and market opportunity.
             </p>
 
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">
-                Free ROI Analysis for Somerset & Dorset Businesses
-              </h4>
-              <p className="text-gray-700 mb-4">
-                Book a free consultation and we'll analyse your website, competitors, and market opportunity. You'll receive a detailed ROI projection showing exactly what a website redesign could achieve for your business.
-              </p>
-              <BookCallButton className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
-                Get Your Free ROI Analysis
-              </BookCallButton>
-            </div>
+
           </div>
 
           {/* Related Articles */}
@@ -451,17 +444,17 @@ export default function WebsiteRedesignROIPost() {
                   Case Study
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Yeovil Case Study</h4>
-                <p className="text-gray-600">Real ROI: How we increased a business's revenue by 200%</p>
+                <p className="text-gray-600">Real ROI: How we increased a business&apos;s revenue by 200%</p>
               </Link>
               <Link href="/blog/web-design-somerset-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                <div className="bg-slate-100 text-[#172554] px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
                   Web Design
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Somerset Web Design 2025</h4>
                 <p className="text-gray-600">Why Somerset businesses need professional websites</p>
               </Link>
-              <Link href="/blog/mobile-first-design-2025" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+              <Link href="/blog/why-mobile-first-design-matters" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="bg-slate-100 text-[#172554] px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
                   Web Design
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Mobile-First Design</h4>
@@ -472,7 +465,7 @@ export default function WebsiteRedesignROIPost() {
 
           {/* Back to Blog */}
           <div className="mt-8 text-center">
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800 font-semibold">
+            <Link href="/blog" className="text-[#172554] hover:text-[#24376f] font-semibold">
               ← Back to Blog
             </Link>
           </div>

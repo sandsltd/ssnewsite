@@ -4,11 +4,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostBySlug, getAllSlugs, getRelatedPosts } from "@/lib/blog";
-import BookCallButton from "@/components/BookCallButton";
 
 const pillarLabels: Record<string, string> = {
   "web-design": "Web Design",
-  "seo-marketing": "SEO & Marketing",
+  "seo-marketing": "Digital business",
   "software-development": "Software Development",
 };
 
@@ -26,7 +25,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: `${post.title} | Saunders Simmons Blog`,
+    title: `${post.title} | Saunders Simmons Articles`,
     description: post.description,
     keywords: post.keywords,
     openGraph: {
@@ -88,15 +87,19 @@ export default async function BlogPostPage({
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
-            className="text-sm text-gray-500 hover:text-blue-600 transition-colors mb-8 block"
+            className="ss-text-link mb-8"
           >
-            &larr; Back to blog
+            &larr; Back to articles
           </Link>
+
+          <aside className="mb-8 border-y border-gray-200 py-5 text-sm leading-relaxed text-gray-600">
+            From our article archive. This piece reflects the information available when it was published. For our current work, explore <Link href="/services/software" className="underline">our brands</Link> and <Link href="/services/web-design" className="underline">bespoke websites</Link>.
+          </aside>
 
           <article>
             <header className="mb-8">
               <div className="flex items-center gap-3 mb-3">
-                <span className="inline-flex items-center px-2.5 py-0.5 text-xs font-semibold rounded-full text-blue-700 bg-blue-100">
+                <span className="inline-flex items-center px-2.5 py-0.5 text-xs font-semibold rounded-full text-gray-700 bg-gray-100">
                   {pillarLabels[post.pillar] || post.pillar}
                 </span>
                 <time className="text-sm text-gray-500">
@@ -124,35 +127,10 @@ export default async function BlogPostPage({
               </div>
             )}
 
-            <div className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-[#51AACD] prose-a:underline prose-a:decoration-[#51AACD]/30 hover:prose-a:text-[#3E8BA8] hover:prose-a:decoration-[#3E8BA8] prose-ul:my-4 prose-ol:my-4 prose-img:rounded-lg prose-blockquote:border-l-[#51AACD] prose-blockquote:text-gray-600">
+            <div className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-black prose-a:underline prose-a:decoration-gray-300 hover:prose-a:decoration-black prose-ul:my-4 prose-ol:my-4 prose-img:rounded-lg prose-blockquote:border-l-black prose-blockquote:text-gray-600">
               <MDXRemote source={post.content} />
             </div>
           </article>
-
-          {/* CTA Section */}
-          <div className="mt-12 rounded-lg bg-gray-900 p-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-3">
-              Ready to grow your business online?
-            </h2>
-            <p className="text-gray-300 mb-6 max-w-lg mx-auto">
-              Saunders Simmons builds professional websites, runs effective SEO
-              campaigns, and develops custom software — all tailored to your
-              business goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <BookCallButton
-                className="inline-block rounded-lg bg-[#51AACD] px-6 py-3 text-sm font-semibold text-white hover:bg-[#3E8BA8] transition-colors cursor-pointer"
-              >
-                Get a Free Quote
-              </BookCallButton>
-              <Link
-                href="/services"
-                className="inline-block rounded-lg bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
-              >
-                View Our Services
-              </Link>
-            </div>
-          </div>
 
           {/* Related Articles */}
           {relatedPosts.length > 0 && (
@@ -165,12 +143,12 @@ export default async function BlogPostPage({
                   <Link
                     key={related.slug}
                     href={`/blog/${related.slug}`}
-                    className="group block rounded-lg border border-gray-200 p-5 hover:border-blue-500 hover:shadow-sm transition-all"
+                    className="group block rounded-lg border border-gray-200 p-5 hover:border-black transition-all"
                   >
-                    <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-semibold rounded-full text-blue-700 bg-blue-100 mb-2">
+                    <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-semibold rounded-full text-gray-700 bg-gray-100 mb-2">
                       {pillarLabels[related.pillar] || related.pillar}
                     </span>
-                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors text-sm leading-snug mb-2">
+                    <h3 className="font-semibold text-gray-900 group-hover:underline transition-colors text-sm leading-snug mb-2">
                       {related.title}
                     </h3>
                     <p className="text-xs text-gray-500 line-clamp-2">

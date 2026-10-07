@@ -35,6 +35,22 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Keep legacy marketing URLs useful while the corporate redesign is reviewed.
+      {
+        source: '/services/seo',
+        destination: '/services',
+        permanent: false,
+      },
+      ...[
+        '/web-design-yeovil',
+        '/web-design-somerset',
+        '/web-design-dorset',
+        '/wordpress-web-design-yeovil',
+      ].map((source) => ({
+        source,
+        destination: '/services/web-design',
+        permanent: false,
+      })),
       {
         source: '/blogs',
         destination: '/blog',
@@ -51,46 +67,49 @@ const nextConfig = {
   // Configure cache headers for better performance
   async headers() {
     return [
-      {
-        // Cache static assets for 1 year
-        source: '/(.*)\\.(ico|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot|otf|avif)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        // Cache CSS and JS files for 1 year (Next.js handles versioning)
-        source: '/_next/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        // Cache HTML files for 1 hour with revalidation
-        source: '/(.*)\\.(html|htm)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600, must-revalidate',
-          },
-        ],
-      },
-      {
-        // Cache manifest and robots for 1 day
-        source: '/(robots\\.txt|sitemap\\.xml|site\\.webmanifest)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=86400, must-revalidate',
-          },
-        ],
-      },
+      // Let development assets refresh immediately during local review.
+      ...(process.env.NODE_ENV === 'production' ? [
+        {
+          // Cache static assets for 1 year
+          source: '/(.*)\\.(ico|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot|otf|avif)',
+          headers: [
+            {
+              key: 'Cache-Control',
+              value: 'public, max-age=31536000, immutable',
+            },
+          ],
+        },
+        {
+          // Cache CSS and JS files for 1 year (Next.js handles versioning)
+          source: '/_next/static/(.*)',
+          headers: [
+            {
+              key: 'Cache-Control',
+              value: 'public, max-age=31536000, immutable',
+            },
+          ],
+        },
+        {
+          // Cache HTML files for 1 hour with revalidation
+          source: '/(.*)\\.(html|htm)',
+          headers: [
+            {
+              key: 'Cache-Control',
+              value: 'public, max-age=3600, must-revalidate',
+            },
+          ],
+        },
+        {
+          // Cache manifest and robots for 1 day
+          source: '/(robots\\.txt|sitemap\\.xml|site\\.webmanifest)',
+          headers: [
+            {
+              key: 'Cache-Control',
+              value: 'public, max-age=86400, must-revalidate',
+            },
+          ],
+        },
+      ] : []),
       {
         // Signing endpoints set stricter per-response privacy/CSP headers themselves.
         // Do not overwrite their nonce CSP or no-referrer policy with marketing headers.
