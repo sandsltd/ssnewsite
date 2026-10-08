@@ -121,6 +121,7 @@ async function main() {
       rankings,
       blogPost: blogPost
         ? {
+            slug: blogPost.slug,
             title: blogPost.title,
             targetKeyword: blogPost.targetKeyword,
             prUrl: null,
